@@ -1,0 +1,145 @@
+{
+  "$schema": "https://schema.openjewelryschema.org/v1/ojs-strict.json",
+  "product_type": "watch",
+  "audit": {
+    "ojs_version": "1.0.0",
+    "created_at": "2026-05-17T10:00:00Z",
+    "source_system": "manual",
+    "last_validated_by_human": "2026-05-15T14:30:00Z"
+  },
+  "identity": {
+    "sku": "WATCH-VTG-CART-1932",
+    "title": "Vintage Cartier Tank Cintrée — 1932, Manual Wind",
+    "description": "Rare 1932 Cartier Tank Cintrée in 18k yellow gold. Manual-wind mechanical movement. Original silver dial with Roman numerals. Comes with extracted Cartier service papers and recent inspection (2024). One of approximately 200 examples produced in this configuration.",
+    "brand": {"name": "Cartier", "website": "https://www.cartier.com"},
+    "model": "Tank Cintrée 1932",
+    "collection": "Tank",
+    "handle": "vintage-cartier-tank-cintree-1932"
+  },
+  "commerce": {
+    "offers": [{
+      "price": {"amount": "85000.00", "currency": "USD"},
+      "availability": "in_stock",
+      "url": "https://example.com/products/watch-vtg-cart-1932",
+      "condition": "vintage",
+      "target_countries": ["US", "CH", "GB", "FR", "JP", "AE"],
+      "seller_name": "Example Watch Dealer",
+      "seller_url": "https://example.com",
+      "return_policy_url": "https://example.com/policies/returns",
+      "accepted_payments": ["bank_transfer", "visa", "amex"],
+      "bnpl_available": false,
+      "free_shipping": true,
+      "handling_time_days": 5,
+      "warranty_description": "2-year movement warranty by our master watchmaker"
+    }]
+  },
+  "media": {
+    "images": [
+      {"url": "https://example.com/img/cartier-vtg-front.jpg", "is_primary": true, "role": "primary"},
+      {"url": "https://example.com/img/cartier-vtg-back.jpg", "role": "additional"},
+      {"url": "https://example.com/img/cartier-vtg-papers.jpg", "role": "certificate"},
+      {"url": "https://example.com/img/cartier-vtg-hallmark.jpg", "role": "hallmark"},
+      {"url": "https://example.com/img/cartier-vtg-worn.jpg", "role": "lifestyle"}
+    ]
+  },
+  "watch": {
+    "movement_type": "manual_wind",
+    "caliber": "ETA-derived (period appropriate)",
+    "complications": [],
+    "power_reserve_hours": 38,
+    "case_shape": "rectangular",
+    "case_diameter_mm": 22.0,
+    "case_thickness_mm": 6.5,
+    "case_material": "18k yellow gold",
+    "crystal_type": "mineral_glass",
+    "water_resistance": {"atm": 0, "meters": 0},
+    "strap_type": "leather",
+    "strap_material": "black alligator (recent replacement)",
+    "dial_color": "silver",
+    "box_papers_included": true,
+    "serviced_date": "2024-09-12"
+  },
+  "metals": {
+    "compositions": [{
+      "type": "gold",
+      "purity_fineness": 750,
+      "purity_karat": 18,
+      "color": "yellow",
+      "primary": true,
+      "hallmark": "750 (period French hallmark)"
+    }]
+  },
+  "sizing": {
+    "total_weight_grams": 35.0
+  },
+  "style": {
+    "era": "art_deco",
+    "design_styles": ["vintage_inspired", "geometric", "classic"],
+    "aesthetic_tags": ["collector", "investment piece", "horological"]
+  },
+  "estate": {
+    "period_verified": true,
+    "period_appraiser": "John Doe FGA — Specialist Cartier Vintage",
+    "hallmarks": [
+      {
+        "hallmark_type": "fineness_mark",
+        "mark_text": "750",
+        "location_on_piece": "case back",
+        "interpretation": "18-karat gold (Au 750/1000)"
+      },
+      {
+        "hallmark_type": "maker_mark",
+        "mark_text": "Cartier Paris",
+        "location_on_piece": "dial",
+        "interpretation": "Cartier Paris manufacture"
+      }
+    ],
+    "provenance": [
+      {"year_from": 1932, "year_to": 1985, "owner": "Original purchaser (unnamed European collector)", "description": "Worn as daily watch"},
+      {"year_from": 1985, "year_to": 2024, "owner": "Auction house holding company", "description": "Sold at Christie's Geneva May 1985, Lot 187"}
+    ],
+    "restoration_history": [
+      {
+        "restored_date": "2024-09-12",
+        "restorer": "Example Watchmakers Ltd, London",
+        "description": "Full service: cleaned movement, replaced 3 jewels, replaced mainspring, replaced strap to period-appropriate alligator. Case original.",
+        "parts_replaced": ["mainspring", "leather strap", "3 movement jewels"]
+      }
+    ],
+    "original_box_papers": true,
+    "age_estimate_year_from": 1932,
+    "age_estimate_year_to": 1933,
+    "appraisal_value": "$90,000 USD (per 2024 appraisal)",
+    "appraisal_date": "2024-10-01"
+  },
+  "certification": {
+    "certificates": [{
+      "lab": "none",
+      "report_number": "CART-EXT-2024-001",
+      "report_url": "https://www.cartier.com/heritage/extract-from-archives",
+      "issued_date": "2024-08-20",
+      "notes": "Cartier extract from archives confirming production year 1932"
+    }]
+  },
+  "care": {
+    "cleaning_methods": ["polishing_cloth_only", "professional_only", "avoid_water"],
+    "activity_safety": ["avoid_household_chemicals"],
+    "storage": ["soft_pouch", "dry_environment", "avoid_humidity"],
+    "professional_inspection_recommended_months": 36
+  },
+  "reviews": {
+    "aggregate": {"rating_value": 5.0, "review_count": 8}
+  },
+  "legal": {
+    "hs_code": "9101",
+    "country_of_origin": "FR"
+  },
+  "ai_commerce": {
+    "semantic_description": "Rare vintage 1932 Cartier Tank Cintrée wristwatch in 18k yellow gold with manual-wind movement, original silver dial with Roman numerals, period French gold hallmarks. Comes with Cartier extract from archives, original box and papers, recent 2024 service. Collector-grade horological investment piece from the Art Deco era.",
+    "query_keywords": ["vintage Cartier", "1932 Cartier watch", "Tank Cintrée", "vintage gold watch", "art deco watch", "Cartier archives extract", "collector watch investment"],
+    "occasion_tags": ["self_purchase", "anniversary"],
+    "audience_tags": ["men", "women", "unisex", "adult"],
+    "style_descriptors": ["vintage", "art deco", "horological", "rare"],
+    "price_tier": "luxury"
+  }
+}

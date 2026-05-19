@@ -1,0 +1,39 @@
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   Copyright 2026 Arbling Inc. and OJS contributors.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+----------------------------------------------------------------------
+
+SCOPE OF THIS LICENSE
+
+This Apache 2.0 license applies to:
+  - The Python reference implementation in src/python/
+  - The transformer modules in src/python/ojs/transformers/
+  - The Pydantic models in src/python/ojs/models/
+  - Tests in tests/
+  - Examples in examples/
+
+The Apache 2.0 license does NOT apply to:
+  - The OJS vocabulary, schema, and codelists (spec/v1/*) — these are
+    dedicated to the public domain under CC0 1.0 (see LICENSE-CC0)
+  - The "OJS" and "Open Jewelry Schema" names and logos — trademarks
+    of Arbling Inc.
+
+----------------------------------------------------------------------
+
+The full Apache 2.0 license text is available at
+http://www.apache.org/licenses/LICENSE-2.0

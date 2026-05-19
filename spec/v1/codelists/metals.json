@@ -1,0 +1,198 @@
+{
+  "types": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_types.json",
+    "title": "OJS codelist: metal_types",
+    "description": "Base metal types per ISO 9202",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "gold",
+        "label": "Gold"
+      },
+      {
+        "code": "silver",
+        "label": "Silver"
+      },
+      {
+        "code": "platinum",
+        "label": "Platinum"
+      },
+      {
+        "code": "palladium",
+        "label": "Palladium"
+      },
+      {
+        "code": "rhodium",
+        "label": "Rhodium"
+      },
+      {
+        "code": "titanium",
+        "label": "Titanium"
+      },
+      {
+        "code": "niobium",
+        "label": "Niobium"
+      },
+      {
+        "code": "steel",
+        "label": "Steel"
+      },
+      {
+        "code": "tungsten",
+        "label": "Tungsten"
+      },
+      {
+        "code": "brass",
+        "label": "Brass"
+      },
+      {
+        "code": "bronze",
+        "label": "Bronze"
+      },
+      {
+        "code": "copper",
+        "label": "Copper"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "colors": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_colors.json",
+    "title": "OJS codelist: metal_colors",
+    "description": "Visible metal colors",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "yellow",
+        "label": "Yellow"
+      },
+      {
+        "code": "white",
+        "label": "White"
+      },
+      {
+        "code": "rose",
+        "label": "Rose"
+      },
+      {
+        "code": "green",
+        "label": "Green"
+      },
+      {
+        "code": "black",
+        "label": "Black"
+      },
+      {
+        "code": "natural",
+        "label": "Natural"
+      },
+      {
+        "code": "two_tone",
+        "label": "Two Tone"
+      },
+      {
+        "code": "tri_color",
+        "label": "Tri Color"
+      }
+    ]
+  },
+  "finishes": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_finishes.json",
+    "title": "OJS codelist: metal_finishes",
+    "description": "Surface finishes",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "polished",
+        "label": "Polished"
+      },
+      {
+        "code": "matte",
+        "label": "Matte"
+      },
+      {
+        "code": "brushed",
+        "label": "Brushed"
+      },
+      {
+        "code": "satin",
+        "label": "Satin"
+      },
+      {
+        "code": "hammered",
+        "label": "Hammered"
+      },
+      {
+        "code": "sandblasted",
+        "label": "Sandblasted"
+      },
+      {
+        "code": "oxidized",
+        "label": "Oxidized"
+      },
+      {
+        "code": "milgrain",
+        "label": "Milgrain"
+      },
+      {
+        "code": "engraved",
+        "label": "Engraved"
+      },
+      {
+        "code": "florentine",
+        "label": "Florentine"
+      }
+    ]
+  },
+  "platings": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/plating_types.json",
+    "title": "OJS codelist: plating_types",
+    "description": "Plating types (vermeil ≥2.5µm per FTC §23.5)",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "none",
+        "label": "None"
+      },
+      {
+        "code": "gold_plated",
+        "label": "Gold Plated"
+      },
+      {
+        "code": "gold_filled",
+        "label": "Gold Filled"
+      },
+      {
+        "code": "vermeil",
+        "label": "Gold Vermeil"
+      },
+      {
+        "code": "rhodium_plated",
+        "label": "Rhodium Plated"
+      },
+      {
+        "code": "silver_plated",
+        "label": "Silver Plated"
+      },
+      {
+        "code": "platinum_plated",
+        "label": "Platinum Plated"
+      },
+      {
+        "code": "black_rhodium",
+        "label": "Black Rhodium"
+      },
+      {
+        "code": "rose_gold_plated",
+        "label": "Rose Gold Plated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "types": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_types.json",
+    "title": "OJS codelist: pearl_types",
+    "description": "Pearl origin types per CIBJO",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "akoya",
+        "label": "Akoya"
+      },
+      {
+        "code": "south_sea",
+        "label": "South Sea"
+      },
+      {
+        "code": "tahitian",
+        "label": "Tahitian"
+      },
+      {
+        "code": "freshwater",
+        "label": "Freshwater"
+      },
+      {
+        "code": "sea_of_cortez",
+        "label": "Sea Of Cortez"
+      },
+      {
+        "code": "natural",
+        "label": "Natural"
+      },
+      {
+        "code": "keshi",
+        "label": "Keshi"
+      },
+      {
+        "code": "mabe",
+        "label": "Mabe"
+      },
+      {
+        "code": "imitation",
+        "label": "Imitation"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "luster": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_luster.json",
+    "title": "OJS codelist: pearl_luster",
+    "description": "Luster grades",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "excellent",
+        "label": "Excellent"
+      },
+      {
+        "code": "very_good",
+        "label": "Very Good"
+      },
+      {
+        "code": "good",
+        "label": "Good"
+      },
+      {
+        "code": "fair",
+        "label": "Fair"
+      },
+      {
+        "code": "poor",
+        "label": "Poor"
+      }
+    ]
+  },
+  "surface": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_surface.json",
+    "title": "OJS codelist: pearl_surface",
+    "description": "Surface cleanliness grades",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "clean",
+        "label": "Clean"
+      },
+      {
+        "code": "lightly_blemished",
+        "label": "Lightly Blemished"
+      },
+      {
+        "code": "moderately_blemished",
+        "label": "Moderately Blemished"
+      },
+      {
+        "code": "heavily_blemished",
+        "label": "Heavily Blemished"
+      }
+    ]
+  },
+  "shapes": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_shapes.json",
+    "title": "OJS codelist: pearl_shapes",
+    "description": "CIBJO 7-shape classification",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "round",
+        "label": "Round"
+      },
+      {
+        "code": "near_round",
+        "label": "Near Round"
+      },
+      {
+        "code": "oval",
+        "label": "Oval"
+      },
+      {
+        "code": "button",
+        "label": "Button"
+      },
+      {
+        "code": "drop",
+        "label": "Drop"
+      },
+      {
+        "code": "semi_baroque",
+        "label": "Semi Baroque"
+      },
+      {
+        "code": "baroque",
+        "label": "Baroque"
+      },
+      {
+        "code": "circle",
+        "label": "Circle"
+      },
+      {
+        "code": "keshi",
+        "label": "Keshi"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "body_colors": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_body_colors.json",
+    "title": "OJS codelist: pearl_body_colors",
+    "description": "Body colors",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "white",
+        "label": "White"
+      },
+      {
+        "code": "cream",
+        "label": "Cream"
+      },
+      {
+        "code": "gold",
+        "label": "Gold"
+      },
+      {
+        "code": "silver",
+        "label": "Silver"
+      },
+      {
+        "code": "peach",
+        "label": "Peach"
+      },
+      {
+        "code": "pink",
+        "label": "Pink"
+      },
+      {
+        "code": "lavender",
+        "label": "Lavender"
+      },
+      {
+        "code": "black",
+        "label": "Black"
+      },
+      {
+        "code": "grey",
+        "label": "Grey"
+      },
+      {
+        "code": "green",
+        "label": "Green"
+      },
+      {
+        "code": "blue",
+        "label": "Blue"
+      },
+      {
+        "code": "aubergine",
+        "label": "Aubergine"
+      },
+      {
+        "code": "multicolor",
+        "label": "Multicolor"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "overtones": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_overtones.json",
+    "title": "OJS codelist: pearl_overtones",
+    "description": "Overtone colors",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "none",
+        "label": "None"
+      },
+      {
+        "code": "rose",
+        "label": "Rose"
+      },
+      {
+        "code": "silver",
+        "label": "Silver"
+      },
+      {
+        "code": "green",
+        "label": "Green"
+      },
+      {
+        "code": "blue",
+        "label": "Blue"
+      },
+      {
+        "code": "peacock",
+        "label": "Peacock"
+      },
+      {
+        "code": "pink",
+        "label": "Pink"
+      },
+      {
+        "code": "aubergine",
+        "label": "Aubergine"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  }
+}

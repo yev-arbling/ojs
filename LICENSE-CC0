@@ -1,0 +1,37 @@
+Creative Commons CC0 1.0 Universal
+
+To the extent possible under law, the contributors to the Open Jewelry
+Schema (OJS) vocabulary, schema definitions, JSON-LD context, and codelists
+have waived all copyright and related or neighboring rights to those
+works.
+
+This dedication makes the SCHEMA, VOCABULARY, AND CODELISTS public-domain.
+You can copy, modify, distribute, and use them, even for commercial
+purposes, all without asking permission.
+
+For the full legal code, see:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+----------------------------------------------------------------------
+
+SCOPE OF THIS LICENSE
+
+This CC0 dedication applies to:
+  - All JSON Schema files in spec/v1/*.json
+  - The JSON-LD context in spec/v1/context.jsonld
+  - All codelists in spec/v1/codelists/*.json
+  - All field names, enum values, and schema definitions
+  - All documentation describing the schema in docs/
+
+This CC0 dedication does NOT apply to:
+  - The Python reference implementation in src/python/ — covered by
+    Apache 2.0 (see LICENSE-APACHE)
+  - The "OJS" and "Open Jewelry Schema" names and logos — these remain
+    trademarks of Arbling Inc.
+
+----------------------------------------------------------------------
+
+The dual-licensing pattern (CC0 vocabulary + Apache 2.0 code) follows
+the HL7 FHIR governance model and is intended to maximize adoption
+while preserving the maintainer's ability to evolve the reference
+implementation.

@@ -1,0 +1,202 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.0",
+    "created_at": "2026-05-17T09:56:05.578940Z",
+    "source_system": "arbling_pipeline"
+  },
+  "identity": {
+    "sku": "OJS-RING-001",
+    "title": "Platinum Solitaire Engagement Ring",
+    "description": "Classic 6-prong platinum solitaire engagement ring with 1.5ct round brilliant diamond center stone, F color VS1 clarity, GIA certified.",
+    "brand": {
+      "name": "Atelier Demo",
+      "website": "https://demo.example.com"
+    },
+    "gtin": "00012345678905",
+    "collection": "Classic Solitaire"
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "8500.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://demo.example.com/products/ojs-ring-001",
+        "condition": "new",
+        "target_countries": [
+          "US",
+          "CA",
+          "GB"
+        ],
+        "seller_name": "Atelier Demo",
+        "seller_url": "https://demo.example.com",
+        "return_policy_url": "https://demo.example.com/returns",
+        "accepted_payments": [],
+        "bnpl_available": true,
+        "free_shipping": true,
+        "lifetime_warranty": true
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://demo.example.com/img/ring-001-primary.jpg",
+        "role": "primary",
+        "width_px": 1500,
+        "height_px": 1500,
+        "alt_text": "Platinum solitaire engagement ring front view",
+        "is_primary": true
+      },
+      {
+        "url": "https://demo.example.com/img/ring-001-side.jpg",
+        "role": "additional",
+        "width_px": 1500,
+        "height_px": 1500,
+        "alt_text": "Side profile",
+        "is_primary": false
+      },
+      {
+        "url": "https://demo.example.com/img/ring-001-macro.jpg",
+        "role": "macro",
+        "width_px": 1500,
+        "height_px": 1500,
+        "alt_text": "Macro view of center diamond",
+        "is_primary": false
+      },
+      {
+        "url": "https://demo.example.com/img/ring-001-hand.jpg",
+        "role": "lifestyle",
+        "width_px": 1500,
+        "height_px": 1500,
+        "alt_text": "On model hand",
+        "is_primary": false
+      }
+    ],
+    "videos": [],
+    "glb_url": "https://demo.example.com/3d/ring-001.glb",
+    "usdz_url": "https://demo.example.com/3d/ring-001.usdz"
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "platinum",
+        "purity_fineness": 950,
+        "color": "natural",
+        "finish": "polished",
+        "primary": true,
+        "hallmark": "PT950"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "natural",
+        "carat": 1.5,
+        "cut": "round_brilliant",
+        "length_mm": 7.35,
+        "width_mm": 7.4,
+        "depth_mm": 4.55,
+        "color_grade": "F",
+        "clarity_grade": "VS1",
+        "cut_grade": "excellent",
+        "polish": "excellent",
+        "symmetry": "excellent",
+        "fluorescence": "none",
+        "treatments": [],
+        "position": "center",
+        "setting_style_id": "center"
+      }
+    ],
+    "total_carat_weight": 1.5,
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "center",
+        "setting_type": "prong",
+        "prong_count": 6,
+        "head_height_mm": 6.5
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "iso_mm": 54.0,
+      "us_ca": 7.0,
+      "uk_au": "N½",
+      "eu": 54.0
+    },
+    "ring_width_mm": 2.0,
+    "ring_resizable": true,
+    "total_weight_grams": 4.5
+  },
+  "style": {
+    "era": "contemporary",
+    "design_styles": [
+      "classic",
+      "minimalist"
+    ],
+    "motifs": [],
+    "aesthetic_tags": []
+  },
+  "certification": {
+    "certificates": [
+      {
+        "lab": "gia",
+        "report_number": "2199999999",
+        "report_url": "https://www.gia.edu/report-check?reportno=2199999999",
+        "refers_to_stone_index": 0
+      }
+    ]
+  },
+  "reviews": {
+    "aggregate": {
+      "rating_value": 4.7,
+      "review_count": 128,
+      "best_rating": 5.0,
+      "worst_rating": 1.0
+    },
+    "reviews": [],
+    "qa_questions": [],
+    "qa_answers": []
+  },
+  "legal": {
+    "hs_code": "711319",
+    "country_of_origin": "US",
+    "regulatory_flags": [
+      "nickel_directive_compliant"
+    ],
+    "ftc_lab_grown_disclosure": true,
+    "ftc_treatment_disclosure": true
+  },
+  "ai_commerce": {
+    "semantic_description": "Classic 1.5ct round brilliant diamond solitaire engagement ring in platinum 950 with 6-prong setting, F color VS1 clarity, GIA certified. Suitable for engagement and as a heirloom.",
+    "query_keywords": [
+      "engagement ring",
+      "platinum solitaire",
+      "1.5 carat diamond",
+      "GIA certified diamond ring",
+      "classic engagement ring"
+    ],
+    "occasion_tags": [
+      "engagement",
+      "anniversary"
+    ],
+    "audience_tags": [
+      "women",
+      "bride",
+      "gift_for_partner"
+    ],
+    "style_descriptors": [],
+    "price_tier": "affordable_luxury",
+    "confidence_scores": {}
+  }
+}

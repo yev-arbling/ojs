@@ -1,0 +1,298 @@
+{
+  "species": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/gemstone_species.json",
+    "title": "OJS codelist: gemstone_species",
+    "description": "Recognized gemstone species",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "diamond",
+        "label": "Diamond"
+      },
+      {
+        "code": "ruby",
+        "label": "Ruby"
+      },
+      {
+        "code": "sapphire",
+        "label": "Sapphire"
+      },
+      {
+        "code": "emerald",
+        "label": "Emerald"
+      },
+      {
+        "code": "aquamarine",
+        "label": "Aquamarine"
+      },
+      {
+        "code": "morganite",
+        "label": "Morganite"
+      },
+      {
+        "code": "amethyst",
+        "label": "Amethyst"
+      },
+      {
+        "code": "citrine",
+        "label": "Citrine"
+      },
+      {
+        "code": "smoky_quartz",
+        "label": "Smoky Quartz"
+      },
+      {
+        "code": "rose_quartz",
+        "label": "Rose Quartz"
+      },
+      {
+        "code": "tanzanite",
+        "label": "Tanzanite"
+      },
+      {
+        "code": "topaz",
+        "label": "Topaz"
+      },
+      {
+        "code": "tourmaline",
+        "label": "Tourmaline"
+      },
+      {
+        "code": "garnet",
+        "label": "Garnet"
+      },
+      {
+        "code": "peridot",
+        "label": "Peridot"
+      },
+      {
+        "code": "spinel",
+        "label": "Spinel"
+      },
+      {
+        "code": "zircon",
+        "label": "Zircon"
+      },
+      {
+        "code": "moissanite",
+        "label": "Moissanite"
+      },
+      {
+        "code": "pearl",
+        "label": "Pearl"
+      },
+      {
+        "code": "amber",
+        "label": "Amber"
+      },
+      {
+        "code": "coral",
+        "label": "Coral"
+      },
+      {
+        "code": "jet",
+        "label": "Jet"
+      },
+      {
+        "code": "opal",
+        "label": "Opal"
+      },
+      {
+        "code": "turquoise",
+        "label": "Turquoise"
+      },
+      {
+        "code": "lapis_lazuli",
+        "label": "Lapis Lazuli"
+      },
+      {
+        "code": "malachite",
+        "label": "Malachite"
+      },
+      {
+        "code": "onyx",
+        "label": "Onyx"
+      },
+      {
+        "code": "agate",
+        "label": "Agate"
+      },
+      {
+        "code": "jade_jadeite",
+        "label": "Jade Jadeite"
+      },
+      {
+        "code": "jade_nephrite",
+        "label": "Jade Nephrite"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "origins": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/stone_origins.json",
+    "title": "OJS codelist: stone_origins",
+    "description": "Stone origin types (natural/lab-grown/simulant)",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "natural",
+        "label": "Natural"
+      },
+      {
+        "code": "lab_grown",
+        "label": "Lab Grown"
+      },
+      {
+        "code": "simulant",
+        "label": "Simulant"
+      },
+      {
+        "code": "unknown",
+        "label": "Unknown"
+      }
+    ]
+  },
+  "cuts": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/stone_cuts.json",
+    "title": "OJS codelist: stone_cuts",
+    "description": "Faceting shapes",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "round_brilliant",
+        "label": "Round Brilliant"
+      },
+      {
+        "code": "princess",
+        "label": "Princess"
+      },
+      {
+        "code": "cushion",
+        "label": "Cushion"
+      },
+      {
+        "code": "emerald_cut",
+        "label": "Emerald Cut"
+      },
+      {
+        "code": "oval",
+        "label": "Oval"
+      },
+      {
+        "code": "pear",
+        "label": "Pear"
+      },
+      {
+        "code": "marquise",
+        "label": "Marquise"
+      },
+      {
+        "code": "radiant",
+        "label": "Radiant"
+      },
+      {
+        "code": "asscher",
+        "label": "Asscher"
+      },
+      {
+        "code": "heart",
+        "label": "Heart"
+      },
+      {
+        "code": "baguette",
+        "label": "Baguette"
+      },
+      {
+        "code": "trillion",
+        "label": "Trillion"
+      },
+      {
+        "code": "rose_cut",
+        "label": "Rose Cut"
+      },
+      {
+        "code": "old_european",
+        "label": "Old European"
+      },
+      {
+        "code": "old_mine",
+        "label": "Old Mine"
+      },
+      {
+        "code": "cabochon",
+        "label": "Cabochon"
+      },
+      {
+        "code": "briolette",
+        "label": "Briolette"
+      },
+      {
+        "code": "fancy",
+        "label": "Fancy"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "grading_labs": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/grading_labs.json",
+    "title": "OJS codelist: grading_labs",
+    "description": "Accredited grading laboratories (AGS legacy-only after 2022)",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "gia",
+        "label": "Gia"
+      },
+      {
+        "code": "ags",
+        "label": "Ags"
+      },
+      {
+        "code": "igi",
+        "label": "Igi"
+      },
+      {
+        "code": "hrd",
+        "label": "Hrd"
+      },
+      {
+        "code": "gcal",
+        "label": "Gcal"
+      },
+      {
+        "code": "egl_usa",
+        "label": "Egl Usa"
+      },
+      {
+        "code": "ssef",
+        "label": "Ssef"
+      },
+      {
+        "code": "agta_gtc",
+        "label": "Agta Gtc"
+      },
+      {
+        "code": "grs",
+        "label": "Grs"
+      },
+      {
+        "code": "lotus",
+        "label": "Lotus"
+      },
+      {
+        "code": "none",
+        "label": "None"
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "product_type": "pearl",
+  "audit": {
+    "ojs_version": "1.0.0",
+    "created_at": "2026-05-17T09:56:05.578940Z",
+    "source_system": "manual"
+  },
+  "identity": {
+    "sku": "OJS-PEARL-001",
+    "title": "Akoya Pearl Necklace 18 inch AAA",
+    "description": "Classic Akoya cultured pearl strand 18 inch length, AAA quality with white body color and rose overtone, knotted on silk.",
+    "brand": {
+      "name": "Atelier Demo"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "1200.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://demo.example.com/products/ojs-pearl-001",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Atelier Demo",
+        "seller_url": "https://demo.example.com",
+        "return_policy_url": "https://demo.example.com/returns",
+        "accepted_payments": []
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://demo.example.com/img/pearl-001.jpg",
+        "role": "primary",
+        "is_primary": true
+      }
+    ],
+    "videos": []
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "purity_fineness": 585,
+        "color": "yellow",
+        "primary": true
+      }
+    ]
+  },
+  "sizing": {
+    "length_mm": 460.0,
+    "closure": "box_clasp",
+    "total_weight_grams": 22.0
+  },
+  "care": {
+    "cleaning_methods": [
+      "polishing_cloth_only",
+      "avoid_water"
+    ],
+    "activity_safety": [
+      "avoid_perfume",
+      "avoid_lotion",
+      "avoid_household_chemicals"
+    ],
+    "storage": [
+      "lay_flat",
+      "soft_pouch"
+    ],
+    "professional_inspection_recommended_months": 24
+  },
+  "ai_commerce": {
+    "semantic_description": "Cultured Akoya pearl necklace 18 inch strand with AAA luster excellent surface, white body with rose overtone, 7-7.5mm size, knotted construction, gold clasp.",
+    "query_keywords": [
+      "akoya pearl necklace",
+      "18 inch pearl strand",
+      "AAA pearl necklace",
+      "classic pearl necklace"
+    ],
+    "occasion_tags": [
+      "wedding",
+      "graduation",
+      "formal"
+    ],
+    "audience_tags": [
+      "women",
+      "gift_for_her"
+    ],
+    "style_descriptors": [],
+    "price_tier": "mid_market",
+    "confidence_scores": {}
+  },
+  "pearls": {
+    "pearl_type": "akoya",
+    "luster": "excellent",
+    "surface_quality": "clean",
+    "shape": "round",
+    "body_color": "white",
+    "overtone": "rose",
+    "size_mm": 7.5,
+    "size_range_mm": "7.0-7.5",
+    "pearl_count": 49,
+    "matching_grade": "excellent",
+    "drilling": "fully_drilled",
+    "treatments": []
+  }
+}

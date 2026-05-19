@@ -1,0 +1,123 @@
+{
+  "$schema": "https://schema.openjewelryschema.org/v1/ojs-strict.json",
+  "product_type": "smart_wearable",
+  "audit": {
+    "ojs_version": "1.0.0",
+    "created_at": "2026-05-17T10:00:00Z",
+    "source_system": "manual"
+  },
+  "identity": {
+    "sku": "SMART-RING-TITAN-8-BK",
+    "title": "Example Smart Ring Gen 3 — Size 8 Black",
+    "description": "Titanium smart ring with PPG heart-rate, SpO2, body temperature, HRV, and sleep tracking. 7-day battery, IP68 waterproof, no subscription required for core features.",
+    "brand": {"name": "Example Health Co.", "website": "https://example.com"},
+    "gtin": "0123456789104",
+    "model": "Gen 3",
+    "handle": "smart-ring-gen3-size-8-black"
+  },
+  "commerce": {
+    "offers": [{
+      "price": {"amount": "349.00", "currency": "USD"},
+      "availability": "in_stock",
+      "url": "https://example.com/products/smart-ring-titan-8-bk",
+      "condition": "new",
+      "target_countries": ["US", "CA", "GB", "EU", "AU"],
+      "seller_name": "Example Health Co.",
+      "seller_url": "https://example.com",
+      "return_policy_url": "https://example.com/returns",
+      "accepted_payments": ["visa", "mastercard", "amex", "shop_pay", "affirm"],
+      "bnpl_available": true,
+      "free_shipping": true,
+      "handling_time_days": 1,
+      "lifetime_warranty": false,
+      "warranty_description": "2-year hardware warranty"
+    }]
+  },
+  "media": {
+    "images": [
+      {"url": "https://example.com/img/ring-bk-front.jpg", "is_primary": true, "role": "primary"},
+      {"url": "https://example.com/img/ring-bk-side.jpg", "role": "additional"},
+      {"url": "https://example.com/img/ring-bk-app.jpg", "role": "infographic"},
+      {"url": "https://example.com/img/ring-bk-hand.jpg", "role": "lifestyle"}
+    ],
+    "glb_url": "https://example.com/3d/ring-bk.glb"
+  },
+  "smart": {
+    "features": ["heart_rate", "hrv", "spo2", "skin_temperature", "sleep_tracking", "activity_tracking", "stress_tracking"],
+    "operating_system": "Example Health OS 3.2",
+    "app_required": true,
+    "app_ios_compatible": true,
+    "app_android_compatible": true,
+    "minimum_ios_version": "15.0",
+    "minimum_android_version": "10",
+    "battery_life_days": 7,
+    "charging_method": "magnetic_puck",
+    "charge_time_minutes": 60,
+    "connectivity": ["bluetooth_le"],
+    "sensor_count": 7,
+    "sensors": ["PPG", "skin_temperature", "accelerometer", "gyroscope"],
+    "waterproof_rating": "ip68",
+    "fda_cleared": false,
+    "ce_certified": true,
+    "subscription_required": false,
+    "subscription_monthly_usd": 0,
+    "data_export_supported": true,
+    "data_export_formats": ["csv", "json", "apple_health", "google_fit"],
+    "weight_grams": 3.5
+  },
+  "metals": {
+    "compositions": [{
+      "type": "titanium",
+      "color": "black",
+      "finish": "matte",
+      "primary": true,
+      "plating": "black_rhodium"
+    }],
+    "nickel_free": true,
+    "hypoallergenic_certified": true
+  },
+  "sizing": {
+    "ring_size": {
+      "iso_mm": 57.0,
+      "us_ca": 8.0,
+      "inner_diameter_mm": 18.1
+    },
+    "ring_width_mm": 8.0,
+    "ring_resizable": false,
+    "total_weight_grams": 3.5
+  },
+  "style": {
+    "era": "contemporary",
+    "design_styles": ["minimalist", "unisex"]
+  },
+  "care": {
+    "cleaning_methods": ["mild_soap_water", "polishing_cloth_only"],
+    "activity_safety": ["shower_safe", "swimming_safe", "exercise_safe", "sleep_safe"],
+    "storage": ["dry_environment"]
+  },
+  "relationships": {
+    "item_group_id": "smart-ring-gen3",
+    "variant_axes": [
+      {"name": "ring_size", "value": "8"},
+      {"name": "finish", "value": "black_matte"}
+    ],
+    "is_master_variant": false
+  },
+  "reviews": {
+    "aggregate": {"rating_value": 4.4, "review_count": 1247}
+  },
+  "legal": {
+    "hs_code": "711719",
+    "country_of_origin": "TW",
+    "regulatory_flags": ["ce_marked", "rohs_compliant", "fcc_certified"],
+    "age_restriction_minimum": 13
+  },
+  "ai_commerce": {
+    "semantic_description": "Titanium smart ring tracking heart rate, HRV, SpO2, skin temperature, sleep, and stress with 7-day battery life and IP68 waterproof rating. No subscription required for core features. Magnetic puck charging. Data exports to Apple Health and Google Fit. Suitable for everyday wear including showers, swimming, and sleep.",
+    "query_keywords": ["smart ring no subscription", "smart ring 7 day battery", "titanium smart ring", "sleep tracker ring", "smart ring black", "no subscription health ring", "Oura alternative"],
+    "occasion_tags": ["self_purchase", "everyday"],
+    "audience_tags": ["unisex", "adult", "gender_neutral"],
+    "style_descriptors": ["minimalist", "modern", "tech"],
+    "price_tier": "affordable"
+  }
+}

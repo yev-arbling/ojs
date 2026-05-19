@@ -1,0 +1,176 @@
+{
+  "design": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/design_styles.json",
+    "title": "OJS codelist: design_styles",
+    "description": "Design style tags",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "minimalist",
+        "label": "Minimalist"
+      },
+      {
+        "code": "maximalist",
+        "label": "Maximalist"
+      },
+      {
+        "code": "classic",
+        "label": "Classic"
+      },
+      {
+        "code": "vintage_inspired",
+        "label": "Vintage Inspired"
+      },
+      {
+        "code": "boho",
+        "label": "Boho"
+      },
+      {
+        "code": "gothic",
+        "label": "Gothic"
+      },
+      {
+        "code": "industrial",
+        "label": "Industrial"
+      },
+      {
+        "code": "nature_inspired",
+        "label": "Nature Inspired"
+      },
+      {
+        "code": "geometric",
+        "label": "Geometric"
+      },
+      {
+        "code": "abstract",
+        "label": "Abstract"
+      },
+      {
+        "code": "figurative",
+        "label": "Figurative"
+      },
+      {
+        "code": "ethnic",
+        "label": "Ethnic"
+      },
+      {
+        "code": "tribal",
+        "label": "Tribal"
+      },
+      {
+        "code": "romantic",
+        "label": "Romantic"
+      },
+      {
+        "code": "edgy",
+        "label": "Edgy"
+      },
+      {
+        "code": "unisex",
+        "label": "Unisex"
+      },
+      {
+        "code": "feminine",
+        "label": "Feminine"
+      },
+      {
+        "code": "masculine",
+        "label": "Masculine"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "motifs": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.openjewelryschema.org/v1/codelist/motifs.json",
+    "title": "OJS codelist: motifs",
+    "description": "Decorative motifs",
+    "version": "1.0.0",
+    "values": [
+      {
+        "code": "floral",
+        "label": "Floral"
+      },
+      {
+        "code": "leaf",
+        "label": "Leaf"
+      },
+      {
+        "code": "animal",
+        "label": "Animal"
+      },
+      {
+        "code": "butterfly",
+        "label": "Butterfly"
+      },
+      {
+        "code": "bird",
+        "label": "Bird"
+      },
+      {
+        "code": "snake",
+        "label": "Snake"
+      },
+      {
+        "code": "heart",
+        "label": "Heart"
+      },
+      {
+        "code": "star",
+        "label": "Star"
+      },
+      {
+        "code": "moon",
+        "label": "Moon"
+      },
+      {
+        "code": "sun",
+        "label": "Sun"
+      },
+      {
+        "code": "celestial",
+        "label": "Celestial"
+      },
+      {
+        "code": "cross",
+        "label": "Cross"
+      },
+      {
+        "code": "knot",
+        "label": "Knot"
+      },
+      {
+        "code": "infinity",
+        "label": "Infinity"
+      },
+      {
+        "code": "bow",
+        "label": "Bow"
+      },
+      {
+        "code": "geometric",
+        "label": "Geometric"
+      },
+      {
+        "code": "scroll",
+        "label": "Scroll"
+      },
+      {
+        "code": "filigree",
+        "label": "Filigree"
+      },
+      {
+        "code": "milgrain",
+        "label": "Milgrain"
+      },
+      {
+        "code": "other",
+        "label": "Other"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/hallmark_types.json",
+  "title": "OJS codelist: hallmark_types",
+  "description": "Hallmark categories",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "maker_mark",
+      "label": "Maker Mark"
+    },
+    {
+      "code": "assay_office",
+      "label": "Assay Office"
+    },
+    {
+      "code": "fineness_mark",
+      "label": "Fineness Mark"
+    },
+    {
+      "code": "date_letter",
+      "label": "Date Letter"
+    },
+    {
+      "code": "duty_mark",
+      "label": "Duty Mark"
+    },
+    {
+      "code": "standard_mark",
+      "label": "Standard Mark"
+    },
+    {
+      "code": "import_mark",
+      "label": "Import Mark"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

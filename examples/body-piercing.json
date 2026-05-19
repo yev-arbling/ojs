@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schema.openjewelryschema.org/v1/ojs-strict.json",
+  "product_type": "body",
+  "audit": {
+    "ojs_version": "1.0.0",
+    "created_at": "2026-05-17T10:00:00Z",
+    "source_system": "manual"
+  },
+  "identity": {
+    "sku": "BODY-TI-NOSE-18G-CZ",
+    "title": "ASTM F136 Titanium Nose Stud — 18g — 2mm CZ Gem",
+    "description": "Internally-threaded ASTM F136 Ti-6Al-4V ELI titanium nose stud with 2mm bezel-set cubic zirconia. Suitable for initial piercings per APP standards. Autoclave-safe and nickel-free.",
+    "brand": {"name": "Example Body Co.", "website": "https://example.com"},
+    "model": "Classic Nose Stud",
+    "handle": "ti-nose-stud-18g-2mm-cz"
+  },
+  "commerce": {
+    "offers": [{
+      "price": {"amount": "32.00", "currency": "USD"},
+      "availability": "in_stock",
+      "url": "https://example.com/products/body-ti-nose-18g-cz",
+      "condition": "new",
+      "target_countries": ["US", "CA", "GB", "AU"],
+      "seller_name": "Example Body Co.",
+      "seller_url": "https://example.com",
+      "return_policy_url": "https://example.com/returns",
+      "bnpl_available": false,
+      "free_shipping": false,
+      "handling_time_days": 1
+    }]
+  },
+  "media": {
+    "images": [
+      {"url": "https://example.com/img/nose-001.jpg", "is_primary": true, "role": "primary"},
+      {"url": "https://example.com/img/nose-001-scale.jpg", "role": "scale"}
+    ]
+  },
+  "body": {
+    "piercing_location": "nose_nostril",
+    "suitable_for_initial_piercing": true,
+    "biocompatibility_standards": ["astm_f136"],
+    "gauge": {
+      "gauge_us": "18g",
+      "diameter_mm": 1.0
+    },
+    "bar_length_mm": 6.5,
+    "threading_type": "internally_threaded",
+    "end_size_mm": 2.0,
+    "nickel_free_certified": true,
+    "autoclave_safe": true
+  },
+  "metals": {
+    "compositions": [{
+      "type": "titanium",
+      "color": "natural",
+      "finish": "polished",
+      "primary": true
+    }],
+    "nickel_free": true,
+    "hypoallergenic_certified": true
+  },
+  "stones": {
+    "stones": [{
+      "species": "diamond",
+      "origin_type": "simulant",
+      "carat": 0.04,
+      "cut": "round_brilliant",
+      "length_mm": 2.0,
+      "width_mm": 2.0,
+      "treatments": [],
+      "position": "center"
+    }]
+  },
+  "setting": {
+    "styles": [{
+      "style_id": "bezel",
+      "setting_type": "bezel",
+      "material": "same_as_band"
+    }]
+  },
+  "sizing": {
+    "total_weight_grams": 0.3
+  },
+  "style": {
+    "era": "contemporary",
+    "design_styles": ["minimalist", "unisex"]
+  },
+  "care": {
+    "cleaning_methods": ["mild_soap_water"],
+    "activity_safety": ["shower_safe", "exercise_safe", "sleep_safe"],
+    "storage": ["soft_pouch"],
+    "care_instructions_text": "Healing piercings: soak with sterile saline 2x daily. Do not twist or rotate. Avoid touching with unwashed hands. Once fully healed (8-12 weeks), use mild soap and water."
+  },
+  "reviews": {
+    "aggregate": {"rating_value": 4.5, "review_count": 312}
+  },
+  "legal": {
+    "hs_code": "711719",
+    "country_of_origin": "DE",
+    "regulatory_flags": ["nickel_directive_compliant", "ce_marked"],
+    "ftc_lab_grown_disclosure": true
+  },
+  "ai_commerce": {
+    "semantic_description": "ASTM F136 implant-grade titanium nose stud with internal threading and 2mm bezel-set cubic zirconia. 18-gauge wire, 6.5mm bar length. Suitable for fresh piercings per Association of Professional Piercers standards. Autoclave-safe, nickel-free, hypoallergenic. CZ simulant disclosed per FTC.",
+    "query_keywords": ["titanium nose stud", "ASTM F136", "implant grade nose stud", "internally threaded nose stud", "nose piercing jewelry", "nickel free nose stud", "fresh piercing safe jewelry"],
+    "occasion_tags": ["self_purchase", "everyday"],
+    "audience_tags": ["unisex", "young_adult", "adult", "teens"],
+    "style_descriptors": ["minimalist", "everyday"],
+    "price_tier": "affordable"
+  }
+}

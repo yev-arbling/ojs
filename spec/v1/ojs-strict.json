@@ -1,0 +1,6088 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/ojs-strict.json",
+  "title": "JewelryProduct",
+  "description": "The root OJS v1.0 product record.\n\nRequired modules: identity, commerce, media, audit.\nSub-vertical modules activated by product_type discriminator.\nOther modules are optional but recommended per data tier.\n\nJSON-LD friendly: when serialized with `@context` reference, this\nbecomes valid JSON-LD Schema.org Product with ojs: extensions.",
+  "$comment": "OJS version 1.0.0. License: CC0 1.0 (vocabulary), Apache 2.0 (reference implementation).",
+  "version": "1.0.0",
+  "$defs": {
+    "AICommerceModule": {
+      "additionalProperties": false,
+      "description": "AI agent ranking metadata.\n\nDesigned to be consumed by ChatGPT (ACP), Perplexity, Google AI Mode,\nMicrosoft Copilot, and MCP-based agents. Provides explicit discovery\nhooks the platforms reward (vs. relying on agents to parse free text).",
+      "properties": {
+        "semantic_description": {
+          "description": "Description written FOR AI AGENTS, not humans. Should be dense, factual, attribute-loaded. E.g.: 'Vintage art deco style platinum solitaire engagement ring with old european cut diamond center stone, milgrain detail, suitable for engagement and anniversary.'",
+          "maxLength": 2000,
+          "minLength": 20,
+          "title": "Semantic Description",
+          "type": "string"
+        },
+        "semantic_description_localized": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultilingualString"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "query_keywords": {
+          "description": "Phrases real shoppers type ('art deco engagement ring', 'vintage diamond ring under $5000'). Used for query matching.",
+          "items": {
+            "maxLength": 80,
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Query Keywords",
+          "type": "array"
+        },
+        "occasion_tags": {
+          "description": "Gift/purchase occasions this piece suits",
+          "items": {
+            "$ref": "#/$defs/Occasion"
+          },
+          "title": "Occasion Tags",
+          "type": "array"
+        },
+        "audience_tags": {
+          "description": "Target audiences",
+          "items": {
+            "$ref": "#/$defs/Audience"
+          },
+          "title": "Audience Tags",
+          "type": "array"
+        },
+        "style_descriptors": {
+          "description": "Aesthetic descriptors ('vintage', 'romantic', 'minimalist')",
+          "items": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "title": "Style Descriptors",
+          "type": "array"
+        },
+        "price_tier": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PriceTier"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Coarse price tier"
+        },
+        "confidence_scores": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ConfidenceScore"
+          },
+          "description": "Per-field confidence metadata for enrichment pipeline review",
+          "title": "Confidence Scores",
+          "type": "object"
+        },
+        "overall_quality_score": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Aggregate quality score across all fields (0-1)",
+          "title": "Overall Quality Score"
+        },
+        "enrichment_completeness_percent": {
+          "anyOf": [
+            {
+              "maximum": 100.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "% of OJS fields populated (0-100)",
+          "title": "Enrichment Completeness Percent"
+        },
+        "last_enriched_at": {
+          "anyOf": [
+            {
+              "pattern": ".+",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8601 timestamp of last enrichment run",
+          "title": "Last Enriched At"
+        }
+      },
+      "required": [
+        "semantic_description"
+      ],
+      "title": "AICommerceModule",
+      "type": "object"
+    },
+    "ARMetadata": {
+      "additionalProperties": false,
+      "description": "AR placement and rendering metadata.\n\nConsumed by Camweara, mirrAR, Trillion, Kivisense, Apple Quick Look.\nWithout this metadata, AR vendors can render the 3D model but cannot\nplace it correctly on the user's body.",
+      "properties": {
+        "placement_anchor": {
+          "$ref": "#/$defs/PlacementAnchor",
+          "description": "Body anchor point"
+        },
+        "anchor_offset_mm": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "[x, y, z] offset from anchor in mm",
+          "title": "Anchor Offset Mm"
+        },
+        "default_rotation_degrees": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "[x, y, z] Euler rotation in degrees",
+          "title": "Default Rotation Degrees"
+        },
+        "scale_reference": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Scaling reference (e.g. 'ring_size_iso', 'wrist_circumference', 'absolute_mm')",
+          "title": "Scale Reference"
+        },
+        "occlusion_priority": {
+          "anyOf": [
+            {
+              "maxLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "'high' (occludes hand), 'medium', 'low' (always on top)",
+          "title": "Occlusion Priority"
+        },
+        "physics_enabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Allow physics simulation (e.g. swinging earrings, pendant sway)",
+          "title": "Physics Enabled"
+        },
+        "lighting_preset": {
+          "anyOf": [
+            {
+              "maxLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Preferred lighting ('warm', 'cool', 'neutral', 'studio')",
+          "title": "Lighting Preset"
+        },
+        "fallback_2d_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Static 2D fallback when AR unavailable",
+          "title": "Fallback 2D Url"
+        }
+      },
+      "required": [
+        "placement_anchor"
+      ],
+      "title": "ARMetadata",
+      "type": "object"
+    },
+    "ActivitySafety": {
+      "description": "Activities and exposures the piece can/cannot tolerate.",
+      "enum": [
+        "shower_safe",
+        "swimming_safe",
+        "ocean_safe",
+        "exercise_safe",
+        "sleep_safe",
+        "avoid_perfume",
+        "avoid_lotion",
+        "avoid_household_chemicals",
+        "avoid_direct_sun"
+      ],
+      "title": "ActivitySafety",
+      "type": "string"
+    },
+    "AggregateRating": {
+      "additionalProperties": false,
+      "description": "Aggregate review summary.\n\nMaps to Schema.org AggregateRating. Required by GMC for review\nextensions to display in Shopping. ACP recommends `star_rating` +\n`review_count` at product level.",
+      "properties": {
+        "rating_value": {
+          "description": "Average rating on 0-5 scale",
+          "maximum": 5.0,
+          "minimum": 0.0,
+          "title": "Rating Value",
+          "type": "number"
+        },
+        "review_count": {
+          "description": "Number of reviews",
+          "minimum": 0,
+          "title": "Review Count",
+          "type": "integer"
+        },
+        "best_rating": {
+          "default": 5.0,
+          "description": "Max possible rating (typically 5.0)",
+          "title": "Best Rating",
+          "type": "number"
+        },
+        "worst_rating": {
+          "default": 1.0,
+          "description": "Min possible rating",
+          "title": "Worst Rating",
+          "type": "number"
+        }
+      },
+      "required": [
+        "rating_value",
+        "review_count"
+      ],
+      "title": "AggregateRating",
+      "type": "object"
+    },
+    "ArtisanModule": {
+      "additionalProperties": false,
+      "description": "Artisan-attributed and handmade pieces.",
+      "properties": {
+        "techniques": {
+          "description": "Techniques used",
+          "items": {
+            "$ref": "#/$defs/ArtisanTechnique"
+          },
+          "title": "Techniques",
+          "type": "array"
+        },
+        "edition_type": {
+          "$ref": "#/$defs/EditionType",
+          "description": "Edition classification"
+        },
+        "edition_size": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Total edition size if limited",
+          "title": "Edition Size"
+        },
+        "edition_number": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "This piece's number within edition (e.g. 3 of 50)",
+          "title": "Edition Number"
+        },
+        "artist_name": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Artist name if different from brand",
+          "title": "Artist Name"
+        },
+        "artist_bio_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Artist Bio Url"
+        },
+        "time_to_create_hours": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Approximate hours of artisan labor",
+          "title": "Time To Create Hours"
+        },
+        "studio_country": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Studio Country"
+        },
+        "studio_city": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Studio City"
+        },
+        "signed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Artist signature present on piece",
+          "title": "Signed"
+        },
+        "signature_location": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Signature Location"
+        },
+        "certificate_of_authenticity_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Certificate Of Authenticity Url"
+        }
+      },
+      "required": [
+        "edition_type"
+      ],
+      "title": "ArtisanModule",
+      "type": "object"
+    },
+    "ArtisanTechnique": {
+      "description": "Traditional/artisan jewelry techniques.",
+      "enum": [
+        "lost_wax_casting",
+        "hand_forged",
+        "hand_engraved",
+        "repousse",
+        "chasing",
+        "granulation",
+        "filigree",
+        "enamel_champleve",
+        "enamel_cloisonne",
+        "enamel_plique_a_jour",
+        "mokume_gane",
+        "damascus",
+        "keum_boo",
+        "niello",
+        "soldered_construction",
+        "fabrication",
+        "cast_then_hand_finished",
+        "other"
+      ],
+      "title": "ArtisanTechnique",
+      "type": "string"
+    },
+    "Audience": {
+      "description": "Target audience tags (multi-valued).",
+      "enum": [
+        "women",
+        "men",
+        "unisex",
+        "gender_neutral",
+        "children",
+        "teens",
+        "young_adult",
+        "adult",
+        "gift_for_her",
+        "gift_for_him",
+        "gift_for_parent",
+        "gift_for_partner",
+        "gift_for_friend",
+        "bride",
+        "groom",
+        "graduate"
+      ],
+      "title": "Audience",
+      "type": "string"
+    },
+    "AuditMetadata": {
+      "additionalProperties": false,
+      "description": "Provenance metadata for the OJS record itself.\n\nREQUIRED on every JewelryProduct. Tracks who/when/where the data\ncame from for compliance and round-trip integrity.",
+      "properties": {
+        "ojs_version": {
+          "default": "1.0.0",
+          "description": "SemVer of the OJS spec this record conforms to",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "title": "Ojs Version",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "ISO 8601 timestamp of record creation",
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8601 timestamp of last update",
+          "title": "Updated At"
+        },
+        "source_system": {
+          "$ref": "#/$defs/SourceSystem",
+          "description": "Where this record was created"
+        },
+        "source_record_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Source system's native record ID for round-trip",
+          "title": "Source Record Id"
+        },
+        "last_validated_by_human": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "When a human last reviewed this record end-to-end",
+          "title": "Last Validated By Human"
+        }
+      },
+      "required": [
+        "created_at",
+        "source_system"
+      ],
+      "title": "AuditMetadata",
+      "type": "object"
+    },
+    "Availability": {
+      "description": "Product availability state. Aligned with Schema.org ItemAvailability\nand GMC/ACP availability enums.",
+      "enum": [
+        "in_stock",
+        "out_of_stock",
+        "preorder",
+        "backorder",
+        "discontinued",
+        "limited_availability",
+        "made_to_order",
+        "unknown"
+      ],
+      "title": "Availability",
+      "type": "string"
+    },
+    "BiocompatibilityStandard": {
+      "description": "Material safety standards for body jewelry.",
+      "enum": [
+        "astm_f138",
+        "astm_f136",
+        "astm_f1295",
+        "astm_b392_18",
+        "iso_5832_2",
+        "iso_5832_3",
+        "gold_14k_plus",
+        "gold_18k_plus",
+        "platinum_950",
+        "glass_borosilicate",
+        "none_disclosed"
+      ],
+      "title": "BiocompatibilityStandard",
+      "type": "string"
+    },
+    "BodyModule": {
+      "additionalProperties": false,
+      "description": "Body jewelry specifications.\n\nRequired when product_type='body'. Material disclosure is critical\nfor first-piercing/healing safety.",
+      "properties": {
+        "piercing_location": {
+          "$ref": "#/$defs/PiercingLocation",
+          "description": "Intended piercing site"
+        },
+        "suitable_for_initial_piercing": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Material/design suitable for fresh piercings per APP standards",
+          "title": "Suitable For Initial Piercing"
+        },
+        "biocompatibility_standards": {
+          "description": "Material safety standards this piece meets (multi-valued)",
+          "items": {
+            "$ref": "#/$defs/BiocompatibilityStandard"
+          },
+          "title": "Biocompatibility Standards",
+          "type": "array"
+        },
+        "gauge": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GaugeMeasurement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "bar_length_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "maximum": 50.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Bar length / post length / ring inner diameter (mm)",
+          "title": "Bar Length Mm"
+        },
+        "threading_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ThreadingType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "end_size_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "maximum": 30.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Decorative end (ball, gem, charm) diameter (mm)",
+          "title": "End Size Mm"
+        },
+        "nickel_free_certified": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "EU Nickel Directive 94/27/EC compliant — critical for piercings",
+          "title": "Nickel Free Certified"
+        },
+        "autoclave_safe": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Can be sterilized by steam autoclave",
+          "title": "Autoclave Safe"
+        }
+      },
+      "required": [
+        "piercing_location"
+      ],
+      "title": "BodyModule",
+      "type": "object"
+    },
+    "Brand": {
+      "additionalProperties": false,
+      "description": "Brand / manufacturer identity.\n\nMaps to: Schema.org Brand, GMC `brand`, ACP `brand`, Shopify `vendor`.",
+      "properties": {
+        "name": {
+          "description": "Brand name (≤70 chars per ACP and GMC limits)",
+          "maxLength": 70,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "legal_name": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Full legal entity name if different from brand name",
+          "title": "Legal Name"
+        },
+        "website": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Brand official website URL",
+          "title": "Website"
+        },
+        "logo_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Brand logo URL",
+          "title": "Logo Url"
+        },
+        "gln": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{13}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GS1 Global Location Number (13 digits) — links to GS1 registry",
+          "title": "Gln"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Brand",
+      "type": "object"
+    },
+    "CarbonClaim": {
+      "additionalProperties": false,
+      "description": "Carbon footprint or offset claim.",
+      "properties": {
+        "is_carbon_neutral_shipping": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Carbon Neutral Shipping"
+        },
+        "is_carbon_neutral_product": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Is Carbon Neutral Product"
+        },
+        "carbon_kg_co2e": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lifecycle CO2-equivalent emissions (kg)",
+          "title": "Carbon Kg Co2E"
+        },
+        "offset_provider": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offset Provider"
+        },
+        "offset_verification": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Verifier (e.g. 'Verra', 'Gold Standard')",
+          "title": "Offset Verification"
+        }
+      },
+      "title": "CarbonClaim",
+      "type": "object"
+    },
+    "CareModule": {
+      "additionalProperties": false,
+      "description": "Care, cleaning, storage instructions for the piece.",
+      "properties": {
+        "cleaning_methods": {
+          "description": "Recommended cleaning approaches",
+          "items": {
+            "$ref": "#/$defs/CleaningMethod"
+          },
+          "title": "Cleaning Methods",
+          "type": "array"
+        },
+        "activity_safety": {
+          "description": "Safe and avoid-list activities",
+          "items": {
+            "$ref": "#/$defs/ActivitySafety"
+          },
+          "title": "Activity Safety",
+          "type": "array"
+        },
+        "storage": {
+          "description": "Storage recommendations",
+          "items": {
+            "$ref": "#/$defs/StorageRecommendation"
+          },
+          "title": "Storage",
+          "type": "array"
+        },
+        "professional_inspection_recommended_months": {
+          "anyOf": [
+            {
+              "maximum": 120,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Months between recommended professional inspections (e.g. 6 for prong settings)",
+          "title": "Professional Inspection Recommended Months"
+        },
+        "care_instructions_text": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-text care instructions (English)",
+          "title": "Care Instructions Text"
+        },
+        "care_instructions_localized": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultilingualString"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Care instructions in additional languages"
+        }
+      },
+      "title": "CareModule",
+      "type": "object"
+    },
+    "CaseShape": {
+      "description": "Watch case shape.",
+      "enum": [
+        "round",
+        "square",
+        "rectangular",
+        "tonneau",
+        "cushion",
+        "oval",
+        "octagonal",
+        "other"
+      ],
+      "title": "CaseShape",
+      "type": "string"
+    },
+    "CeremonyType": {
+      "description": "Ceremony / ritual occasion.",
+      "enum": [
+        "wedding",
+        "baptism",
+        "confirmation",
+        "bar_bat_mitzvah",
+        "first_communion",
+        "hajj",
+        "umrah",
+        "diwali",
+        "shadi",
+        "quinceanera",
+        "coronation",
+        "other"
+      ],
+      "title": "CeremonyType",
+      "type": "string"
+    },
+    "Certification": {
+      "additionalProperties": false,
+      "description": "A single gemological / authenticity certificate.",
+      "properties": {
+        "lab": {
+          "$ref": "#/$defs/GradingLab",
+          "description": "Issuing laboratory"
+        },
+        "report_number": {
+          "description": "Lab's report/certificate number",
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Report Number",
+          "type": "string"
+        },
+        "report_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to lab's official report verification page",
+          "title": "Report Url"
+        },
+        "report_pdf_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to PDF copy of full report",
+          "title": "Report Pdf Url"
+        },
+        "issued_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Date report was issued",
+          "title": "Issued Date"
+        },
+        "refers_to_stone_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Index in stones[] this cert refers to (0=center stone). Omit if for whole piece.",
+          "title": "Refers To Stone Index"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "lab",
+        "report_number"
+      ],
+      "title": "Certification",
+      "type": "object"
+    },
+    "CertificationModule": {
+      "additionalProperties": false,
+      "description": "All certificates associated with the piece.\n\nDiamonds typically have one cert per stone. Some pieces have a\nsingle piece-level cert. AGS certs are legacy-only (lab closed 2022).",
+      "properties": {
+        "certificates": {
+          "description": "One or more certifications",
+          "items": {
+            "$ref": "#/$defs/Certification"
+          },
+          "minItems": 1,
+          "title": "Certificates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "certificates"
+      ],
+      "title": "CertificationModule",
+      "type": "object"
+    },
+    "CleaningMethod": {
+      "description": "Recommended cleaning approach.",
+      "enum": [
+        "mild_soap_water",
+        "jewelry_cleaner",
+        "ultrasonic_safe",
+        "ultrasonic_avoid",
+        "steam_safe",
+        "steam_avoid",
+        "polishing_cloth_only",
+        "professional_only",
+        "avoid_water"
+      ],
+      "title": "CleaningMethod",
+      "type": "string"
+    },
+    "CommerceModule": {
+      "additionalProperties": false,
+      "description": "All commercial offers for the piece. REQUIRED.\n\nMost products have one offer (one retailer); marketplace pieces\nmay have many. Use first offer for short-form syndication.",
+      "properties": {
+        "offers": {
+          "description": "One or more commercial offers",
+          "items": {
+            "$ref": "#/$defs/Offer"
+          },
+          "minItems": 1,
+          "title": "Offers",
+          "type": "array"
+        },
+        "primary_offer_index": {
+          "default": 0,
+          "description": "Index of canonical offer for short-form syndication",
+          "minimum": 0,
+          "title": "Primary Offer Index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "offers"
+      ],
+      "title": "CommerceModule",
+      "type": "object"
+    },
+    "Condition": {
+      "description": "Product condition (used by Schema.org, GMC, ACP).",
+      "enum": [
+        "new",
+        "refurbished",
+        "used",
+        "estate",
+        "vintage",
+        "antique"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "ConfidenceScore": {
+      "additionalProperties": false,
+      "description": "Confidence metadata for a field value.\n\nSurfaced in the Arbling enrichment pipeline so retailers can see\nwhich fields are reliable vs. need review.",
+      "properties": {
+        "value": {
+          "description": "0.0-1.0 confidence score",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Value",
+          "type": "number"
+        },
+        "source": {
+          "$ref": "#/$defs/ConfidenceSource",
+          "description": "How the value was derived"
+        },
+        "validated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "When a human last confirmed this value",
+          "title": "Validated At"
+        }
+      },
+      "required": [
+        "value",
+        "source"
+      ],
+      "title": "ConfidenceScore",
+      "type": "object"
+    },
+    "ConfidenceSource": {
+      "description": "Where a value came from. Higher confidence sources outrank lower.",
+      "enum": [
+        "manual",
+        "certificate",
+        "regex_text",
+        "cv_image",
+        "llm_inferred",
+        "default"
+      ],
+      "title": "ConfidenceSource",
+      "type": "string"
+    },
+    "Connectivity": {
+      "description": "Wireless connectivity standards.",
+      "enum": [
+        "bluetooth_le",
+        "bluetooth_classic",
+        "wifi",
+        "nfc",
+        "uwb",
+        "lte_cat_m1",
+        "lte_cat_nb1",
+        "gps",
+        "glonass",
+        "galileo"
+      ],
+      "title": "Connectivity",
+      "type": "string"
+    },
+    "CrystalType": {
+      "description": "Watch crystal/glass material.",
+      "enum": [
+        "sapphire",
+        "mineral_glass",
+        "acrylic",
+        "hardlex",
+        "other"
+      ],
+      "title": "CrystalType",
+      "type": "string"
+    },
+    "CutGrade": {
+      "description": "GIA cut grade for round brilliant diamonds. Also polish/symmetry.",
+      "enum": [
+        "excellent",
+        "very_good",
+        "good",
+        "fair",
+        "poor"
+      ],
+      "title": "CutGrade",
+      "type": "string"
+    },
+    "DesignStyle": {
+      "description": "Design style tags. Multi-valued in StyleModule.",
+      "enum": [
+        "minimalist",
+        "maximalist",
+        "classic",
+        "vintage_inspired",
+        "boho",
+        "gothic",
+        "industrial",
+        "nature_inspired",
+        "geometric",
+        "abstract",
+        "figurative",
+        "ethnic",
+        "tribal",
+        "romantic",
+        "edgy",
+        "unisex",
+        "feminine",
+        "masculine",
+        "other"
+      ],
+      "title": "DesignStyle",
+      "type": "string"
+    },
+    "DiamondClarityGrade": {
+      "description": "GIA clarity scale.",
+      "enum": [
+        "FL",
+        "IF",
+        "VVS1",
+        "VVS2",
+        "VS1",
+        "VS2",
+        "SI1",
+        "SI2",
+        "SI3",
+        "I1",
+        "I2",
+        "I3"
+      ],
+      "title": "DiamondClarityGrade",
+      "type": "string"
+    },
+    "DiamondColorGrade": {
+      "description": "GIA D-Z color scale + Fancy Color descriptors.",
+      "enum": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O-P",
+        "Q-R",
+        "S-T",
+        "U-V",
+        "W-X",
+        "Y-Z",
+        "fancy_light",
+        "fancy",
+        "fancy_intense",
+        "fancy_vivid",
+        "fancy_deep",
+        "fancy_dark"
+      ],
+      "title": "DiamondColorGrade",
+      "type": "string"
+    },
+    "EditionType": {
+      "description": "How the piece is published.",
+      "enum": [
+        "one_of_a_kind",
+        "limited_edition",
+        "open_edition",
+        "production"
+      ],
+      "title": "EditionType",
+      "type": "string"
+    },
+    "Era": {
+      "description": "Historical periods. Estate/antique jewelry critical for AI search.\n\nBoundaries are conventional, not absolute. Confidence often <0.80\nfrom CV — recommend human validation.",
+      "enum": [
+        "georgian",
+        "early_victorian",
+        "mid_victorian",
+        "late_victorian",
+        "edwardian",
+        "art_nouveau",
+        "art_deco",
+        "retro",
+        "mid_century",
+        "modernist",
+        "contemporary",
+        "unknown"
+      ],
+      "title": "Era",
+      "type": "string"
+    },
+    "EstateModule": {
+      "additionalProperties": false,
+      "description": "Estate / vintage / antique authentication.\n\nPieces classified as vintage (20+ years) or antique (100+ years)\nneed provenance documentation to command premium pricing.",
+      "properties": {
+        "period_verified": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Period attribution verified by qualified appraiser/specialist",
+          "title": "Period Verified"
+        },
+        "period_appraiser": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period Appraiser"
+        },
+        "hallmarks": {
+          "description": "Stamped hallmarks",
+          "items": {
+            "$ref": "#/$defs/Hallmark"
+          },
+          "title": "Hallmarks",
+          "type": "array"
+        },
+        "provenance": {
+          "description": "Chain of ownership",
+          "items": {
+            "$ref": "#/$defs/ProvenanceEntry"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "restoration_history": {
+          "description": "Documented restorations",
+          "items": {
+            "$ref": "#/$defs/RestorationRecord"
+          },
+          "title": "Restoration History",
+          "type": "array"
+        },
+        "original_box_papers": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Original box, papers, receipts retained",
+          "title": "Original Box Papers"
+        },
+        "age_estimate_year_from": {
+          "anyOf": [
+            {
+              "maximum": 2100,
+              "minimum": 1000,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Age Estimate Year From"
+        },
+        "age_estimate_year_to": {
+          "anyOf": [
+            {
+              "maximum": 2100,
+              "minimum": 1000,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Age Estimate Year To"
+        },
+        "appraisal_value": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Formal appraisal value (text to preserve currency notation)",
+          "title": "Appraisal Value"
+        },
+        "appraisal_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Appraisal Date"
+        },
+        "appraisal_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Appraisal Url"
+        }
+      },
+      "title": "EstateModule",
+      "type": "object"
+    },
+    "FluorescenceIntensity": {
+      "description": "GIA fluorescence intensity under longwave UV.",
+      "enum": [
+        "none",
+        "faint",
+        "medium",
+        "strong",
+        "very_strong"
+      ],
+      "title": "FluorescenceIntensity",
+      "type": "string"
+    },
+    "GaugeMeasurement": {
+      "additionalProperties": false,
+      "description": "Body jewelry gauge — wire/bar thickness.\n\nGauge is INVERSE: lower number = thicker. 20g (0.8mm) is thinnest\ncommon; 00g (~10mm) is thickest standard for stretched piercings.",
+      "properties": {
+        "gauge_us": {
+          "anyOf": [
+            {
+              "maxLength": 5,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "US wire gauge (e.g. '20g', '18g', '16g', '14g', '12g', '10g', '8g', '6g', '4g', '2g', '0g', '00g')",
+          "title": "Gauge Us"
+        },
+        "diameter_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "maximum": 50.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Bar/wire diameter in mm",
+          "title": "Diameter Mm"
+        }
+      },
+      "title": "GaugeMeasurement",
+      "type": "object"
+    },
+    "GemstoneSpecies": {
+      "description": "Major gemstone species. Use 'other' + free-text for rare types.",
+      "enum": [
+        "diamond",
+        "ruby",
+        "sapphire",
+        "emerald",
+        "aquamarine",
+        "morganite",
+        "amethyst",
+        "citrine",
+        "smoky_quartz",
+        "rose_quartz",
+        "tanzanite",
+        "topaz",
+        "tourmaline",
+        "garnet",
+        "peridot",
+        "spinel",
+        "zircon",
+        "moissanite",
+        "pearl",
+        "amber",
+        "coral",
+        "jet",
+        "opal",
+        "turquoise",
+        "lapis_lazuli",
+        "malachite",
+        "onyx",
+        "agate",
+        "jade_jadeite",
+        "jade_nephrite",
+        "other"
+      ],
+      "title": "GemstoneSpecies",
+      "type": "string"
+    },
+    "GradingLab": {
+      "description": "Accredited gemological laboratories.\n\nNOTE: AGS Laboratories closed end-2022 and merged into GIA.\nDo not assign new grading to AGS; legacy reports remain valid.",
+      "enum": [
+        "gia",
+        "ags",
+        "igi",
+        "hrd",
+        "gcal",
+        "egl_usa",
+        "ssef",
+        "agta_gtc",
+        "grs",
+        "lotus",
+        "none"
+      ],
+      "title": "GradingLab",
+      "type": "string"
+    },
+    "HSCodePrefix": {
+      "description": "Common HS 2022 codes for jewelry. Use 6-digit subheadings where known.",
+      "enum": [
+        "7101",
+        "710110",
+        "710121",
+        "710122",
+        "710231",
+        "710239",
+        "710310",
+        "710391",
+        "710399",
+        "711311",
+        "711319",
+        "711320",
+        "7114",
+        "7115",
+        "711610",
+        "711620",
+        "7117",
+        "711719",
+        "711790",
+        "9101",
+        "9102",
+        "other"
+      ],
+      "title": "HSCodePrefix",
+      "type": "string"
+    },
+    "Hallmark": {
+      "additionalProperties": false,
+      "description": "A single hallmark stamped on the piece.",
+      "properties": {
+        "hallmark_type": {
+          "$ref": "#/$defs/HallmarkType"
+        },
+        "mark_text": {
+          "description": "Text/symbol of the mark (e.g. 'LION PASSANT', '750', 'M' date letter)",
+          "maxLength": 50,
+          "title": "Mark Text",
+          "type": "string"
+        },
+        "location_on_piece": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Where on piece (e.g. 'inner shank', 'clasp underside')",
+          "title": "Location On Piece"
+        },
+        "interpretation": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "What it tells us (e.g. 'Sterling silver, London 1925')",
+          "title": "Interpretation"
+        },
+        "photo_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Photo Url"
+        }
+      },
+      "required": [
+        "hallmark_type",
+        "mark_text"
+      ],
+      "title": "Hallmark",
+      "type": "object"
+    },
+    "HallmarkType": {
+      "description": "Common hallmark types.",
+      "enum": [
+        "maker_mark",
+        "assay_office",
+        "fineness_mark",
+        "date_letter",
+        "duty_mark",
+        "standard_mark",
+        "import_mark",
+        "other"
+      ],
+      "title": "HallmarkType",
+      "type": "string"
+    },
+    "IdentityModule": {
+      "additionalProperties": false,
+      "description": "Product identity. REQUIRED on every JewelryProduct.\n\nThe minimum viable fields for cross-platform syndication. Every\ndownstream platform (Schema.org, GMC, ACP, UCP, Shopify, MCP)\nrequires title + brand + a stable identifier.",
+      "properties": {
+        "sku": {
+          "description": "Stable SKU. Maps to: Schema.org sku, GMC id, ACP item_id, Shopify variant.sku",
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Sku",
+          "type": "string"
+        },
+        "title": {
+          "description": "Product title (≤150 chars per ACP; ≤150 GMC recommended). Avoid all-caps.",
+          "maxLength": 150,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "title_localized": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultilingualString"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Title in additional languages. Use for multi-locale catalogs."
+        },
+        "description": {
+          "description": "Plain-text product description (≤5000 chars per ACP)",
+          "maxLength": 5000,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "description_localized": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultilingualString"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Description in additional languages"
+        },
+        "brand": {
+          "$ref": "#/$defs/Brand",
+          "description": "Brand / manufacturer"
+        },
+        "gtin": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{8}$|^\\d{12}$|^\\d{13}$|^\\d{14}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GTIN-8/12/13/14. Strongly recommended — major AI ranking signal.",
+          "title": "Gtin"
+        },
+        "mpn": {
+          "anyOf": [
+            {
+              "maxLength": 70,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Manufacturer Part Number (≤70 chars per ACP)",
+          "title": "Mpn"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Model name (e.g. 'Submariner Date 126610LN' for Rolex)",
+          "title": "Model"
+        },
+        "collection": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Collection or line name (e.g. 'Love', 'Tank', 'Trinity')",
+          "title": "Collection"
+        },
+        "designer": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Designer name if distinct from brand (e.g. 'Aldo Cipullo' for Cartier Love)",
+          "title": "Designer"
+        },
+        "handle": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "pattern": "^[a-z0-9-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL-safe slug. Shopify-style handle (lowercase, hyphens). Auto-generated if absent.",
+          "title": "Handle"
+        }
+      },
+      "required": [
+        "sku",
+        "title",
+        "description",
+        "brand"
+      ],
+      "title": "IdentityModule",
+      "type": "object"
+    },
+    "ImageAsset": {
+      "additionalProperties": false,
+      "description": "A single image.",
+      "properties": {
+        "url": {
+          "description": "HTTPS URL to image",
+          "title": "Url",
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/$defs/ImageRole",
+          "default": "additional",
+          "description": "Image role"
+        },
+        "width_px": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width Px"
+        },
+        "height_px": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height Px"
+        },
+        "alt_text": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accessibility alt text (also helps SEO/AI)",
+          "title": "Alt Text"
+        },
+        "is_primary": {
+          "default": false,
+          "description": "Exactly one image should have this true",
+          "title": "Is Primary",
+          "type": "boolean"
+        },
+        "color_variant": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Variant axis value (e.g. 'rose_gold') if image is variant-specific",
+          "title": "Color Variant"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "ImageAsset",
+      "type": "object"
+    },
+    "ImageRole": {
+      "description": "Role/category of image.",
+      "enum": [
+        "primary",
+        "additional",
+        "lifestyle",
+        "macro",
+        "scale",
+        "certificate",
+        "hallmark",
+        "packaging",
+        "video_thumbnail",
+        "infographic",
+        "other"
+      ],
+      "title": "ImageRole",
+      "type": "string"
+    },
+    "JewelryClosure": {
+      "description": "For necklaces, bracelets, earrings — closure mechanism.",
+      "enum": [
+        "lobster_claw",
+        "spring_ring",
+        "box_clasp",
+        "toggle",
+        "magnetic",
+        "screw",
+        "hook",
+        "barrel",
+        "slide",
+        "push_back",
+        "lever_back",
+        "omega_back",
+        "screw_back",
+        "french_wire",
+        "clip_on",
+        "other"
+      ],
+      "title": "JewelryClosure",
+      "type": "string"
+    },
+    "LegalModule": {
+      "additionalProperties": false,
+      "description": "Legal / regulatory compliance metadata.",
+      "properties": {
+        "hs_code": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HSCodePrefix"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "HS 2022 code for customs"
+        },
+        "hs_code_full": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{6,10}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Full HS code (6-10 digits) including country sub-classifications",
+          "title": "Hs Code Full"
+        },
+        "country_of_origin": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 3166-1 alpha-2 country of origin (required for cross-border)",
+          "title": "Country Of Origin"
+        },
+        "age_restriction_minimum": {
+          "anyOf": [
+            {
+              "maximum": 21,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Minimum age in years (for piercing tools, smart medical wearables)",
+          "title": "Age Restriction Minimum"
+        },
+        "regulatory_flags": {
+          "description": "Compliance flags claimed",
+          "items": {
+            "$ref": "#/$defs/RegulatoryFlag"
+          },
+          "title": "Regulatory Flags",
+          "type": "array"
+        },
+        "ftc_lab_grown_disclosure": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lab-grown disclosed per FTC 16 CFR §23.24 if synthetic stones present",
+          "title": "Ftc Lab Grown Disclosure"
+        },
+        "ftc_treatment_disclosure": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Treatments disclosed per FTC 16 CFR §23.22 if treated stones present",
+          "title": "Ftc Treatment Disclosure"
+        },
+        "cites_permit_number": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "CITES permit number for restricted materials (coral, ivory)",
+          "title": "Cites Permit Number"
+        }
+      },
+      "title": "LegalModule",
+      "type": "object"
+    },
+    "MediaModule": {
+      "additionalProperties": false,
+      "description": "All visual media assets.",
+      "properties": {
+        "images": {
+          "description": "At least one image required for syndication",
+          "items": {
+            "$ref": "#/$defs/ImageAsset"
+          },
+          "minItems": 1,
+          "title": "Images",
+          "type": "array"
+        },
+        "videos": {
+          "items": {
+            "$ref": "#/$defs/VideoAsset"
+          },
+          "title": "Videos",
+          "type": "array"
+        },
+        "glb_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "glTF binary (preferred for web AR)",
+          "title": "Glb Url"
+        },
+        "usdz_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Apple USDZ (preferred for iOS Quick Look)",
+          "title": "Usdz Url"
+        },
+        "gltf_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "glTF JSON variant",
+          "title": "Gltf Url"
+        },
+        "spin_360_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "360° spin viewer URL",
+          "title": "Spin 360 Url"
+        },
+        "ar_metadata": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ARMetadata"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "AR placement metadata for vendor integration"
+        }
+      },
+      "required": [
+        "images"
+      ],
+      "title": "MediaModule",
+      "type": "object"
+    },
+    "MetalColor": {
+      "description": "Visible metal color. Note: 'rose'/'yellow'/'white' refer to gold variants.",
+      "enum": [
+        "yellow",
+        "white",
+        "rose",
+        "green",
+        "black",
+        "natural",
+        "two_tone",
+        "tri_color"
+      ],
+      "title": "MetalColor",
+      "type": "string"
+    },
+    "MetalComposition": {
+      "additionalProperties": false,
+      "description": "A single metal component of the piece.\n\nFor multi-metal pieces (two-tone rings, etc.), include one\nMetalComposition per distinct metal. Mark `primary=True` on the\ndominant one (used for short-form syndication like Schema.org material).",
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/MetalType",
+          "description": "Base metal type"
+        },
+        "purity_fineness": {
+          "anyOf": [
+            {
+              "maximum": 999,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Parts per 1000 (fineness). Examples: gold 24k=999, 18k=750, 14k=585, 10k=417; silver sterling=925, Britannia=958; platinum=950.",
+          "title": "Purity Fineness"
+        },
+        "purity_karat": {
+          "anyOf": [
+            {
+              "maximum": 24.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Karat for gold only (10/14/18/22/24). Auto-derivable from fineness.",
+          "title": "Purity Karat"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetalColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Visible color"
+        },
+        "finish": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetalFinish"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface finish"
+        },
+        "plating": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PlatingType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Plating type if any"
+        },
+        "plating_thickness_microns": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Plating thickness in µm (UN/CEFACT code '4H'). Vermeil requires ≥2.5 µm.",
+          "title": "Plating Thickness Microns"
+        },
+        "weight_grams": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Weight of this metal component in grams",
+          "title": "Weight Grams"
+        },
+        "primary": {
+          "default": false,
+          "description": "Whether this is the primary/dominant metal (one per product)",
+          "title": "Primary",
+          "type": "boolean"
+        },
+        "hallmark": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Stamped hallmark (e.g. '750', 'PT950', 'STERLING')",
+          "title": "Hallmark"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "MetalComposition",
+      "type": "object"
+    },
+    "MetalFinish": {
+      "description": "Surface finish.",
+      "enum": [
+        "polished",
+        "matte",
+        "brushed",
+        "satin",
+        "hammered",
+        "sandblasted",
+        "oxidized",
+        "milgrain",
+        "engraved",
+        "florentine"
+      ],
+      "title": "MetalFinish",
+      "type": "string"
+    },
+    "MetalType": {
+      "description": "Base metal types per ISO 9202:2019.\n\nCodes correspond to common jewelry trade conventions. For non-precious\nor surgical metals (steel, titanium), use the appropriate enum.",
+      "enum": [
+        "gold",
+        "silver",
+        "platinum",
+        "palladium",
+        "rhodium",
+        "titanium",
+        "niobium",
+        "steel",
+        "tungsten",
+        "brass",
+        "bronze",
+        "copper",
+        "other"
+      ],
+      "title": "MetalType",
+      "type": "string"
+    },
+    "MetalsModule": {
+      "additionalProperties": false,
+      "description": "All metal information for a jewelry piece.\n\nREQUIRED for metal-bearing products. Skip for pure-pearl or pure-gem\nitems where metal is incidental (e.g. pearl on silk cord).",
+      "properties": {
+        "compositions": {
+          "description": "One per distinct metal. Mark one with primary=True.",
+          "items": {
+            "$ref": "#/$defs/MetalComposition"
+          },
+          "minItems": 1,
+          "title": "Compositions",
+          "type": "array"
+        },
+        "total_metal_weight_grams": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sum of metal weight across all compositions",
+          "title": "Total Metal Weight Grams"
+        },
+        "nickel_free": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Compliant with EU Nickel Directive 94/27/EC for prolonged skin contact",
+          "title": "Nickel Free"
+        },
+        "hypoallergenic_certified": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Manufacturer claims hypoallergenic; verify with ASTM F2999 / EN 1811",
+          "title": "Hypoallergenic Certified"
+        },
+        "conflict_free": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Compliant with OECD conflict-free sourcing for gold",
+          "title": "Conflict Free"
+        },
+        "recycled_content_percent": {
+          "anyOf": [
+            {
+              "maximum": 100.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Percent recycled metal content (0-100). Audit chain required for claim.",
+          "title": "Recycled Content Percent"
+        }
+      },
+      "required": [
+        "compositions"
+      ],
+      "title": "MetalsModule",
+      "type": "object"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "description": "A monetary amount with currency.\n\n`amount` is stored as Decimal-compatible string to avoid float drift.\nAlways pair with `currency` (ISO 4217). Schema.org maps this to\nPriceSpecification; GMC splits into `price` + `currency`.",
+      "properties": {
+        "amount": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Amount, non-negative",
+          "title": "Amount"
+        },
+        "currency": {
+          "description": "ISO 4217 currency code (e.g. 'USD')",
+          "pattern": "^[A-Z]{3}$",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "title": "Money",
+      "type": "object"
+    },
+    "Motif": {
+      "description": "Recurring decorative motifs (multi-valued).",
+      "enum": [
+        "floral",
+        "leaf",
+        "animal",
+        "butterfly",
+        "bird",
+        "snake",
+        "heart",
+        "star",
+        "moon",
+        "sun",
+        "celestial",
+        "cross",
+        "knot",
+        "infinity",
+        "bow",
+        "geometric",
+        "scroll",
+        "filigree",
+        "milgrain",
+        "other"
+      ],
+      "title": "Motif",
+      "type": "string"
+    },
+    "MovementType": {
+      "description": "Watch movement technology.",
+      "enum": [
+        "automatic",
+        "manual_wind",
+        "quartz",
+        "solar_quartz",
+        "kinetic",
+        "spring_drive",
+        "meca_quartz",
+        "smart",
+        "other"
+      ],
+      "title": "MovementType",
+      "type": "string"
+    },
+    "MultilingualString": {
+      "additionalProperties": false,
+      "description": "Text in multiple languages, keyed by ISO 639-1 code.\n\nUse for product titles, descriptions, care instructions, etc.\nAlways include at least one language; 'en' recommended as fallback.",
+      "properties": {
+        "en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "En"
+        },
+        "es": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Es"
+        },
+        "fr": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fr"
+        },
+        "de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "De"
+        },
+        "it": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "It"
+        },
+        "ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ja"
+        },
+        "zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zh"
+        },
+        "ru": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ru"
+        },
+        "ar": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ar"
+        },
+        "pt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pt"
+        },
+        "ko": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ko"
+        },
+        "other": {
+          "anyOf": [
+            {
+              "patternProperties": {
+                "^[a-z]{2}$": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Other"
+        }
+      },
+      "title": "MultilingualString",
+      "type": "object"
+    },
+    "NacreQuality": {
+      "description": "Nacre thickness assessment.",
+      "enum": [
+        "thick",
+        "acceptable",
+        "thin",
+        "unknown"
+      ],
+      "title": "NacreQuality",
+      "type": "string"
+    },
+    "Occasion": {
+      "description": "Common gift/purchase occasions (multi-valued).",
+      "enum": [
+        "engagement",
+        "wedding",
+        "anniversary",
+        "birthday",
+        "valentines",
+        "mothers_day",
+        "fathers_day",
+        "christmas",
+        "hanukkah",
+        "graduation",
+        "prom",
+        "quinceanera",
+        "push_present",
+        "promotion",
+        "self_purchase",
+        "everyday",
+        "evening",
+        "formal",
+        "casual",
+        "bridal_party",
+        "other"
+      ],
+      "title": "Occasion",
+      "type": "string"
+    },
+    "Offer": {
+      "additionalProperties": false,
+      "description": "A single commercial offer for the piece.\n\nMaps to Schema.org Offer. Multi-region pricing or multi-channel\noffers use multiple Offer entries.",
+      "properties": {
+        "price": {
+          "$ref": "#/$defs/Money",
+          "description": "Price including currency"
+        },
+        "sale_price": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sale price if currently on sale"
+        },
+        "sale_starts": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sale start (ISO 8601)",
+          "title": "Sale Starts"
+        },
+        "sale_ends": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sale end (ISO 8601)",
+          "title": "Sale Ends"
+        },
+        "availability": {
+          "$ref": "#/$defs/Availability",
+          "description": "Stock state"
+        },
+        "availability_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8601 date when item becomes available (required if preorder)",
+          "title": "Availability Date"
+        },
+        "url": {
+          "description": "Product detail page URL (HTTPS preferred)",
+          "title": "Url",
+          "type": "string"
+        },
+        "condition": {
+          "$ref": "#/$defs/Condition",
+          "default": "new",
+          "description": "New / used / vintage / antique"
+        },
+        "inventory_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Units in stock if quantifiable",
+          "title": "Inventory Count"
+        },
+        "target_countries": {
+          "description": "ISO 3166-1 alpha-2 countries where offer is valid (ACP required field)",
+          "items": {
+            "pattern": "^[A-Z]{2}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Target Countries",
+          "type": "array"
+        },
+        "seller_name": {
+          "description": "Seller name (ACP required, ≤70 chars)",
+          "maxLength": 70,
+          "title": "Seller Name",
+          "type": "string"
+        },
+        "seller_url": {
+          "description": "Seller website URL (ACP required)",
+          "title": "Seller Url",
+          "type": "string"
+        },
+        "return_policy_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Return policy URL (ACP required for eligible_checkout)",
+          "title": "Return Policy Url"
+        },
+        "seller_privacy_policy_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller Privacy Policy Url"
+        },
+        "seller_tos_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller Tos Url"
+        },
+        "accepted_payments": {
+          "description": "Accepted payment methods",
+          "items": {
+            "$ref": "#/$defs/PaymentMethod"
+          },
+          "title": "Accepted Payments",
+          "type": "array"
+        },
+        "bnpl_available": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether BNPL (Affirm/Klarna/Afterpay) is offered — strong AI ranking signal",
+          "title": "Bnpl Available"
+        },
+        "free_shipping": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Free Shipping"
+        },
+        "free_shipping_threshold": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Money"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "handling_time_days": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Days from order to ship",
+          "title": "Handling Time Days"
+        },
+        "free_engraving": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Free Engraving"
+        },
+        "lifetime_warranty": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lifetime Warranty"
+        },
+        "warranty_description": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Warranty Description"
+        }
+      },
+      "required": [
+        "price",
+        "availability",
+        "url",
+        "target_countries",
+        "seller_name",
+        "seller_url"
+      ],
+      "title": "Offer",
+      "type": "object"
+    },
+    "OriginClaim": {
+      "description": "Geographic/ethical origin claim.",
+      "enum": [
+        "canadian_diamond",
+        "botswana_sort",
+        "australian_diamond",
+        "recycled_gold",
+        "fairmined_gold",
+        "recycled_platinum",
+        "recycled_silver",
+        "single_origin",
+        "blockchain_tracked",
+        "other"
+      ],
+      "title": "OriginClaim",
+      "type": "string"
+    },
+    "PaymentMethod": {
+      "description": "Accepted payment methods. Influences BNPL/financing signals.",
+      "enum": [
+        "visa",
+        "mastercard",
+        "amex",
+        "paypal",
+        "apple_pay",
+        "google_pay",
+        "affirm",
+        "klarna",
+        "afterpay",
+        "shop_pay",
+        "bank_transfer",
+        "crypto",
+        "other"
+      ],
+      "title": "PaymentMethod",
+      "type": "string"
+    },
+    "PearlBodyColor": {
+      "description": "Primary body color (hue of the pearl itself).",
+      "enum": [
+        "white",
+        "cream",
+        "gold",
+        "silver",
+        "peach",
+        "pink",
+        "lavender",
+        "black",
+        "grey",
+        "green",
+        "blue",
+        "aubergine",
+        "multicolor",
+        "other"
+      ],
+      "title": "PearlBodyColor",
+      "type": "string"
+    },
+    "PearlLuster": {
+      "description": "CIBJO/GIA luster grades — how surface reflects light.",
+      "enum": [
+        "excellent",
+        "very_good",
+        "good",
+        "fair",
+        "poor"
+      ],
+      "title": "PearlLuster",
+      "type": "string"
+    },
+    "PearlMatchingGrade": {
+      "description": "For strands and multi-pearl pieces — how well pearls match.",
+      "enum": [
+        "excellent",
+        "very_good",
+        "good",
+        "fair",
+        "single_pearl"
+      ],
+      "title": "PearlMatchingGrade",
+      "type": "string"
+    },
+    "PearlOvertone": {
+      "description": "Secondary translucent color overlaid on body color.",
+      "enum": [
+        "none",
+        "rose",
+        "silver",
+        "green",
+        "blue",
+        "peacock",
+        "pink",
+        "aubergine",
+        "other"
+      ],
+      "title": "PearlOvertone",
+      "type": "string"
+    },
+    "PearlShape": {
+      "description": "CIBJO 7-shape classification.",
+      "enum": [
+        "round",
+        "near_round",
+        "oval",
+        "button",
+        "drop",
+        "semi_baroque",
+        "baroque",
+        "circle",
+        "keshi",
+        "other"
+      ],
+      "title": "PearlShape",
+      "type": "string"
+    },
+    "PearlSurface": {
+      "description": "Surface cleanliness — abundance of blemishes.",
+      "enum": [
+        "clean",
+        "lightly_blemished",
+        "moderately_blemished",
+        "heavily_blemished"
+      ],
+      "title": "PearlSurface",
+      "type": "string"
+    },
+    "PearlType": {
+      "description": "Pearl origin type (most economically important attribute).",
+      "enum": [
+        "akoya",
+        "south_sea",
+        "tahitian",
+        "freshwater",
+        "sea_of_cortez",
+        "natural",
+        "keshi",
+        "mabe",
+        "imitation",
+        "other"
+      ],
+      "title": "PearlType",
+      "type": "string"
+    },
+    "PearlsModule": {
+      "additionalProperties": false,
+      "description": "CIBJO 7-factor pearl grading.\n\nActivated when product_type='pearl' or stones contain pearl species.\nMany fields have AAA/AA/A market shorthand mapped to the more\ndescriptive CIBJO enum values above.",
+      "properties": {
+        "pearl_type": {
+          "$ref": "#/$defs/PearlType",
+          "description": "Pearl species/origin type"
+        },
+        "luster": {
+          "$ref": "#/$defs/PearlLuster",
+          "description": "Surface luster grade"
+        },
+        "surface_quality": {
+          "$ref": "#/$defs/PearlSurface",
+          "description": "Surface cleanliness grade"
+        },
+        "shape": {
+          "$ref": "#/$defs/PearlShape",
+          "description": "Shape classification"
+        },
+        "body_color": {
+          "$ref": "#/$defs/PearlBodyColor",
+          "description": "Primary body color"
+        },
+        "overtone": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PearlOvertone"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Secondary overtone color"
+        },
+        "nacre_quality": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NacreQuality"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Nacre thickness assessment"
+        },
+        "nacre_thickness_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Measured nacre thickness if known (mm)",
+          "title": "Nacre Thickness Mm"
+        },
+        "size_mm": {
+          "description": "Pearl diameter in mm (use longest axis for non-round)",
+          "exclusiveMinimum": 0.0,
+          "title": "Size Mm",
+          "type": "number"
+        },
+        "size_range_mm": {
+          "anyOf": [
+            {
+              "maxLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "For strands: range like '7.0-7.5' (mm)",
+          "title": "Size Range Mm"
+        },
+        "pearl_count": {
+          "default": 1,
+          "description": "Number of pearls in the piece (e.g. strand)",
+          "minimum": 1,
+          "title": "Pearl Count",
+          "type": "integer"
+        },
+        "matching_grade": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PearlMatchingGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Matching quality across pearls (strands/multi-pearl pieces)"
+        },
+        "drilling": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Drill type (e.g. 'fully_drilled', 'half_drilled', 'undrilled')",
+          "title": "Drilling"
+        },
+        "treatments": {
+          "description": "Disclosed treatments (e.g. 'bleached', 'dyed', 'irradiated', 'pinking')",
+          "items": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "title": "Treatments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pearl_type",
+        "luster",
+        "surface_quality",
+        "shape",
+        "body_color",
+        "size_mm"
+      ],
+      "title": "PearlsModule",
+      "type": "object"
+    },
+    "PiercingLocation": {
+      "description": "Piercing site.",
+      "enum": [
+        "ear_lobe",
+        "ear_helix",
+        "ear_tragus",
+        "ear_daith",
+        "ear_rook",
+        "ear_conch",
+        "ear_industrial",
+        "nose_nostril",
+        "nose_septum",
+        "nose_bridge",
+        "eyebrow",
+        "lip_labret",
+        "lip_monroe",
+        "lip_medusa",
+        "tongue",
+        "navel",
+        "nipple",
+        "surface",
+        "dermal",
+        "genital",
+        "other"
+      ],
+      "title": "PiercingLocation",
+      "type": "string"
+    },
+    "PlacementAnchor": {
+      "description": "Where AR-rendered piece attaches on the body.",
+      "enum": [
+        "ring_finger",
+        "any_finger",
+        "wrist",
+        "neck",
+        "ear_lobe",
+        "ear_helix",
+        "nose",
+        "navel",
+        "chest",
+        "head",
+        "other"
+      ],
+      "title": "PlacementAnchor",
+      "type": "string"
+    },
+    "PlatingType": {
+      "description": "Surface plating applied over a base metal.",
+      "enum": [
+        "none",
+        "gold_plated",
+        "gold_filled",
+        "vermeil",
+        "rhodium_plated",
+        "silver_plated",
+        "platinum_plated",
+        "black_rhodium",
+        "rose_gold_plated"
+      ],
+      "title": "PlatingType",
+      "type": "string"
+    },
+    "PriceTier": {
+      "description": "Coarse price tier for AI agent matching ('affordable luxury', 'fine').",
+      "enum": [
+        "budget",
+        "affordable",
+        "mid_market",
+        "affordable_luxury",
+        "luxury",
+        "ultra_luxury"
+      ],
+      "title": "PriceTier",
+      "type": "string"
+    },
+    "ProductRelation": {
+      "additionalProperties": false,
+      "description": "A relationship to another product.",
+      "properties": {
+        "related_sku": {
+          "description": "SKU of related product",
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Related Sku",
+          "type": "string"
+        },
+        "relationship_type": {
+          "$ref": "#/$defs/RelationshipType",
+          "description": "Type of relationship"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "related_sku",
+        "relationship_type"
+      ],
+      "title": "ProductRelation",
+      "type": "object"
+    },
+    "ProductType": {
+      "description": "Top-level discriminator. Activates sub-vertical modules.\n\nSee domain docs for which fields become required per type:\n  - pearl → pearls module\n  - watch → watch module\n  - smart_wearable → smart module\n  - body → body module\n  - estate → estate module",
+      "enum": [
+        "ring",
+        "earring",
+        "necklace",
+        "bracelet",
+        "pendant",
+        "brooch",
+        "anklet",
+        "watch",
+        "pearl",
+        "smart_wearable",
+        "body",
+        "estate",
+        "jewelry_set",
+        "other"
+      ],
+      "title": "ProductType",
+      "type": "string"
+    },
+    "ProvenanceEntry": {
+      "additionalProperties": false,
+      "description": "A single chain-of-ownership entry.",
+      "properties": {
+        "year_from": {
+          "anyOf": [
+            {
+              "maximum": 2100,
+              "minimum": 1000,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Year From"
+        },
+        "year_to": {
+          "anyOf": [
+            {
+              "maximum": 2100,
+              "minimum": 1000,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Year To"
+        },
+        "owner": {
+          "description": "Person, family, institution, or auction house",
+          "maxLength": 200,
+          "title": "Owner",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Notes on ownership period",
+          "title": "Description"
+        },
+        "documentation_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Auction record, certificate, photograph URL",
+          "title": "Documentation Url"
+        }
+      },
+      "required": [
+        "owner"
+      ],
+      "title": "ProvenanceEntry",
+      "type": "object"
+    },
+    "RegulatoryFlag": {
+      "description": "Regulatory and compliance flags.",
+      "enum": [
+        "prop_65_warning",
+        "nickel_directive_compliant",
+        "cpsia_compliant",
+        "reach_compliant",
+        "rohs_compliant",
+        "fcc_certified",
+        "ce_marked",
+        "kimberley_verified",
+        "cites_listed"
+      ],
+      "title": "RegulatoryFlag",
+      "type": "string"
+    },
+    "RelationshipType": {
+      "description": "How two products relate (matches ACP relationship_type enum).",
+      "enum": [
+        "variant",
+        "is_variant_of",
+        "part_of_set",
+        "pairs_with",
+        "substitute",
+        "replaces",
+        "successor_of",
+        "different_brand",
+        "accessory",
+        "required_part"
+      ],
+      "title": "RelationshipType",
+      "type": "string"
+    },
+    "RelationshipsModule": {
+      "additionalProperties": false,
+      "description": "Variant grouping and related-product relationships.",
+      "properties": {
+        "item_group_id": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Stable group ID shared by all variants of this product (GMC item_group_id, ACP group_id, Shopify product ID)",
+          "title": "Item Group Id"
+        },
+        "variant_axes": {
+          "description": "Up to 3 axes (Shopify cap). For ACP, also fills Custom_variant1-3.",
+          "items": {
+            "$ref": "#/$defs/VariantAxis"
+          },
+          "maxItems": 3,
+          "title": "Variant Axes",
+          "type": "array"
+        },
+        "is_master_variant": {
+          "default": false,
+          "description": "Whether this SKU is the canonical/master variant",
+          "title": "Is Master Variant",
+          "type": "boolean"
+        },
+        "related_products": {
+          "description": "Related products by SKU",
+          "items": {
+            "$ref": "#/$defs/ProductRelation"
+          },
+          "title": "Related Products",
+          "type": "array"
+        }
+      },
+      "title": "RelationshipsModule",
+      "type": "object"
+    },
+    "Religion": {
+      "description": "Faith tradition.",
+      "enum": [
+        "christian",
+        "catholic",
+        "orthodox",
+        "protestant",
+        "jewish",
+        "muslim",
+        "hindu",
+        "buddhist",
+        "sikh",
+        "pagan",
+        "shinto",
+        "interfaith",
+        "spiritual_non_religious",
+        "other"
+      ],
+      "title": "Religion",
+      "type": "string"
+    },
+    "ReligiousModule": {
+      "additionalProperties": false,
+      "description": "Religious / ceremonial significance.",
+      "properties": {
+        "religion": {
+          "$ref": "#/$defs/Religion",
+          "description": "Faith tradition"
+        },
+        "religion_other": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Religion Other"
+        },
+        "symbol_meaning": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultilingualString"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Symbol meaning and significance (multilingual)"
+        },
+        "symbol_name": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name of the symbol (e.g. 'Hamsa', 'Khamsa', 'Star of David', 'Crucifix')",
+          "title": "Symbol Name"
+        },
+        "ceremony_types": {
+          "description": "Ceremonies/occasions this piece is associated with",
+          "items": {
+            "$ref": "#/$defs/CeremonyType"
+          },
+          "title": "Ceremony Types",
+          "type": "array"
+        },
+        "blessed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Has the piece been blessed/consecrated",
+          "title": "Blessed"
+        },
+        "blessing_authority": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Who blessed it (priest, rabbi, imam, etc.)",
+          "title": "Blessing Authority"
+        },
+        "sacred_origin": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Origin claim (e.g. 'Olive wood from Bethlehem')",
+          "title": "Sacred Origin"
+        },
+        "suitable_for_burial": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Compliant with religious burial customs",
+          "title": "Suitable For Burial"
+        }
+      },
+      "required": [
+        "religion"
+      ],
+      "title": "ReligiousModule",
+      "type": "object"
+    },
+    "RestorationRecord": {
+      "additionalProperties": false,
+      "description": "A documented repair/restoration event.",
+      "properties": {
+        "restored_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "When the restoration was performed",
+          "title": "Restored Date"
+        },
+        "restorer": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Restorer"
+        },
+        "description": {
+          "description": "What was done (e.g. 'replaced 2 prongs', 'restrung pearls')",
+          "maxLength": 1000,
+          "title": "Description",
+          "type": "string"
+        },
+        "parts_replaced": {
+          "anyOf": [
+            {
+              "items": {
+                "maxLength": 100,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parts Replaced"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "title": "RestorationRecord",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "description": "A single review (optional; mostly used for syndication).",
+      "properties": {
+        "rating": {
+          "description": "0-5 rating",
+          "maximum": 5.0,
+          "minimum": 0.0,
+          "title": "Rating",
+          "type": "number"
+        },
+        "author_name": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author Name"
+        },
+        "verified_purchase": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified Purchase"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "body": {
+          "anyOf": [
+            {
+              "maxLength": 5000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Body"
+        },
+        "review_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Date"
+        },
+        "review_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Url"
+        },
+        "helpful_votes": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Helpful Votes"
+        }
+      },
+      "required": [
+        "rating"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "ReviewsModule": {
+      "additionalProperties": false,
+      "description": "Reviews data — aggregate and (optionally) individual.",
+      "properties": {
+        "aggregate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AggregateRating"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Summary stats (preferred over individual reviews)"
+        },
+        "reviews": {
+          "description": "Optional individual reviews (cap at 20 for feed size)",
+          "items": {
+            "$ref": "#/$defs/Review"
+          },
+          "maxItems": 20,
+          "title": "Reviews",
+          "type": "array"
+        },
+        "qa_questions": {
+          "description": "Customer questions (for q_and_a feed in ACP)",
+          "items": {
+            "maxLength": 500,
+            "type": "string"
+          },
+          "title": "Qa Questions",
+          "type": "array"
+        },
+        "qa_answers": {
+          "description": "Corresponding answers — same index as qa_questions",
+          "items": {
+            "maxLength": 2000,
+            "type": "string"
+          },
+          "title": "Qa Answers",
+          "type": "array"
+        }
+      },
+      "title": "ReviewsModule",
+      "type": "object"
+    },
+    "RingSize": {
+      "additionalProperties": false,
+      "description": "A ring size measurement in multiple equivalent systems.\n\nISO inner circumference is canonical; other systems derived.\nExample: US 7 ≈ ISO 54 ≈ UK N ≈ EU 54.",
+      "properties": {
+        "iso_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "maximum": 100.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8653 inner circumference in mm (canonical)",
+          "title": "Iso Mm"
+        },
+        "us_ca": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "US/Canada numeric size (e.g. 7.0)",
+          "title": "Us Ca"
+        },
+        "uk_au": {
+          "anyOf": [
+            {
+              "maxLength": 5,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "UK/Australia alphabetic size (e.g. 'N', 'N1/2')",
+          "title": "Uk Au"
+        },
+        "eu": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Eu"
+        },
+        "de": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "De"
+        },
+        "jp_cn": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Jp Cn"
+        },
+        "it": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "It"
+        },
+        "inner_diameter_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "maximum": 30.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Inner diameter (alternative to circumference)",
+          "title": "Inner Diameter Mm"
+        }
+      },
+      "title": "RingSize",
+      "type": "object"
+    },
+    "SettingMaterial": {
+      "description": "Material the setting is made of.",
+      "enum": [
+        "same_as_band",
+        "gold",
+        "silver",
+        "platinum",
+        "palladium",
+        "other"
+      ],
+      "title": "SettingMaterial",
+      "type": "string"
+    },
+    "SettingModule": {
+      "additionalProperties": false,
+      "description": "All settings used in the piece. Most rings have 1; eternity bands many.",
+      "properties": {
+        "styles": {
+          "description": "One per distinct setting",
+          "items": {
+            "$ref": "#/$defs/SettingStyle"
+          },
+          "minItems": 1,
+          "title": "Styles",
+          "type": "array"
+        },
+        "primary_style_id": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ID of the main/center setting if multiple styles present",
+          "title": "Primary Style Id"
+        }
+      },
+      "required": [
+        "styles"
+      ],
+      "title": "SettingModule",
+      "type": "object"
+    },
+    "SettingStyle": {
+      "additionalProperties": false,
+      "description": "A single setting style applied to one or more stones.",
+      "properties": {
+        "style_id": {
+          "description": "Local ID used by Stones.setting_style_id to reference this setting",
+          "maxLength": 50,
+          "title": "Style Id",
+          "type": "string"
+        },
+        "setting_type": {
+          "$ref": "#/$defs/SettingType",
+          "description": "Type of setting"
+        },
+        "prong_count": {
+          "anyOf": [
+            {
+              "maximum": 12,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of prongs (only for prong/half-bezel settings)",
+          "title": "Prong Count"
+        },
+        "material": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SettingMaterial"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Metal used for this setting"
+        },
+        "head_height_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Vertical projection of setting above band (mm)",
+          "title": "Head Height Mm"
+        },
+        "gallery_present": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether decorative gallery (under-setting filigree) is present",
+          "title": "Gallery Present"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-text notes (e.g. 'Tiffany-style 6-prong')",
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "style_id",
+        "setting_type"
+      ],
+      "title": "SettingStyle",
+      "type": "object"
+    },
+    "SettingType": {
+      "description": "How stone(s) are mounted to the metal.",
+      "enum": [
+        "prong",
+        "bezel",
+        "half_bezel",
+        "tension",
+        "channel",
+        "pave",
+        "micro_pave",
+        "bar",
+        "flush",
+        "gypsy",
+        "invisible",
+        "cluster",
+        "halo",
+        "burnish",
+        "illusion",
+        "suspension",
+        "other"
+      ],
+      "title": "SettingType",
+      "type": "string"
+    },
+    "SizingModule": {
+      "additionalProperties": false,
+      "description": "Physical dimensions of the piece. Fields used depend on product_type.",
+      "properties": {
+        "ring_size": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RingSize"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Ring size (rings only)"
+        },
+        "ring_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Band width across finger (mm)",
+          "title": "Ring Width Mm"
+        },
+        "ring_resizable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether ring can be resized professionally",
+          "title": "Ring Resizable"
+        },
+        "length_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Total length in mm",
+          "title": "Length Mm"
+        },
+        "adjustable_to_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "If adjustable, maximum length reached (mm)",
+          "title": "Adjustable To Mm"
+        },
+        "chain_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Chain/strand thickness (mm)",
+          "title": "Chain Width Mm"
+        },
+        "drop_length_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Length below clasp/post (mm) for pendants/earrings",
+          "title": "Drop Length Mm"
+        },
+        "pendant_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pendant Width Mm"
+        },
+        "pendant_height_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pendant Height Mm"
+        },
+        "earring_drop_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Earring Drop Mm"
+        },
+        "earring_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Earring Width Mm"
+        },
+        "brooch_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brooch Width Mm"
+        },
+        "brooch_height_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Brooch Height Mm"
+        },
+        "closure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/JewelryClosure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Closure mechanism"
+        },
+        "total_weight_grams": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Total weight of the finished piece (g)",
+          "title": "Total Weight Grams"
+        }
+      },
+      "title": "SizingModule",
+      "type": "object"
+    },
+    "SmartFeature": {
+      "description": "Smart features (multi-valued).",
+      "enum": [
+        "heart_rate",
+        "hrv",
+        "spo2",
+        "ecg",
+        "sleep_tracking",
+        "activity_tracking",
+        "gps",
+        "nfc_payment",
+        "cellular_lte",
+        "blood_pressure",
+        "skin_temperature",
+        "body_battery",
+        "stress_tracking",
+        "menstrual_cycle",
+        "fall_detection",
+        "crash_detection",
+        "emergency_sos",
+        "smart_notifications",
+        "voice_assistant",
+        "camera",
+        "speaker",
+        "microphone",
+        "other"
+      ],
+      "title": "SmartFeature",
+      "type": "string"
+    },
+    "SmartModule": {
+      "additionalProperties": false,
+      "description": "Smart device specifications.\n\nRequired when product_type='smart_wearable'. For Apple Watch /\nGalaxy Watch, also populate WatchModule.",
+      "properties": {
+        "features": {
+          "description": "Smart features available",
+          "items": {
+            "$ref": "#/$defs/SmartFeature"
+          },
+          "minItems": 1,
+          "title": "Features",
+          "type": "array"
+        },
+        "operating_system": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "OS (e.g. 'watchOS 11', 'Wear OS 4', 'Oura OS')",
+          "title": "Operating System"
+        },
+        "app_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Companion smartphone app required",
+          "title": "App Required"
+        },
+        "app_ios_compatible": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "App Ios Compatible"
+        },
+        "app_android_compatible": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "App Android Compatible"
+        },
+        "minimum_ios_version": {
+          "anyOf": [
+            {
+              "maxLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Ios Version"
+        },
+        "minimum_android_version": {
+          "anyOf": [
+            {
+              "maxLength": 20,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Android Version"
+        },
+        "battery_life_hours": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Battery life under typical use (hours)",
+          "title": "Battery Life Hours"
+        },
+        "battery_life_days": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Battery life in days (preferred for smart rings)",
+          "title": "Battery Life Days"
+        },
+        "charging_method": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Charging method (e.g. 'magnetic_puck', 'usb_c', 'wireless_qi')",
+          "title": "Charging Method"
+        },
+        "charge_time_minutes": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Time Minutes"
+        },
+        "connectivity": {
+          "description": "Wireless standards supported",
+          "items": {
+            "$ref": "#/$defs/Connectivity"
+          },
+          "title": "Connectivity",
+          "type": "array"
+        },
+        "sensor_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sensor Count"
+        },
+        "sensors": {
+          "description": "Sensor names (e.g. 'PPG', 'gyroscope', 'accelerometer', 'thermometer')",
+          "items": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "title": "Sensors",
+          "type": "array"
+        },
+        "waterproof_rating": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/WaterProofRating"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fda_cleared": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Has FDA clearance for medical claims",
+          "title": "Fda Cleared"
+        },
+        "fda_clearance_numbers": {
+          "description": "FDA 510(k) clearance numbers if any",
+          "items": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "title": "Fda Clearance Numbers",
+          "type": "array"
+        },
+        "ce_certified": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ce Certified"
+        },
+        "subscription_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Premium subscription required for full features (e.g. Oura ring)",
+          "title": "Subscription Required"
+        },
+        "subscription_monthly_usd": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subscription Monthly Usd"
+        },
+        "data_export_supported": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data Export Supported"
+        },
+        "data_export_formats": {
+          "description": "Export formats (csv, json, hl7-fhir, etc.)",
+          "items": {
+            "maxLength": 20,
+            "type": "string"
+          },
+          "title": "Data Export Formats",
+          "type": "array"
+        },
+        "weight_grams": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Device weight in grams (important for smart rings)",
+          "title": "Weight Grams"
+        }
+      },
+      "required": [
+        "features"
+      ],
+      "title": "SmartModule",
+      "type": "object"
+    },
+    "SourceSystem": {
+      "description": "Where the OJS record was created or last updated.",
+      "enum": [
+        "manual",
+        "shopify",
+        "arbling_pipeline",
+        "pim_akeneo",
+        "pim_salsify",
+        "pim_syndigo",
+        "gmc_import",
+        "acp_import",
+        "other"
+      ],
+      "title": "SourceSystem",
+      "type": "string"
+    },
+    "Stone": {
+      "additionalProperties": false,
+      "description": "A single stone in the piece. Multi-stone pieces use one Stone each.",
+      "properties": {
+        "species": {
+          "$ref": "#/$defs/GemstoneSpecies",
+          "description": "Stone species"
+        },
+        "species_other": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-text species if 'other'",
+          "title": "Species Other"
+        },
+        "origin_type": {
+          "$ref": "#/$defs/StoneOrigin",
+          "description": "Natural / lab-grown / simulant"
+        },
+        "origin_country": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Geographic origin (e.g. 'Burma' for ruby, 'Colombia' for emerald)",
+          "title": "Origin Country"
+        },
+        "carat": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Weight in carats (1 ct = 200 mg, UN/CEFACT 'CTM')",
+          "title": "Carat"
+        },
+        "cut": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StoneCut"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Cut/shape"
+        },
+        "length_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Length Mm"
+        },
+        "width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width Mm"
+        },
+        "depth_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Depth Mm"
+        },
+        "color_grade": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DiamondColorGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GIA D-Z scale (diamonds only)"
+        },
+        "color_description": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-text color (e.g. 'Pigeon Blood Red', 'Padparadscha')",
+          "title": "Color Description"
+        },
+        "clarity_grade": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DiamondClarityGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GIA clarity scale (diamonds only)"
+        },
+        "cut_grade": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CutGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GIA cut grade (round brilliants only)"
+        },
+        "polish": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CutGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "symmetry": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CutGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "fluorescence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FluorescenceIntensity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "treatments": {
+          "description": "Enhancements applied. Empty list means untreated/none disclosed.",
+          "items": {
+            "$ref": "#/$defs/TreatmentType"
+          },
+          "title": "Treatments",
+          "type": "array"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Position in piece (e.g. 'center', 'halo', 'side_1', 'shank')",
+          "title": "Position"
+        },
+        "setting_style_id": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Cross-ref to SettingModule for this stone",
+          "title": "Setting Style Id"
+        }
+      },
+      "required": [
+        "species",
+        "origin_type"
+      ],
+      "title": "Stone",
+      "type": "object"
+    },
+    "StoneCut": {
+      "description": "Common faceting shapes. Used for diamond 4Cs and colored stones.",
+      "enum": [
+        "round_brilliant",
+        "princess",
+        "cushion",
+        "emerald_cut",
+        "oval",
+        "pear",
+        "marquise",
+        "radiant",
+        "asscher",
+        "heart",
+        "baguette",
+        "trillion",
+        "rose_cut",
+        "old_european",
+        "old_mine",
+        "cabochon",
+        "briolette",
+        "fancy",
+        "other"
+      ],
+      "title": "StoneCut",
+      "type": "string"
+    },
+    "StoneOrigin": {
+      "description": "How the stone was created.",
+      "enum": [
+        "natural",
+        "lab_grown",
+        "simulant",
+        "unknown"
+      ],
+      "title": "StoneOrigin",
+      "type": "string"
+    },
+    "StonesModule": {
+      "additionalProperties": false,
+      "description": "All stones in the piece. Order matters: index 0 = center/primary stone.",
+      "properties": {
+        "stones": {
+          "description": "One entry per stone",
+          "items": {
+            "$ref": "#/$defs/Stone"
+          },
+          "minItems": 1,
+          "title": "Stones",
+          "type": "array"
+        },
+        "total_carat_weight": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sum of carat across all stones (TCW)",
+          "title": "Total Carat Weight"
+        },
+        "center_stone_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "description": "Index of the center/primary stone (default 0)",
+          "title": "Center Stone Index"
+        }
+      },
+      "required": [
+        "stones"
+      ],
+      "title": "StonesModule",
+      "type": "object"
+    },
+    "StorageRecommendation": {
+      "description": "Recommended storage practice.",
+      "enum": [
+        "soft_pouch",
+        "jewelry_box_divided",
+        "airtight_bag",
+        "dry_environment",
+        "avoid_humidity",
+        "lay_flat"
+      ],
+      "title": "StorageRecommendation",
+      "type": "string"
+    },
+    "StrapType": {
+      "description": "Strap/bracelet material.",
+      "enum": [
+        "leather",
+        "metal_bracelet",
+        "rubber",
+        "silicone",
+        "nato",
+        "nylon",
+        "canvas",
+        "fabric",
+        "ceramic",
+        "other"
+      ],
+      "title": "StrapType",
+      "type": "string"
+    },
+    "StyleModule": {
+      "additionalProperties": false,
+      "description": "Aesthetic and design tags. Multi-valued by design — pieces can\nhave multiple styles and motifs.",
+      "properties": {
+        "era": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Era"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Historical period"
+        },
+        "design_styles": {
+          "description": "Design style tags (multi-valued)",
+          "items": {
+            "$ref": "#/$defs/DesignStyle"
+          },
+          "title": "Design Styles",
+          "type": "array"
+        },
+        "motifs": {
+          "description": "Decorative motifs",
+          "items": {
+            "$ref": "#/$defs/Motif"
+          },
+          "title": "Motifs",
+          "type": "array"
+        },
+        "aesthetic_tags": {
+          "description": "Free-text aesthetic descriptors for AI search (e.g. 'cottagecore', 'old-money')",
+          "items": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Aesthetic Tags",
+          "type": "array"
+        }
+      },
+      "title": "StyleModule",
+      "type": "object"
+    },
+    "SustainabilityCertification": {
+      "description": "Recognized sustainability/ethical sourcing certifications.",
+      "enum": [
+        "rjc_cop",
+        "rjc_coc",
+        "kimberley_process",
+        "fairmined",
+        "fairtrade_gold",
+        "scs_recycled",
+        "bluesign",
+        "oeko_tex",
+        "wgc_conflict_free",
+        "diamond_foundry_cert",
+        "bcorp",
+        "other"
+      ],
+      "title": "SustainabilityCertification",
+      "type": "string"
+    },
+    "SustainabilityModule": {
+      "additionalProperties": false,
+      "description": "Sustainability and ethical sourcing claims.\n\nAudit chain required for every claim. Unsubstantiated claims may\ntrigger greenwashing regulatory action (EU Green Claims Directive,\nFTC Green Guides 16 CFR Part 260).",
+      "properties": {
+        "certifications": {
+          "description": "Held sustainability/ethical certifications",
+          "items": {
+            "$ref": "#/$defs/SustainabilityCertification"
+          },
+          "title": "Certifications",
+          "type": "array"
+        },
+        "origin_claims": {
+          "description": "Origin/provenance claims",
+          "items": {
+            "$ref": "#/$defs/OriginClaim"
+          },
+          "title": "Origin Claims",
+          "type": "array"
+        },
+        "recycled_metal_percent": {
+          "anyOf": [
+            {
+              "maximum": 100.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Percent recycled metal (0-100). Audit required.",
+          "title": "Recycled Metal Percent"
+        },
+        "is_conflict_free": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Compliant with conflict-free sourcing (OECD due diligence)",
+          "title": "Is Conflict Free"
+        },
+        "is_lab_grown_marketed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Marketed as lab-grown alternative to mined (FTC disclosure rule applies)",
+          "title": "Is Lab Grown Marketed"
+        },
+        "is_traceable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Full supply-chain traceability available",
+          "title": "Is Traceable"
+        },
+        "traceability_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to traceability dashboard/blockchain record",
+          "title": "Traceability Url"
+        },
+        "carbon": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CarbonClaim"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Carbon footprint claims"
+        },
+        "sustainability_story": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-text sustainability story for AI agent narrative use",
+          "title": "Sustainability Story"
+        }
+      },
+      "title": "SustainabilityModule",
+      "type": "object"
+    },
+    "ThreadingType": {
+      "description": "How the jewelry attaches together.",
+      "enum": [
+        "internally_threaded",
+        "externally_threaded",
+        "threadless",
+        "hinged",
+        "captive_bead",
+        "seamless",
+        "segment",
+        "push_pin",
+        "other"
+      ],
+      "title": "ThreadingType",
+      "type": "string"
+    },
+    "TreatmentType": {
+      "description": "Stone enhancement treatments. FTC requires disclosure (16 CFR §23.22).",
+      "enum": [
+        "none",
+        "heat",
+        "irradiation",
+        "laser_drilling",
+        "fracture_filling",
+        "oiling",
+        "dye",
+        "coating",
+        "diffusion",
+        "bleaching",
+        "hpht_treatment",
+        "other"
+      ],
+      "title": "TreatmentType",
+      "type": "string"
+    },
+    "VariantAxis": {
+      "additionalProperties": false,
+      "description": "A dimension of variation (e.g. 'metal_color', 'ring_size', 'stone_size').\n\nUsed to group SKUs into a coherent product family. Shopify exposes\nthese as Option 1/2/3 (max 3 axes, 2048 variants total).",
+      "properties": {
+        "name": {
+          "description": "Axis name (e.g. 'metal_color', 'ring_size', 'stone_carat')",
+          "maxLength": 50,
+          "title": "Name",
+          "type": "string"
+        },
+        "value": {
+          "description": "This SKU's value on this axis (e.g. 'yellow_gold', '7', '1.5ct')",
+          "maxLength": 100,
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "title": "VariantAxis",
+      "type": "object"
+    },
+    "VideoAsset": {
+      "additionalProperties": false,
+      "description": "A single video.",
+      "properties": {
+        "url": {
+          "description": "HTTPS URL (YouTube/Vimeo embed or hosted MP4)",
+          "title": "Url",
+          "type": "string"
+        },
+        "thumbnail_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Thumbnail Url"
+        },
+        "duration_seconds": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Seconds"
+        },
+        "width_px": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width Px"
+        },
+        "height_px": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height Px"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "VideoAsset",
+      "type": "object"
+    },
+    "WatchComplication": {
+      "description": "Watch complications (multi-valued).",
+      "enum": [
+        "chronograph",
+        "date",
+        "day_date",
+        "gmt",
+        "dual_time",
+        "moonphase",
+        "perpetual_calendar",
+        "annual_calendar",
+        "equation_of_time",
+        "tourbillon",
+        "power_reserve_indicator",
+        "alarm",
+        "minute_repeater",
+        "world_time",
+        "second_time_zone",
+        "small_seconds",
+        "big_date",
+        "regulateur",
+        "chime",
+        "other"
+      ],
+      "title": "WatchComplication",
+      "type": "string"
+    },
+    "WatchModule": {
+      "additionalProperties": false,
+      "description": "Watch-specific specifications. Required when product_type='watch'.",
+      "properties": {
+        "movement_type": {
+          "$ref": "#/$defs/MovementType",
+          "description": "Movement technology"
+        },
+        "caliber": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Movement caliber name (e.g. 'ETA 2824-2', 'Rolex 3235', 'Omega 8800')",
+          "title": "Caliber"
+        },
+        "cosc_chronometer": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "COSC chronometer certified",
+          "title": "Cosc Chronometer"
+        },
+        "master_chronometer": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "METAS Master Chronometer certified (Omega standard)",
+          "title": "Master Chronometer"
+        },
+        "complications": {
+          "description": "Watch complications",
+          "items": {
+            "$ref": "#/$defs/WatchComplication"
+          },
+          "title": "Complications",
+          "type": "array"
+        },
+        "power_reserve_hours": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Power reserve in hours",
+          "title": "Power Reserve Hours"
+        },
+        "frequency_hz": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Beat frequency in Hz (e.g. 4 = 28800 vph)",
+          "title": "Frequency Hz"
+        },
+        "jewel_count": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Jewel Count"
+        },
+        "case_shape": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CaseShape"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "case_diameter_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Case diameter (mm) — primary size dimension",
+          "title": "Case Diameter Mm"
+        },
+        "case_thickness_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Thickness Mm"
+        },
+        "case_lug_to_lug_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Lug To Lug Mm"
+        },
+        "case_lug_width_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Case Lug Width Mm"
+        },
+        "case_material": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Case material (stainless steel, gold, titanium, ceramic)",
+          "title": "Case Material"
+        },
+        "crystal_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CrystalType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "crystal_coating_ar": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Anti-reflective coating on crystal",
+          "title": "Crystal Coating Ar"
+        },
+        "bezel_type": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Bezel type (e.g. 'unidirectional_dive', 'tachymeter', 'gmt_24h')",
+          "title": "Bezel Type"
+        },
+        "rotating_bezel": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rotating Bezel"
+        },
+        "water_resistance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/WaterResistanceRating"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "shock_resistance_iso_1413": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shock Resistance Iso 1413"
+        },
+        "magnetic_resistance_gauss": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Magnetic resistance in Gauss",
+          "title": "Magnetic Resistance Gauss"
+        },
+        "strap_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StrapType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "strap_material": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strap Material"
+        },
+        "bracelet_type": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Bracelet type (e.g. 'oyster', 'jubilee', 'president', 'milanese')",
+          "title": "Bracelet Type"
+        },
+        "dial_color": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dial Color"
+        },
+        "lume_type": {
+          "anyOf": [
+            {
+              "maxLength": 50,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Luminescence (e.g. 'Super-LumiNova C3', 'Chromalight')",
+          "title": "Lume Type"
+        },
+        "box_papers_included": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Original box and papers included (collector signal)",
+          "title": "Box Papers Included"
+        },
+        "serviced_date": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last service date (ISO 8601) for pre-owned watches",
+          "title": "Serviced Date"
+        }
+      },
+      "required": [
+        "movement_type"
+      ],
+      "title": "WatchModule",
+      "type": "object"
+    },
+    "WaterProofRating": {
+      "description": "IP / ATM ingress protection ratings for electronics.",
+      "enum": [
+        "ipx4",
+        "ipx5",
+        "ipx6",
+        "ipx7",
+        "ipx8",
+        "ip67",
+        "ip68",
+        "3atm",
+        "5atm",
+        "10atm",
+        "20atm",
+        "not_waterproof"
+      ],
+      "title": "WaterProofRating",
+      "type": "string"
+    },
+    "WaterResistanceRating": {
+      "additionalProperties": false,
+      "description": "Water resistance per ISO 22810:2010.",
+      "properties": {
+        "atm": {
+          "anyOf": [
+            {
+              "maximum": 200.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Atmospheres (1 ATM = 10m static depth)",
+          "title": "Atm"
+        },
+        "meters": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Equivalent depth in meters",
+          "title": "Meters"
+        },
+        "iso_22810_compliant": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iso 22810 Compliant"
+        },
+        "iso_6425_divers": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 6425 divers' watch certified (≥100m + safety features)",
+          "title": "Iso 6425 Divers"
+        }
+      },
+      "title": "WaterResistanceRating",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "product_type": {
+      "$ref": "#/$defs/ProductType",
+      "description": "Top-level product type. Activates sub-vertical modules."
+    },
+    "audit": {
+      "$ref": "#/$defs/AuditMetadata",
+      "description": "Provenance/audit metadata for the record"
+    },
+    "identity": {
+      "$ref": "#/$defs/IdentityModule",
+      "description": "Product identity (REQUIRED)"
+    },
+    "commerce": {
+      "$ref": "#/$defs/CommerceModule",
+      "description": "Pricing/availability (REQUIRED)"
+    },
+    "media": {
+      "$ref": "#/$defs/MediaModule",
+      "description": "Visual assets (REQUIRED — at least 1 image)"
+    },
+    "metals": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/MetalsModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Metal composition. Required for metal-bearing products."
+    },
+    "stones": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StonesModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Stone(s) in the piece"
+    },
+    "setting": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SettingModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "How stones are set (skip if no stones)"
+    },
+    "sizing": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SizingModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Physical dimensions"
+    },
+    "style": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StyleModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Aesthetic/design tags"
+    },
+    "certification": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CertificationModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Gemological certifications"
+    },
+    "sustainability": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SustainabilityModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Ethical sourcing claims"
+    },
+    "care": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CareModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Cleaning/storage instructions"
+    },
+    "relationships": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RelationshipsModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Variants and related products"
+    },
+    "reviews": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewsModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Aggregate review data"
+    },
+    "legal": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LegalModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Compliance metadata"
+    },
+    "ai_commerce": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AICommerceModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "AI agent ranking metadata (strongly recommended)"
+    },
+    "pearls": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PearlsModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "REQUIRED if product_type='pearl'"
+    },
+    "watch": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/WatchModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "REQUIRED if product_type='watch'"
+    },
+    "smart": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SmartModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "REQUIRED if product_type='smart_wearable'"
+    },
+    "body": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BodyModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "REQUIRED if product_type='body'"
+    },
+    "estate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/EstateModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "REQUIRED if product_type='estate'"
+    },
+    "artisan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ArtisanModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Optional — for handmade/artist-attributed pieces"
+    },
+    "religious": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReligiousModule"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Optional — for ceremonial/faith pieces"
+    }
+  },
+  "required": [
+    "product_type",
+    "audit",
+    "identity",
+    "commerce",
+    "media"
+  ],
+  "type": "object"
+}
