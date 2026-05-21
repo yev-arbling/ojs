@@ -1,0 +1,83 @@
+{
+  "product_type": "earring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-mega-d-me-earrings",
+    "title": "Mega Dôme Earrings",
+    "description": "Maybe you want more. With the puffiest piece in our Dôme collection, you don't have to ask for attention—you command it.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "338.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/mega-dome-earrings?Material=18k+Gold+Vermeil",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "298.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/mega-dome-earrings?Material=Sterling+Silver",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-SILVERBIGGIEDOMEEARRINGS_DomeBiggieEarrings_SS_Angled_241_new_79fd65a9-e8d6-402f-8c16-05cd8fe8c3da.png?v=1758043821",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-VERMEILBIGGIEDOMEEARRINGS_DomeBiggieEarrings_V_Angled_241_new_2c047613-a556-479a-81e0-61497a802b0c.png?v=1758043821",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 18.0,
+        "color": "yellow",
+        "plating": "vermeil"
+      }
+    ]
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold"
+    ],
+    "era": "contemporary"
+  }
+}

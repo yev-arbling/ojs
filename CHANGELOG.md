@@ -2,6 +2,29 @@
 
 All notable changes to OJS are documented here. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-05-21
+
+Adoption-funnel patch. No schema changes — all additions are tooling, examples, and docs around the existing v1.0 schema.
+
+### Added
+
+- **Node.js CLI validator** (`tools/validate-node/`) — `@openjewelryschema/validate` package, AJV-based, validates against `spec/v1/ojs-strict.json` (the same file Pydantic uses). Outputs per-tier completeness score (REQUIRED/RECOMMENDED/CONDITIONAL/OPTIONAL). Supports multiple files, `--quiet`, `--strict`, `--schema` flags. Exit code 0 = all valid, 1 = any invalid, 2 = schema/CLI error.
+- **20 contributor examples** (`examples/contrib/`) — real-product JSON migrated from v0.1 covering fashion rings (signet, dome, stacker, braided), earrings (drop, stud, hoop, pearl), necklaces (chain, herringbone), and colored-stone pieces (emerald, sapphire, onyx). All 20 validated against the v1.0 Pydantic model.
+- **Integration guides** (`docs/integrations/shopify-integration.md`, `docs/integrations/woocommerce-integration.md`) — step-by-step retailer onboarding with both JSON-LD drop-in and Python transformer usage (Shopify: `to_shopify_metafields()`; WooCommerce: `to_schema_org()`). Updated all field references to v1.0 modular paths.
+- **Integration guide index** (`docs/integrations/README.md`) — "what to choose" table for Shopify vs. WooCommerce vs. pipeline approach.
+- **Migration script** (`tools/migrate-v0.1/migrate.py`) — automated v0.1 → v1.0.1 migration for contrib examples.
+
+### Changed
+
+- **README reordered**: JSON-LD drop-in Quickstart now leads (for retailers and Shopify partners); Python/Pydantic Quickstart follows (for pipeline builders). Added `examples/contrib/` and Node.js validator to "What's in the box". Added `Examples` section. No content removed.
+- **`tests/validate_examples.py`** extended to cover `examples/contrib/` in addition to `examples/`.
+
+### Fixed
+
+- (nothing yet — deferred to v1.0.2)
+
+[1.0.1]: https://github.com/openjewelryschema/ojs/releases/tag/v1.0.1
+
 ## [1.0.0] — 2026-05-17
 
 Initial public release.

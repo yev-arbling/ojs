@@ -1,0 +1,82 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-organic-d-me-thin-marquise-cut-nesting-ring",
+    "title": "Organic Dôme Thin Marquise Cut Nesting Ring",
+    "description": "Designed to stack seamlessly with the Dôme collection, the Organic Dôme Thin Marquise Cut Nesting Ring features a fancy cut lab grown diamond that shines in the stack. Featuring a soft curve that hugs the shape of our Dôme rings, this ring is a perfect addition to your stack or stunning on its own.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "778.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/organic-dome-thin-marquise-cut-nesting-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRings_ThinDomeRingMarquiseLGD_YG_OffFigure-PDP_new_d7938539-a0af-4cfd-98c0-03cea86ac6bd.png?v=1758043914",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "lab_grown",
+        "cut": "marquise",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 5.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [
+      "minimalist"
+    ],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold",
+      "color:white"
+    ]
+  }
+}

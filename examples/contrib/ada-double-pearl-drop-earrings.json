@@ -1,0 +1,76 @@
+{
+  "product_type": "earring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-ada-double-pear-drop-earrings",
+    "title": "Ada Double Pear Drop Earrings",
+    "description": "Two pear-shaped gemstones for double the impact with a drop designed for subtle movement and not-so-subtle shine.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "178.00",
+          "currency": "USD"
+        },
+        "availability": "backorder",
+        "url": "https://mejuri.com/world/en/products/ada-double-pearl-drop-earrings?Material=18k+Gold+Vermeil&Stone=Lab+Grown+White+Sapphire",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-AdaDoublePearDropEarringsOffFigureAngledView2160x2580.jpg?v=1774968742",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 18.0,
+        "color": "yellow",
+        "plating": "vermeil"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "sapphire",
+        "origin_type": "lab_grown",
+        "cut": "pear",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold",
+      "color:blue"
+    ],
+    "era": "contemporary"
+  }
+}

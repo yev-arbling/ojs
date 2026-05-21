@@ -1,0 +1,89 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-pearl-half-eternity-ring",
+    "title": "Pearl Half Eternity Ring",
+    "description": "You’ll be eternally pearlescent. Especially when wearing this stack of pearls that’s handcrafted in recycled 14k solid gold.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "358.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/pearl-half-eternity-ring?Material=14k+Yellow+Gold&Stone=Pearl&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-PearlHalfEternityRingRelaunch_PearlHalfEternityRing_YG_OffFigureAngledView-PDP_new_66f8feca-fa38-46cd-b354-f389717e7ec2.png?v=1758073325",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "pearl",
+        "origin_type": "natural",
+        "cut": "pear",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "main",
+        "setting_type": "channel"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 5.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "wedding",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}

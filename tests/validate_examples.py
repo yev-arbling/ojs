@@ -12,7 +12,9 @@ sys.path.insert(0, str(ROOT / "src" / "python"))
 
 from ojs.models import JewelryProduct  # noqa: E402
 
-EXAMPLES = sorted((ROOT / "examples").glob("*.json"))
+EXAMPLES = sorted((ROOT / "examples").glob("*.json")) + sorted(
+    (ROOT / "examples" / "contrib").glob("*.json")
+)
 
 
 def main() -> int:

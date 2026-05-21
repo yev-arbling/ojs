@@ -1,0 +1,89 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-pav-diamond-wishbone-ring",
+    "title": "Pavé Diamond Wishbone Ring",
+    "description": "Part stacker, part statement, all charm. Keep this good Wishbone Ring in close range for an extra dose of fortune. Handcrafted in 14k solid gold and set with pavé diamonds. Mejuri's 14k Solid Gold Pavé Diamond Wishbone Ring adds elegance and luck to any jewelry collection.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "458.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/pave-diamond-wishbone-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0_WishbonePave_ring_yg_hero_new_07e3de7d-f6d7-4920-a4b0-54d6dd98ca90.png?v=1758043839",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "natural",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "main",
+        "setting_type": "pave"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 4.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "nature-inspired",
+      "everyday",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}

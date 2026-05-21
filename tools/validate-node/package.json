@@ -1,0 +1,19 @@
+{
+  "name": "@openjewelryschema/validate",
+  "version": "1.0.1",
+  "description": "CLI validator for Open Jewelry Schema (OJS) v1.0 documents — AJV-based, validates against spec/v1/ojs-strict.json",
+  "bin": { "ojs-validate": "./bin/ojs-validate.js" },
+  "main": "./bin/ojs-validate.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": ["jewelry", "json-schema", "json-ld", "ojs", "validator", "open-jewelry-schema"],
+  "author": "Arbling Inc.",
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "https://github.com/openjewelryschema/ojs.git" },
+  "homepage": "https://openjewelryschema.org",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

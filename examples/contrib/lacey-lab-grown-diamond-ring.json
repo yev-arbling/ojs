@@ -1,0 +1,88 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-lacey-lab-grown-diamond-ring",
+    "title": "Lacey Lab Grown Diamond Ring",
+    "description": "This half eternity lab grown diamond ring features graduating stones for an eye-catching ring that adds dimension to your stack (or wears perfectly on its own).",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "898.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/lacey-lab-grown-diamond-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-DiamondLace_DiamondLaceRing_OffFigureAngledView-PDP_new_2985ae0d-535f-41cc-9577-8382331aad70.png?v=1758043928",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "lab_grown",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "main",
+        "setting_type": "channel"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 4.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "wedding",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}

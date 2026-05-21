@@ -1,0 +1,126 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-ziggy-ring",
+    "title": "Ziggy Ring",
+    "description": "Our beloved Ziggy Ring is a gifting and self-gifting favorite for a reason. Bezel set lab grown gemstones play and dance off of each other in a zig-zag pattern that catches the light. The Ziggy Ring is a party on its own, and also really shines when you stack a few together.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "718.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "538.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Emerald&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "458.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=Sterling+Silver&Stone=Lab+Grown+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LABGROWNDIAMONDSBEZEL-BabyBezelScatteredRing-14K-Angled_329_new_4e56da0e-dd76-470b-bbd1-fbebae6e9f19.png?v=1761058558",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LGDSilver_BezelLGDZigZagRingSilver-SS-Angled-v2-PDP_new_9c237fff-2a48-4529-ba20-73d004520873.png?v=1761058558",
+        "role": "additional",
+        "is_primary": false
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LabGrownEmerald_ZigZagLabGrownEmeraldRing_YG_OffFigureAngledView-PDP_new_4e4aa007-3788-4b0f-827b-510ef0c78ee9.png?v=1761058558",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "lab_grown",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "main",
+        "setting_type": "bezel"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 4.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}
