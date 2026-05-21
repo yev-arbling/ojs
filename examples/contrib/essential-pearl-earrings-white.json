@@ -1,0 +1,75 @@
+{
+  "product_type": "earring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-essential-pearl-earrings",
+    "title": "Essential Pearl Earrings",
+    "description": "Add elegance to your collection with Mejuri's 14k Gold Freshwater Pearl Double Drop Earrings. These earrings feature freshwater pearls set in solid gold, offering a timeless and sophisticated look.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "288.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/essential-pearl-earrings-white?Material=14k+Yellow+Gold&Stone=Pearl",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/ClassicPearlDrop_earrings__White_yg_hero_new_42a0f45f-b945-4f87-addc-8142294e3c9d.png?v=1761058361",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "pearl",
+        "origin_type": "natural",
+        "cut": "pear",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}

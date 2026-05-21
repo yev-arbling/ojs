@@ -1,0 +1,95 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-stacker-ring",
+    "title": "Stacker Ring",
+    "description": "Shop the 14k yellow gold stackable ring at Mejuri. This dainty stacking ring is the perfect starter ring or addition to anyone's collection.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "158.00",
+          "currency": "USD"
+        },
+        "availability": "backorder",
+        "url": "https://mejuri.com/world/en/products/stacker-ring?Material=10k+Yellow+Gold&Size=3",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "188.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/stacker-ring?Material=14k+Yellow+Gold&Size=10",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRing-14K-Angled_352_new_1a1dbe41-b301-430e-b757-4d6ab65e243d.png?v=1758043901",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRing_10k_OffFigureAngledView_PDP_new_cd553b68-0235-4101-a70c-91b663ca2d63.png?v=1763561719",
+        "role": "additional",
+        "is_primary": false
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/stacker_ring_OffFigureAngledView_PDP.jpg?v=1763561719",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 10.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 4.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [
+      "celestial"
+    ],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold"
+    ],
+    "era": "contemporary"
+  }
+}

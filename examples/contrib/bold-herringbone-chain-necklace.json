@@ -1,0 +1,125 @@
+{
+  "product_type": "necklace",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-bold-herringbone-chain-necklace",
+    "title": "Bold Herringbone Chain Necklace",
+    "description": "Elevate your wardrobe with the Gold Vermeil Herringbone Chain Necklace from Mejuri. This elegant necklace is crafted in gold vermeil and features a sleek herringbone design, making it a versatile staple that complements any outfit effortlessly.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "338.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=16+inches",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "378.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=18+inches",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "318.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=20+inches",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "298.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=Sterling+Silver&Length=16+inches",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "328.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=Sterling+Silver&Length=18+inches",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Reshoot_DomeHuggies_V_OffFigureAngledView_PDP_2.jpg?v=1763561983",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/WG-Reshoot_DomeHuggies_V_OffFigureAngledView_PDP.jpg?v=1763561983",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 18.0,
+        "color": "yellow",
+        "plating": "vermeil"
+      }
+    ]
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold"
+    ],
+    "era": "contemporary"
+  }
+}

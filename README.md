@@ -24,11 +24,52 @@ OJS is a structured data schema for jewelry that captures the attributes existin
   - Perplexity Merchant feed
   - Shopify (Product + metafields)
   - Model Context Protocol (MCP) resources
+- **Node.js CLI validator** — `tools/validate-node/` — `npm install -g @openjewelryschema/validate`
 - **21 domain reference docs** — `docs/domains/` — FHIR-grade per-field documentation
-- **Examples** — `examples/` — realistic sample products per sub-vertical
+- **Integration guides** — `docs/integrations/` — Shopify and WooCommerce retailer onboarding
+- **Examples** — `examples/` — 5 production-grade examples + `examples/contrib/` — 20 contributor-migrated real-product examples
 - **Test suite** — `tests/` — 21 tests covering models, discriminators, transformers, round-trip
 
-## Quickstart
+## Quickstart — drop-in JSON-LD for any HTML page
+
+Drop this in your product page `<head>`. Google, ChatGPT, Perplexity, and OJS-aware agents will parse it. Validate with `npx @openjewelryschema/validate yourfile.json`.
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://openjewelryschema.org/v1/context.jsonld",
+  "@type": "Product",
+  "product_type": "ring",
+  "identity": {
+    "title": "1ct Round Brilliant Solitaire",
+    "sku": "YOUR-SKU-001",
+    "description": "Classic 1ct round brilliant diamond solitaire in 14k yellow gold.",
+    "brand": { "name": "Atelier Example" }
+  },
+  "commerce": {
+    "offers": [{
+      "price": { "amount": "2500.00", "currency": "USD" },
+      "availability": "in_stock",
+      "url": "https://example.com/products/solitaire",
+      "condition": "new",
+      "target_countries": ["US"],
+      "seller_name": "Atelier Example",
+      "seller_url": "https://example.com"
+    }]
+  },
+  "media": {
+    "images": [{ "url": "https://example.com/ring.jpg", "role": "primary", "is_primary": true }]
+  },
+  "audit": { "ojs_version": "1.0.1", "created_at": "2026-05-20T00:00:00Z", "source_system": "manual" }
+}
+</script>
+```
+
+For Shopify and WooCommerce integration guides (metafields, Liquid snippets, PHP hooks), see [docs/integrations/](docs/integrations/).
+
+## Quickstart — Python / Pydantic (for validation + pipeline)
+
+Use this if you build an enrichment pipeline, run validation in CI, or generate OJS records programmatically.
 
 ```bash
 pip install pydantic>=2.5
@@ -95,6 +136,11 @@ from ojs.models import JewelryProduct, ProductType
 # Will raise ValidationError: pearl requires pearls module
 JewelryProduct(product_type=ProductType.PEARL, audit=..., identity=..., ...)
 ```
+
+## Examples
+
+- **`examples/`** — 5 production-grade examples covering engagement ring, pearl necklace, vintage watch, smart ring, body piercing. Full field coverage with certification, ai_commerce, legal modules.
+- **`examples/contrib/`** — 20 contributor-migrated real-product examples from Mejuri, covering fashion rings (signet, dome, stacker, braided), earrings (drop, stud, hoop), and necklaces. Migrated from v0.1 format, all validated against the v1.0 schema.
 
 ## License
 

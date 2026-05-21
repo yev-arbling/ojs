@@ -1,0 +1,69 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-charlotte-ring",
+    "title": "Charlotte Ring",
+    "description": "Shop the iconic 14k Gold Charlotte Ribbed Ring from Mejuri. Inspired by the beautiful French dessert, this statement ribbed ring is crafted in solid gold, offering elegance and style.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "1100.00",
+          "currency": "USD"
+        },
+        "availability": "discontinued",
+        "url": "https://mejuri.com/world/en/products/charlotte-ring?Material=14k+Yellow+Gold&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/3-Charlotte_Ring_YG_Front_new_436bd2b8-dc0c-41bf-ad6f-52756e519508.png?v=1758043913",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 6.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold"
+    ],
+    "era": "contemporary"
+  }
+}

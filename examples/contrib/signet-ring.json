@@ -1,0 +1,88 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-signet-ring",
+    "title": "Signet Ring",
+    "description": "Some pinky power is in order and we designed the perfect ring to show off. Shop traceable solid gold rings. Free shipping.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "398.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/signet-ring?Material=10k+Yellow+Gold&Size=3",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "478.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/signet-ring?Material=14k+Yellow+Gold&Size=3",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Reshoot_SignetRing_10K_OffFigureAngledView_PDP_new_d5ff7de2-3064-40a7-bd40-353d6bd6acd4.png?v=1758043864",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/Signet_ring_yg_hero_new_73afd350-8da6-4e46-9b9c-72891b17ab51.png?v=1758043864",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 10.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 3.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "everyday",
+      "color:gold"
+    ],
+    "era": "contemporary"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.0.1",
+    "created_at": "2026-05-21T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-CONTRIB-bold-diamond-eternity-ring",
+    "title": "Bold Diamond Eternity Ring",
+    "description": "Discover the Bold Diamond Eternity Ring in 14k gold or 14k white gold, featuring stunning natural diamonds that symbolize eternal love. This handcrafted engagement ring offers a bold and elegant design, perfect for proposals or special occasions. Elevate your jewelry collection with Mejuri's timeless eternity ring, a lasting expression of commitment and sophistication.",
+    "brand": {
+      "name": "Mejuri"
+    }
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "3500.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=4",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "3600.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=5",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "3700.00",
+          "currency": "USD"
+        },
+        "availability": "backorder",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=6",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "3800.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=7",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "4000.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=8",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "4100.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=9",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      },
+      {
+        "price": {
+          "amount": "4200.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=10",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Mejuri",
+        "seller_url": "https://mejuri.com"
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/1_BoldDiamondEternityRing_WG_Hero_new_e85df88a-64a1-4264-b252-e79ba426c171.png?v=1758142464",
+        "role": "primary",
+        "is_primary": true
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/1_BoldDiamondEternityRing_YG_Hero_new_cf6979af-d536-4342-8f7f-c3676bd3f6e0.png?v=1758142464",
+        "role": "additional",
+        "is_primary": false
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ]
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "natural",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "setting": {
+    "styles": [
+      {
+        "style_id": "main",
+        "setting_type": "channel"
+      }
+    ]
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 4.0
+    },
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [
+      "engagement",
+      "color:gold",
+      "color:white"
+    ],
+    "era": "contemporary"
+  }
+}
