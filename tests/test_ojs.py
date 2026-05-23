@@ -168,6 +168,22 @@ class TestModels:
         assert GemstoneSpecies.PRASIOLITE == "prasiolite"
         assert GemstoneSpecies.QUARTZ == "quartz"
 
+    def test_colored_stone_clarity_enum(self):
+        from ojs.models import ColoredStoneClarityGrade
+        assert ColoredStoneClarityGrade.EYE_CLEAN == "eye_clean"
+        assert ColoredStoneClarityGrade.SLIGHTLY_INCLUDED == "slightly_included"
+        assert ColoredStoneClarityGrade.MODERATELY_INCLUDED == "moderately_included"
+        assert ColoredStoneClarityGrade.HEAVILY_INCLUDED == "heavily_included"
+
+    def test_stone_colored_clarity_field(self):
+        from ojs.models import Stone, ColoredStoneClarityGrade
+        s = Stone(
+            species="sapphire",
+            origin_type="natural",
+            colored_stone_clarity=ColoredStoneClarityGrade.EYE_CLEAN,
+        )
+        assert s.colored_stone_clarity == "eye_clean"
+
 
 # ============================================================
 # Discriminator tests

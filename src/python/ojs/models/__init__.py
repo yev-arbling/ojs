@@ -83,6 +83,7 @@ from .stones import (
     GradingLab,
     DiamondColorGrade,
     DiamondClarityGrade,
+    ColoredStoneClarityGrade,
     CutGrade,
     FluorescenceIntensity,
     TreatmentType,

@@ -186,6 +186,18 @@ class DiamondClarityGrade(str, Enum):
     I3 = "I3"
 
 
+class ColoredStoneClarityGrade(str, Enum):
+    """GIA clarity system for colored stones.
+
+    Distinct from the diamond FL-I3 scale. Used for sapphires, rubies,
+    emeralds, and other colored species per GIA colored stone grading.
+    """
+    EYE_CLEAN = "eye_clean"               # no inclusions visible to unaided eye
+    SLIGHTLY_INCLUDED = "slightly_included"
+    MODERATELY_INCLUDED = "moderately_included"
+    HEAVILY_INCLUDED = "heavily_included"  # affects brilliance/durability
+
+
 class CutGrade(str, Enum):
     """GIA cut grade for round brilliant diamonds. Also polish/symmetry."""
 
@@ -252,6 +264,11 @@ class Stone(OJSBaseModel):
     )
     clarity_grade: Optional[DiamondClarityGrade] = Field(
         default=None, description="GIA clarity scale (diamonds only)"
+    )
+    colored_stone_clarity: Optional[ColoredStoneClarityGrade] = Field(
+        default=None,
+        description="GIA clarity grade for colored stones. Use instead of clarity_grade "
+        "for non-diamond species (sapphire, ruby, emerald, etc.).",
     )
     cut_grade: Optional[CutGrade] = Field(
         default=None, description="GIA cut grade (round brilliants only)"
