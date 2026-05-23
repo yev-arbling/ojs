@@ -273,6 +273,20 @@ class TestModels:
                 note="x" * 1001,
             )
 
+    def test_metal_finish_twisted(self):
+        from ojs.models import MetalFinish
+        assert MetalFinish.TWISTED == "twisted"
+
+    def test_metals_module_lead_free_tarnish_resistant(self):
+        from ojs.models import MetalsModule, MetalComposition
+        m = MetalsModule(
+            compositions=[MetalComposition(type="gold", purity_fineness=750, primary=True)],
+            lead_free=True,
+            tarnish_resistant=True,
+        )
+        assert m.lead_free is True
+        assert m.tarnish_resistant is True
+
 
 # ============================================================
 # Discriminator tests
