@@ -86,8 +86,8 @@
         "overall_quality_score": {
           "anyOf": [
             {
-              "maximum": 1.0,
-              "minimum": 0.0,
+              "maximum": 1,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -101,8 +101,8 @@
         "enrichment_completeness_percent": {
           "anyOf": [
             {
-              "maximum": 100.0,
-              "minimum": 0.0,
+              "maximum": 100,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -275,8 +275,8 @@
       "properties": {
         "rating_value": {
           "description": "Average rating on 0-5 scale",
-          "maximum": 5.0,
-          "minimum": 0.0,
+          "maximum": 5,
+          "minimum": 0,
           "title": "Rating Value",
           "type": "number"
         },
@@ -379,7 +379,7 @@
         "time_to_create_hours": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -656,8 +656,8 @@
         "bar_length_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
-              "maximum": 50.0,
+              "exclusiveMinimum": 0,
+              "maximum": 50,
               "type": "number"
             },
             {
@@ -682,8 +682,8 @@
         "end_size_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
-              "maximum": 30.0,
+              "exclusiveMinimum": 0,
+              "maximum": 30,
               "type": "number"
             },
             {
@@ -830,7 +830,7 @@
         "carbon_kg_co2e": {
           "anyOf": [
             {
-              "minimum": 0.0,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -1089,6 +1089,24 @@
       "title": "CertificationModule",
       "type": "object"
     },
+    "ChainStyle": {
+      "description": "Chain link topology for necklaces and bracelets.",
+      "enum": [
+        "box",
+        "rolo",
+        "cuban_link",
+        "rope",
+        "tennis",
+        "paperclip",
+        "herringbone",
+        "figaro",
+        "snake",
+        "cable",
+        "other"
+      ],
+      "title": "ChainStyle",
+      "type": "string"
+    },
     "CleaningMethod": {
       "description": "Recommended cleaning approach.",
       "enum": [
@@ -1103,6 +1121,17 @@
         "avoid_water"
       ],
       "title": "CleaningMethod",
+      "type": "string"
+    },
+    "ColoredStoneClarityGrade": {
+      "description": "GIA clarity system for colored stones.\n\nDistinct from the diamond FL-I3 scale. Used for sapphires, rubies,\nemeralds, and other colored species per GIA colored stone grading.",
+      "enum": [
+        "eye_clean",
+        "slightly_included",
+        "moderately_included",
+        "heavily_included"
+      ],
+      "title": "ColoredStoneClarityGrade",
       "type": "string"
     },
     "CommerceModule": {
@@ -1140,7 +1169,9 @@
         "used",
         "estate",
         "vintage",
-        "antique"
+        "antique",
+        "pre_owned",
+        "new_with_tags"
       ],
       "title": "Condition",
       "type": "string"
@@ -1311,6 +1342,21 @@
       "title": "DiamondColorGrade",
       "type": "string"
     },
+    "EarringPostType": {
+      "description": "Earring finding form factor.\n\nDistinct from JewelryClosure (mechanical fastening mechanism).\nA huggie is both a form factor and a closure; a stud can have\npush_back or screw_back closure. These are complementary dimensions.",
+      "enum": [
+        "stud",
+        "lever_back",
+        "huggie",
+        "drop",
+        "hoop",
+        "clip_on",
+        "threader",
+        "other"
+      ],
+      "title": "EarringPostType",
+      "type": "string"
+    },
     "EditionType": {
       "description": "How the piece is published.",
       "enum": [
@@ -1323,12 +1369,13 @@
       "type": "string"
     },
     "Era": {
-      "description": "Historical periods. Estate/antique jewelry critical for AI search.\n\nBoundaries are conventional, not absolute. Confidence often <0.80\nfrom CV — recommend human validation.",
+      "description": "Historical periods and style aesthetics.\n\nBoundaries are conventional, not absolute. Confidence often <0.80\nfrom CV — recommend human validation.",
       "enum": [
         "georgian",
         "early_victorian",
         "mid_victorian",
         "late_victorian",
+        "belle_epoque",
         "edwardian",
         "art_nouveau",
         "art_deco",
@@ -1336,6 +1383,7 @@
         "mid_century",
         "modernist",
         "contemporary",
+        "bohemian",
         "unknown"
       ],
       "title": "Era",
@@ -1512,8 +1560,8 @@
         "diameter_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
-              "maximum": 50.0,
+              "exclusiveMinimum": 0,
+              "maximum": 50,
               "type": "number"
             },
             {
@@ -1561,6 +1609,8 @@
         "agate",
         "jade_jadeite",
         "jade_nephrite",
+        "prasiolite",
+        "quartz",
         "other"
       ],
       "title": "GemstoneSpecies",
@@ -1579,6 +1629,10 @@
         "agta_gtc",
         "grs",
         "lotus",
+        "gsi",
+        "ngtc",
+        "agl",
+        "gra",
         "none"
       ],
       "title": "GradingLab",
@@ -1826,6 +1880,32 @@
           "default": null,
           "description": "URL-safe slug. Shopify-style handle (lowercase, hyphens). Auto-generated if absent.",
           "title": "Handle"
+        },
+        "product_subtype": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProductSubtype"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Fine-grained type within product_type. E.g. product_type='ring' + product_subtype='engagement_ring'. Required for marketplace faceted navigation."
+        },
+        "note": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Factual product callout or disclaimer, distinct from marketing description. E.g. 'All natural stones vary slightly in color', 'Aftermarket product not affiliated with brand X'.",
+          "title": "Note"
         }
       },
       "required": [
@@ -2202,8 +2282,8 @@
         "purity_karat": {
           "anyOf": [
             {
-              "maximum": 24.0,
-              "minimum": 0.0,
+              "maximum": 24,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -2253,7 +2333,7 @@
         "plating_thickness_microns": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -2267,7 +2347,7 @@
         "weight_grams": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -2317,7 +2397,8 @@
         "oxidized",
         "milgrain",
         "engraved",
-        "florentine"
+        "florentine",
+        "twisted"
       ],
       "title": "MetalFinish",
       "type": "string"
@@ -2358,7 +2439,7 @@
         "total_metal_weight_grams": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -2411,8 +2492,8 @@
         "recycled_content_percent": {
           "anyOf": [
             {
-              "maximum": 100.0,
-              "minimum": 0.0,
+              "maximum": 100,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -2422,6 +2503,32 @@
           "default": null,
           "description": "Percent recycled metal content (0-100). Audit chain required for claim.",
           "title": "Recycled Content Percent"
+        },
+        "lead_free": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "All components free of lead. Required claim for Prop 65, EU REACH, and children's jewelry regulations.",
+          "title": "Lead Free"
+        },
+        "tarnish_resistant": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the piece is tarnish resistant. Material property of composition/plating, not a care instruction.",
+          "title": "Tarnish Resistant"
         }
       },
       "required": [
@@ -2441,6 +2548,7 @@
               "type": "number"
             },
             {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
               "type": "string"
             }
           ],
@@ -2942,6 +3050,34 @@
           ],
           "default": null,
           "title": "Warranty Description"
+        },
+        "warranty_years": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Manufacturer warranty in years. Complements lifetime_warranty (boolean). E.g. 2.0 for a 2-year warranty.",
+          "title": "Warranty Years"
+        },
+        "return_policy_days": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Return window in days. Structured complement to return_policy_url. GMC and AI agents require numeric value for comparison.",
+          "title": "Return Policy Days"
         }
       },
       "required": [
@@ -3149,7 +3285,7 @@
         "nacre_thickness_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -3162,7 +3298,7 @@
         },
         "size_mm": {
           "description": "Pearl diameter in mm (use longest axis for non-round)",
-          "exclusiveMinimum": 0.0,
+          "exclusiveMinimum": 0,
           "title": "Size Mm",
           "type": "number"
         },
@@ -3344,6 +3480,38 @@
       ],
       "title": "ProductRelation",
       "type": "object"
+    },
+    "ProductSubtype": {
+      "description": "Fine-grained product classification within a product_type.\n\nEnables marketplace faceted navigation (GMC subcategory, Amazon node,\nEtsy taxonomy). product_type='ring' + product_subtype='engagement_ring'\nis unambiguous; product_type alone is not.",
+      "enum": [
+        "engagement_ring",
+        "wedding_band",
+        "fashion_ring",
+        "signet_ring",
+        "eternity_ring",
+        "cocktail_ring",
+        "promise_ring",
+        "mens_ring",
+        "stud",
+        "hoop",
+        "huggie",
+        "drop",
+        "ear_cuff",
+        "climber",
+        "chain",
+        "choker",
+        "pendant_necklace",
+        "collar",
+        "layered",
+        "bangle",
+        "cuff",
+        "tennis",
+        "charm_bracelet",
+        "chain_bracelet",
+        "other"
+      ],
+      "title": "ProductSubtype",
+      "type": "string"
     },
     "ProductType": {
       "description": "Top-level discriminator. Activates sub-vertical modules.\n\nSee domain docs for which fields become required per type:\n  - pearl → pearls module\n  - watch → watch module\n  - smart_wearable → smart module\n  - body → body module\n  - estate → estate module",
@@ -3719,8 +3887,8 @@
       "properties": {
         "rating": {
           "description": "0-5 rating",
-          "maximum": 5.0,
-          "minimum": 0.0,
+          "maximum": 5,
+          "minimum": 0,
           "title": "Rating",
           "type": "number"
         },
@@ -3874,8 +4042,8 @@
         "iso_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
-              "maximum": 100.0,
+              "exclusiveMinimum": 0,
+              "maximum": 100,
               "type": "number"
             },
             {
@@ -3889,7 +4057,7 @@
         "us_ca": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -3917,7 +4085,7 @@
         "eu": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -3930,7 +4098,7 @@
         "de": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -3969,8 +4137,8 @@
         "inner_diameter_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
-              "maximum": 30.0,
+              "exclusiveMinimum": 0,
+              "maximum": 30,
               "type": "number"
             },
             {
@@ -4076,7 +4244,7 @@
         "head_height_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4165,7 +4333,7 @@
         "ring_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4189,10 +4357,24 @@
           "description": "Whether ring can be resized professionally",
           "title": "Ring Resizable"
         },
+        "ring_thickness_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Band profile height in mm (side view). Distinct from ring_width_mm (top view across finger). Relevant for comfort fit bands.",
+          "title": "Ring Thickness Mm"
+        },
         "length_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4206,7 +4388,7 @@
         "adjustable_to_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4220,7 +4402,7 @@
         "chain_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4234,7 +4416,7 @@
         "drop_length_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4248,7 +4430,7 @@
         "pendant_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4261,7 +4443,7 @@
         "pendant_height_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4271,10 +4453,24 @@
           "default": null,
           "title": "Pendant Height Mm"
         },
+        "pendant_thickness_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Pendant depth/thickness in mm. Third dimension alongside pendant_width_mm and pendant_height_mm.",
+          "title": "Pendant Thickness Mm"
+        },
         "earring_drop_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4287,7 +4483,7 @@
         "earring_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4297,10 +4493,22 @@
           "default": null,
           "title": "Earring Width Mm"
         },
+        "earring_post_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EarringPostType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Earring finding form factor (how the earring looks/sits on the ear). Complements closure (mechanical fastening mechanism)."
+        },
         "brooch_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4313,7 +4521,7 @@
         "brooch_height_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4338,7 +4546,7 @@
         "total_weight_grams": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4476,7 +4684,7 @@
         "battery_life_hours": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4490,7 +4698,7 @@
         "battery_life_days": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4619,7 +4827,7 @@
         "subscription_monthly_usd": {
           "anyOf": [
             {
-              "minimum": 0.0,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -4653,7 +4861,7 @@
         "weight_grams": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4730,7 +4938,7 @@
         "carat": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4756,7 +4964,7 @@
         "length_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4769,7 +4977,7 @@
         "width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4782,7 +4990,7 @@
         "depth_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -4829,6 +5037,18 @@
           ],
           "default": null,
           "description": "GIA clarity scale (diamonds only)"
+        },
+        "colored_stone_clarity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ColoredStoneClarityGrade"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "GIA clarity grade for colored stones. Use instead of clarity_grade for non-diamond species (sapphire, ruby, emerald, etc.)."
         },
         "cut_grade": {
           "anyOf": [
@@ -4883,6 +5103,27 @@
           "title": "Treatments",
           "type": "array"
         },
+        "count": {
+          "default": 1,
+          "description": "Number of stones of this type in the piece. Default 1. Use for pavé/accent groups: count=24, total_carat=0.48.",
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "total_carat": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Total carat weight for this stone group when count > 1. Distinct from StonesModule.total_carat_weight (sum of all groups).",
+          "title": "Total Carat"
+        },
         "position": {
           "anyOf": [
             {
@@ -4933,12 +5174,17 @@
         "asscher",
         "heart",
         "baguette",
+        "tapered_baguette",
         "trillion",
         "rose_cut",
         "old_european",
         "old_mine",
         "cabochon",
         "briolette",
+        "hexagon",
+        "kite",
+        "portuguese",
+        "coffin",
         "fancy",
         "other"
       ],
@@ -4972,7 +5218,7 @@
         "total_carat_weight": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5048,7 +5294,7 @@
             }
           ],
           "default": null,
-          "description": "Historical period"
+          "description": "Historical period or style aesthetic"
         },
         "design_styles": {
           "description": "Design style tags (multi-valued)",
@@ -5074,6 +5320,76 @@
           },
           "maxItems": 20,
           "title": "Aesthetic Tags",
+          "type": "array"
+        },
+        "occasions": {
+          "description": "Occasions this piece suits (e.g. engagement, anniversary, birthday). Complements ai_commerce.occasion_tags — use here for non-AI syndication.",
+          "items": {
+            "$ref": "#/$defs/Occasion"
+          },
+          "title": "Occasions",
+          "type": "array"
+        },
+        "engravable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether the piece can be engraved/personalized with text.",
+          "title": "Engravable"
+        },
+        "customizable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Whether buyer can make bespoke choices (stone, metal, etc.) beyond pre-made variants.",
+          "title": "Customizable"
+        },
+        "birthstone_month": {
+          "anyOf": [
+            {
+              "maximum": 12,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "If marketed as a birthstone piece, the month (1=January, 12=December). Not reliably derivable from stone species alone.",
+          "title": "Birthstone Month"
+        },
+        "chain_style": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChainStyle"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Chain link topology for necklaces and bracelets."
+        },
+        "color_story": {
+          "description": "Dominant visual colors of the piece. E.g. ['blue', 'white']. Enables color-based AI search ('show me something blue').",
+          "items": {
+            "maxLength": 30,
+            "type": "string"
+          },
+          "title": "Color Story",
           "type": "array"
         }
       },
@@ -5122,8 +5438,8 @@
         "recycled_metal_percent": {
           "anyOf": [
             {
-              "maximum": 100.0,
-              "minimum": 0.0,
+              "maximum": 100,
+              "minimum": 0,
               "type": "number"
             },
             {
@@ -5246,6 +5562,7 @@
         "diffusion",
         "bleaching",
         "hpht_treatment",
+        "waxed",
         "other"
       ],
       "title": "TreatmentType",
@@ -5441,7 +5758,7 @@
         "power_reserve_hours": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5455,7 +5772,7 @@
         "frequency_hz": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5494,7 +5811,7 @@
         "case_diameter_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5508,7 +5825,7 @@
         "case_thickness_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5521,7 +5838,7 @@
         "case_lug_to_lug_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5534,7 +5851,7 @@
         "case_lug_width_mm": {
           "anyOf": [
             {
-              "exclusiveMinimum": 0.0,
+              "exclusiveMinimum": 0,
               "type": "number"
             },
             {
@@ -5770,8 +6087,8 @@
         "atm": {
           "anyOf": [
             {
-              "maximum": 200.0,
-              "minimum": 0.0,
+              "maximum": 200,
+              "minimum": 0,
               "type": "number"
             },
             {
