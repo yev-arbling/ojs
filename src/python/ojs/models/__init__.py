@@ -88,7 +88,7 @@ from .stones import (
     FluorescenceIntensity,
     TreatmentType,
 )
-from .style import StyleModule, Era, DesignStyle, Motif
+from .style import StyleModule, Era, DesignStyle, Motif, ChainStyle
 from .sustainability import (
     SustainabilityModule,
     SustainabilityCertification,
@@ -135,6 +135,7 @@ __all__ = [
     "SizingModule",
     "RingSize",
     "StyleModule",
+    "ChainStyle",
     "CommerceModule",
     "Offer",
     "CertificationModule",

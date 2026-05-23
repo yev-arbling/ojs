@@ -210,6 +210,40 @@ class TestModels:
         with pytest.raises(Exception):
             Stone(species="diamond", origin_type="natural", count=0)
 
+    def test_new_era_values(self):
+        from ojs.models import Era
+        assert Era.BELLE_EPOQUE == "belle_epoque"
+        assert Era.BOHEMIAN == "bohemian"
+
+    def test_chain_style_enum(self):
+        from ojs.models import ChainStyle
+        assert ChainStyle.CUBAN_LINK == "cuban_link"
+        assert ChainStyle.HERRINGBONE == "herringbone"
+        assert ChainStyle.CABLE == "cable"
+
+    def test_style_module_new_fields(self):
+        from ojs.models import StyleModule, Era, Occasion, ChainStyle
+        s = StyleModule(
+            era=Era.BELLE_EPOQUE,
+            occasions=[Occasion.ENGAGEMENT, Occasion.ANNIVERSARY],
+            engravable=True,
+            customizable=False,
+            birthstone_month=3,
+            chain_style=ChainStyle.HERRINGBONE,
+            color_story=["blue", "white"],
+        )
+        assert s.era == "belle_epoque"
+        assert len(s.occasions) == 2
+        assert s.engravable is True
+        assert s.birthstone_month == 3
+        assert s.chain_style == "herringbone"
+        assert s.color_story == ["blue", "white"]
+
+    def test_birthstone_month_out_of_range(self):
+        from ojs.models import StyleModule
+        with pytest.raises(Exception):
+            StyleModule(birthstone_month=13)
+
 
 # ============================================================
 # Discriminator tests
