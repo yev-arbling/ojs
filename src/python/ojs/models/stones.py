@@ -232,6 +232,7 @@ class TreatmentType(str, Enum):
     DIFFUSION = "diffusion"  # sapphires (Be diffusion)
     BLEACHING = "bleaching"  # pearls
     HPHT_TREATMENT = "hpht_treatment"  # post-growth diamond color modification
+    WAXED = "waxed"         # turquoise, lapis, emerald — per GIA/CIBJO
     OTHER = "other"
 
 
@@ -279,6 +280,17 @@ class Stone(OJSBaseModel):
     treatments: list[TreatmentType] = Field(
         default_factory=list,
         description="Enhancements applied. Empty list means untreated/none disclosed.",
+    )
+    count: int = Field(
+        default=1,
+        ge=1,
+        description="Number of stones of this type in the piece. Default 1. "
+        "Use for pavé/accent groups: count=24, total_carat=0.48.",
+    )
+    total_carat: Optional[Annotated[float, Field(gt=0)]] = Field(
+        default=None,
+        description="Total carat weight for this stone group when count > 1. "
+        "Distinct from StonesModule.total_carat_weight (sum of all groups).",
     )
     position: Optional[Annotated[str, Field(max_length=50)]] = Field(
         default=None,

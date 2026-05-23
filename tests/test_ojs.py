@@ -184,6 +184,32 @@ class TestModels:
         )
         assert s.colored_stone_clarity == "eye_clean"
 
+    def test_treatment_waxed(self):
+        from ojs.models import TreatmentType
+        assert TreatmentType.WAXED == "waxed"
+
+    def test_stone_count_default_one(self):
+        from ojs.models import Stone
+        s = Stone(species="diamond", origin_type="natural")
+        assert s.count == 1
+
+    def test_stone_count_with_total_carat(self):
+        from ojs.models import Stone
+        s = Stone(
+            species="diamond",
+            origin_type="natural",
+            cut="round_brilliant",
+            count=24,
+            total_carat=0.48,
+        )
+        assert s.count == 24
+        assert s.total_carat == 0.48
+
+    def test_stone_count_zero_rejected(self):
+        from ojs.models import Stone
+        with pytest.raises(Exception):
+            Stone(species="diamond", origin_type="natural", count=0)
+
 
 # ============================================================
 # Discriminator tests
