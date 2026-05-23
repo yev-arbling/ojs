@@ -45,7 +45,7 @@ from .commerce import (
     PaymentMethod,
 )
 from .estate import EstateModule, Hallmark, ProvenanceEntry, RestorationRecord
-from .identity import IdentityModule, Brand
+from .identity import IdentityModule, Brand, ProductSubtype
 from .jewelry_product import JewelryProduct
 from .legal import LegalModule, HSCodePrefix, RegulatoryFlag
 from .media import MediaModule, ImageAsset, VideoAsset, ARMetadata, ImageRole, PlacementAnchor
@@ -125,6 +125,7 @@ __all__ = [
     # 21 modules
     "IdentityModule",
     "Brand",
+    "ProductSubtype",
     "MetalsModule",
     "MetalComposition",
     "StonesModule",

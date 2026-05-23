@@ -244,6 +244,35 @@ class TestModels:
         with pytest.raises(Exception):
             StyleModule(birthstone_month=13)
 
+    def test_product_subtype_enum(self):
+        from ojs.models import ProductSubtype
+        assert ProductSubtype.ENGAGEMENT_RING == "engagement_ring"
+        assert ProductSubtype.HOOP == "hoop"
+        assert ProductSubtype.TENNIS == "tennis"
+        assert ProductSubtype.BANGLE == "bangle"
+
+    def test_identity_product_subtype_and_note(self):
+        from ojs.models import IdentityModule, Brand, ProductSubtype
+        m = IdentityModule(
+            sku="X",
+            title="Solitaire Ring",
+            description="A beautiful ring",
+            brand=Brand(name="Test"),
+            product_subtype=ProductSubtype.ENGAGEMENT_RING,
+            note="All natural diamonds vary slightly in color.",
+        )
+        assert m.product_subtype == "engagement_ring"
+        assert m.note == "All natural diamonds vary slightly in color."
+
+    def test_note_max_length(self):
+        from ojs.models import IdentityModule, Brand
+        with pytest.raises(Exception):
+            IdentityModule(
+                sku="X", title="X", description="X test",
+                brand=Brand(name="X"),
+                note="x" * 1001,
+            )
+
 
 # ============================================================
 # Discriminator tests
