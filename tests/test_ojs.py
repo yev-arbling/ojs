@@ -148,6 +148,26 @@ class TestModels:
                 seller_name="X", seller_url="https://x",
             )
 
+    def test_new_stone_cuts_valid(self):
+        from ojs.models import StoneCut
+        assert StoneCut.TAPERED_BAGUETTE == "tapered_baguette"
+        assert StoneCut.HEXAGON == "hexagon"
+        assert StoneCut.KITE == "kite"
+        assert StoneCut.PORTUGUESE == "portuguese"
+        assert StoneCut.COFFIN == "coffin"
+
+    def test_new_grading_labs_valid(self):
+        from ojs.models import GradingLab
+        assert GradingLab.GSI == "gsi"
+        assert GradingLab.NGTC == "ngtc"
+        assert GradingLab.AGL == "agl"
+        assert GradingLab.GRA == "gra"
+
+    def test_new_gemstone_species_valid(self):
+        from ojs.models import GemstoneSpecies
+        assert GemstoneSpecies.PRASIOLITE == "prasiolite"
+        assert GemstoneSpecies.QUARTZ == "quartz"
+
 
 # ============================================================
 # Discriminator tests

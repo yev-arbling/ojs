@@ -71,6 +71,10 @@ class GemstoneSpecies(str, Enum):
     JADE_JADEITE = "jade_jadeite"
     JADE_NEPHRITE = "jade_nephrite"
 
+    # Additional quartz varieties
+    PRASIOLITE = "prasiolite"  # green quartz (sometimes called green amethyst)
+    QUARTZ = "quartz"  # generic quartz (when specific variety unknown)
+
     # Synthetic / lab-grown indicator — combine with `origin_type`
     OTHER = "other"
 
@@ -98,12 +102,17 @@ class StoneCut(str, Enum):
     ASSCHER = "asscher"
     HEART = "heart"
     BAGUETTE = "baguette"
+    TAPERED_BAGUETTE = "tapered_baguette"
     TRILLION = "trillion"
     ROSE_CUT = "rose_cut"  # vintage style
     OLD_EUROPEAN = "old_european"  # antique cut
     OLD_MINE = "old_mine"  # antique cushion-ish
     CABOCHON = "cabochon"  # unfaceted, polished dome
     BRIOLETTE = "briolette"
+    HEXAGON = "hexagon"
+    KITE = "kite"
+    PORTUGUESE = "portuguese"
+    COFFIN = "coffin"
     FANCY = "fancy"
     OTHER = "other"
 
@@ -125,6 +134,10 @@ class GradingLab(str, Enum):
     AGTA_GTC = "agta_gtc"
     GRS = "grs"  # GRS Gemresearch Swisslab (colored stones)
     LOTUS = "lotus"  # Lotus Gemology
+    GSI = "gsi"  # Gemological Science International
+    NGTC = "ngtc"  # National Gemstone Testing Centre (China)
+    AGL = "agl"  # American Gemological Laboratories
+    GRA = "gra"  # Gem Research Antwerp
     NONE = "none"  # Uncertified
 
 
