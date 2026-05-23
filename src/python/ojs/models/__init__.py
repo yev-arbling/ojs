@@ -130,6 +130,7 @@ __all__ = [
     "MetalComposition",
     "StonesModule",
     "Stone",
+    "ColoredStoneClarityGrade",
     "PearlsModule",
     "SettingModule",
     "SettingStyle",
