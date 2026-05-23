@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/nacre-quality.json",
+  "title": "OJS codelist: nacre-quality",
+  "description": "Pearl nacre thickness assessment",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "thick",
+      "label": "Thick"
+    },
+    {
+      "code": "acceptable",
+      "label": "Acceptable"
+    },
+    {
+      "code": "thin",
+      "label": "Thin"
+    },
+    {
+      "code": "unknown",
+      "label": "Unknown"
+    }
+  ]
+}

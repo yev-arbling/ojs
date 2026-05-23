@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/audience.json",
+  "title": "OJS codelist: audience",
+  "description": "Target audience tags for AI commerce matching",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "women",
+      "label": "Women"
+    },
+    {
+      "code": "men",
+      "label": "Men"
+    },
+    {
+      "code": "unisex",
+      "label": "Unisex"
+    },
+    {
+      "code": "gender_neutral",
+      "label": "Gender Neutral"
+    },
+    {
+      "code": "children",
+      "label": "Children"
+    },
+    {
+      "code": "teens",
+      "label": "Teens"
+    },
+    {
+      "code": "young_adult",
+      "label": "Young Adult"
+    },
+    {
+      "code": "adult",
+      "label": "Adult"
+    },
+    {
+      "code": "gift_for_her",
+      "label": "Gift For Her"
+    },
+    {
+      "code": "gift_for_him",
+      "label": "Gift For Him"
+    },
+    {
+      "code": "gift_for_parent",
+      "label": "Gift For Parent"
+    },
+    {
+      "code": "gift_for_partner",
+      "label": "Gift For Partner"
+    },
+    {
+      "code": "gift_for_friend",
+      "label": "Gift For Friend"
+    },
+    {
+      "code": "bride",
+      "label": "Bride"
+    },
+    {
+      "code": "groom",
+      "label": "Groom"
+    },
+    {
+      "code": "graduate",
+      "label": "Graduate"
+    }
+  ]
+}

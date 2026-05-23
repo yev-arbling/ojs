@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/biocompatibility-standard.json",
+  "title": "OJS codelist: biocompatibility-standard",
+  "description": "Material safety standards for body jewelry (ASTM/ISO)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "astm_f138",
+      "label": "Astm F138"
+    },
+    {
+      "code": "astm_f136",
+      "label": "Astm F136"
+    },
+    {
+      "code": "astm_f1295",
+      "label": "Astm F1295"
+    },
+    {
+      "code": "astm_b392_18",
+      "label": "Astm B392 18"
+    },
+    {
+      "code": "iso_5832_2",
+      "label": "Iso 5832 2"
+    },
+    {
+      "code": "iso_5832_3",
+      "label": "Iso 5832 3"
+    },
+    {
+      "code": "gold_14k_plus",
+      "label": "Gold 14K Plus"
+    },
+    {
+      "code": "gold_18k_plus",
+      "label": "Gold 18K Plus"
+    },
+    {
+      "code": "platinum_950",
+      "label": "Platinum 950"
+    },
+    {
+      "code": "glass_borosilicate",
+      "label": "Glass Borosilicate"
+    },
+    {
+      "code": "none_disclosed",
+      "label": "None Disclosed"
+    }
+  ]
+}

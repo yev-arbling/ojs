@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/water-proof-rating.json",
+  "title": "OJS codelist: water-proof-rating",
+  "description": "Smart wearable water resistance ratings",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "ipx4",
+      "label": "Ipx4"
+    },
+    {
+      "code": "ipx5",
+      "label": "Ipx5"
+    },
+    {
+      "code": "ipx6",
+      "label": "Ipx6"
+    },
+    {
+      "code": "ipx7",
+      "label": "Ipx7"
+    },
+    {
+      "code": "ipx8",
+      "label": "Ipx8"
+    },
+    {
+      "code": "ip67",
+      "label": "Ip67"
+    },
+    {
+      "code": "ip68",
+      "label": "Ip68"
+    },
+    {
+      "code": "3atm",
+      "label": "Atm 3"
+    },
+    {
+      "code": "5atm",
+      "label": "Atm 5"
+    },
+    {
+      "code": "10atm",
+      "label": "Atm 10"
+    },
+    {
+      "code": "20atm",
+      "label": "Atm 20"
+    },
+    {
+      "code": "not_waterproof",
+      "label": "Not Waterproof"
+    }
+  ]
+}

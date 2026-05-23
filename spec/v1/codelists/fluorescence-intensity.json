@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/fluorescence-intensity.json",
+  "title": "OJS codelist: fluorescence-intensity",
+  "description": "GIA fluorescence intensity under longwave UV",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "none",
+      "label": "None"
+    },
+    {
+      "code": "faint",
+      "label": "Faint"
+    },
+    {
+      "code": "medium",
+      "label": "Medium"
+    },
+    {
+      "code": "strong",
+      "label": "Strong"
+    },
+    {
+      "code": "very_strong",
+      "label": "Very Strong"
+    }
+  ]
+}

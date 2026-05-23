@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-surface.json",
+  "title": "OJS codelist: pearl-surface",
+  "description": "Pearl surface cleanliness grades",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "clean",
+      "label": "Clean"
+    },
+    {
+      "code": "lightly_blemished",
+      "label": "Lightly Blemished"
+    },
+    {
+      "code": "moderately_blemished",
+      "label": "Moderately Blemished"
+    },
+    {
+      "code": "heavily_blemished",
+      "label": "Heavily Blemished"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/stone-cut.json",
+  "title": "OJS codelist: stone-cut",
+  "description": "Gemstone faceting shapes",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "round_brilliant",
+      "label": "Round Brilliant"
+    },
+    {
+      "code": "princess",
+      "label": "Princess"
+    },
+    {
+      "code": "cushion",
+      "label": "Cushion"
+    },
+    {
+      "code": "emerald_cut",
+      "label": "Emerald Cut"
+    },
+    {
+      "code": "oval",
+      "label": "Oval"
+    },
+    {
+      "code": "pear",
+      "label": "Pear"
+    },
+    {
+      "code": "marquise",
+      "label": "Marquise"
+    },
+    {
+      "code": "radiant",
+      "label": "Radiant"
+    },
+    {
+      "code": "asscher",
+      "label": "Asscher"
+    },
+    {
+      "code": "heart",
+      "label": "Heart"
+    },
+    {
+      "code": "baguette",
+      "label": "Baguette"
+    },
+    {
+      "code": "tapered_baguette",
+      "label": "Tapered Baguette"
+    },
+    {
+      "code": "trillion",
+      "label": "Trillion"
+    },
+    {
+      "code": "rose_cut",
+      "label": "Rose Cut"
+    },
+    {
+      "code": "old_european",
+      "label": "Old European"
+    },
+    {
+      "code": "old_mine",
+      "label": "Old Mine"
+    },
+    {
+      "code": "cabochon",
+      "label": "Cabochon"
+    },
+    {
+      "code": "briolette",
+      "label": "Briolette"
+    },
+    {
+      "code": "hexagon",
+      "label": "Hexagon"
+    },
+    {
+      "code": "kite",
+      "label": "Kite"
+    },
+    {
+      "code": "portuguese",
+      "label": "Portuguese"
+    },
+    {
+      "code": "coffin",
+      "label": "Coffin"
+    },
+    {
+      "code": "fancy",
+      "label": "Fancy"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

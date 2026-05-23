@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/hs-code-prefix.json",
+  "title": "OJS codelist: hs-code-prefix",
+  "description": "Common HS 2022 codes for jewelry customs",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "7101",
+      "label": "Hs 7101"
+    },
+    {
+      "code": "710110",
+      "label": "Hs 710110"
+    },
+    {
+      "code": "710121",
+      "label": "Hs 710121"
+    },
+    {
+      "code": "710122",
+      "label": "Hs 710122"
+    },
+    {
+      "code": "710231",
+      "label": "Hs 710231"
+    },
+    {
+      "code": "710239",
+      "label": "Hs 710239"
+    },
+    {
+      "code": "710310",
+      "label": "Hs 710310"
+    },
+    {
+      "code": "710391",
+      "label": "Hs 710391"
+    },
+    {
+      "code": "710399",
+      "label": "Hs 710399"
+    },
+    {
+      "code": "711311",
+      "label": "Hs 711311"
+    },
+    {
+      "code": "711319",
+      "label": "Hs 711319"
+    },
+    {
+      "code": "711320",
+      "label": "Hs 711320"
+    },
+    {
+      "code": "7114",
+      "label": "Hs 7114"
+    },
+    {
+      "code": "7115",
+      "label": "Hs 7115"
+    },
+    {
+      "code": "711610",
+      "label": "Hs 711610"
+    },
+    {
+      "code": "711620",
+      "label": "Hs 711620"
+    },
+    {
+      "code": "7117",
+      "label": "Hs 7117"
+    },
+    {
+      "code": "711719",
+      "label": "Hs 711719"
+    },
+    {
+      "code": "711790",
+      "label": "Hs 711790"
+    },
+    {
+      "code": "9101",
+      "label": "Hs 9101"
+    },
+    {
+      "code": "9102",
+      "label": "Hs 9102"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

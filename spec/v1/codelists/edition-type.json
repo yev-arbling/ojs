@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/edition-type.json",
+  "title": "OJS codelist: edition-type",
+  "description": "Edition classification for artisan pieces",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "one_of_a_kind",
+      "label": "One Of A Kind"
+    },
+    {
+      "code": "limited_edition",
+      "label": "Limited Edition"
+    },
+    {
+      "code": "open_edition",
+      "label": "Open Edition"
+    },
+    {
+      "code": "production",
+      "label": "Production"
+    }
+  ]
+}

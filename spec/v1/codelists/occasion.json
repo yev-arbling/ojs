@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/occasion.json",
+  "title": "OJS codelist: occasion",
+  "description": "Gift and purchase occasions for AI commerce matching",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "engagement",
+      "label": "Engagement"
+    },
+    {
+      "code": "wedding",
+      "label": "Wedding"
+    },
+    {
+      "code": "anniversary",
+      "label": "Anniversary"
+    },
+    {
+      "code": "birthday",
+      "label": "Birthday"
+    },
+    {
+      "code": "valentines",
+      "label": "Valentines"
+    },
+    {
+      "code": "mothers_day",
+      "label": "Mothers Day"
+    },
+    {
+      "code": "fathers_day",
+      "label": "Fathers Day"
+    },
+    {
+      "code": "christmas",
+      "label": "Christmas"
+    },
+    {
+      "code": "hanukkah",
+      "label": "Hanukkah"
+    },
+    {
+      "code": "graduation",
+      "label": "Graduation"
+    },
+    {
+      "code": "prom",
+      "label": "Prom"
+    },
+    {
+      "code": "quinceanera",
+      "label": "Quinceanera"
+    },
+    {
+      "code": "push_present",
+      "label": "Push Present"
+    },
+    {
+      "code": "promotion",
+      "label": "Promotion"
+    },
+    {
+      "code": "self_purchase",
+      "label": "Self Purchase"
+    },
+    {
+      "code": "everyday",
+      "label": "Everyday"
+    },
+    {
+      "code": "evening",
+      "label": "Evening"
+    },
+    {
+      "code": "formal",
+      "label": "Formal"
+    },
+    {
+      "code": "casual",
+      "label": "Casual"
+    },
+    {
+      "code": "bridal_party",
+      "label": "Bridal Party"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

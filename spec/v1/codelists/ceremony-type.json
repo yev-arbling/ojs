@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/ceremony-type.json",
+  "title": "OJS codelist: ceremony-type",
+  "description": "Ceremony and ritual occasion types",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "wedding",
+      "label": "Wedding"
+    },
+    {
+      "code": "baptism",
+      "label": "Baptism"
+    },
+    {
+      "code": "confirmation",
+      "label": "Confirmation"
+    },
+    {
+      "code": "bar_bat_mitzvah",
+      "label": "Bar Bat Mitzvah"
+    },
+    {
+      "code": "first_communion",
+      "label": "First Communion"
+    },
+    {
+      "code": "hajj",
+      "label": "Hajj"
+    },
+    {
+      "code": "umrah",
+      "label": "Umrah"
+    },
+    {
+      "code": "diwali",
+      "label": "Diwali"
+    },
+    {
+      "code": "shadi",
+      "label": "Shadi"
+    },
+    {
+      "code": "quinceanera",
+      "label": "Quinceanera"
+    },
+    {
+      "code": "coronation",
+      "label": "Coronation"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

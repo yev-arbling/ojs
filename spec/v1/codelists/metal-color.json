@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/metal-color.json",
+  "title": "OJS codelist: metal-color",
+  "description": "Visible metal colors",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "yellow",
+      "label": "Yellow"
+    },
+    {
+      "code": "white",
+      "label": "White"
+    },
+    {
+      "code": "rose",
+      "label": "Rose"
+    },
+    {
+      "code": "green",
+      "label": "Green"
+    },
+    {
+      "code": "black",
+      "label": "Black"
+    },
+    {
+      "code": "natural",
+      "label": "Natural"
+    },
+    {
+      "code": "two_tone",
+      "label": "Two Tone"
+    },
+    {
+      "code": "tri_color",
+      "label": "Tri Color"
+    }
+  ]
+}

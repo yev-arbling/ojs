@@ -502,5 +502,41 @@ class TestRoundTrip:
         assert re_validated.metals.compositions[0].purity_fineness == 950
 
 
+class TestCodelists:
+    def test_all_codelists_generated(self, tmp_path):
+        """generate_codelists.main() must produce at least 30 files."""
+        import importlib.util
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parents[1]
+        spec_path = root / "src" / "python" / "ojs" / "generate_codelists.py"
+        spec = importlib.util.spec_from_file_location("generate_codelists", spec_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        mod.main(out_dir=tmp_path)
+        files = list(tmp_path.glob("*.json"))
+        assert len(files) >= 30, f"Expected ≥30 codelists, got {len(files)}: {[f.name for f in files]}"
+
+    def test_codelist_format_valid(self, tmp_path):
+        """Each generated codelist must have $schema, $id, values array."""
+        import importlib.util, json
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parents[1]
+        spec_path = root / "src" / "python" / "ojs" / "generate_codelists.py"
+        spec = importlib.util.spec_from_file_location("generate_codelists", spec_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        mod.main(out_dir=tmp_path)
+        for f in tmp_path.glob("*.json"):
+            data = json.loads(f.read_text())
+            assert "$schema" in data, f"{f.name} missing $schema"
+            assert "values" in data, f"{f.name} missing values"
+            assert isinstance(data["values"], list), f"{f.name} values not a list"
+            assert len(data["values"]) > 0, f"{f.name} has empty values"
+
+
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-v"]))

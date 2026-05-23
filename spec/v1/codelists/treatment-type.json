@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/treatment-type.json",
+  "title": "OJS codelist: treatment-type",
+  "description": "Stone enhancement treatments (FTC 16 CFR 23.22 disclosure required)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "none",
+      "label": "None"
+    },
+    {
+      "code": "heat",
+      "label": "Heat"
+    },
+    {
+      "code": "irradiation",
+      "label": "Irradiation"
+    },
+    {
+      "code": "laser_drilling",
+      "label": "Laser Drilling"
+    },
+    {
+      "code": "fracture_filling",
+      "label": "Fracture Filling"
+    },
+    {
+      "code": "oiling",
+      "label": "Oiling"
+    },
+    {
+      "code": "dye",
+      "label": "Dye"
+    },
+    {
+      "code": "coating",
+      "label": "Coating"
+    },
+    {
+      "code": "diffusion",
+      "label": "Diffusion"
+    },
+    {
+      "code": "bleaching",
+      "label": "Bleaching"
+    },
+    {
+      "code": "hpht_treatment",
+      "label": "Hpht Treatment"
+    },
+    {
+      "code": "waxed",
+      "label": "Waxed"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

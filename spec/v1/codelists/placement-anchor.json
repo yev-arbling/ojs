@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/placement-anchor.json",
+  "title": "OJS codelist: placement-anchor",
+  "description": "AR body anchor points for virtual try-on",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "ring_finger",
+      "label": "Ring Finger"
+    },
+    {
+      "code": "any_finger",
+      "label": "Any Finger"
+    },
+    {
+      "code": "wrist",
+      "label": "Wrist"
+    },
+    {
+      "code": "neck",
+      "label": "Neck"
+    },
+    {
+      "code": "ear_lobe",
+      "label": "Ear Lobe"
+    },
+    {
+      "code": "ear_helix",
+      "label": "Ear Helix"
+    },
+    {
+      "code": "nose",
+      "label": "Nose"
+    },
+    {
+      "code": "navel",
+      "label": "Navel"
+    },
+    {
+      "code": "chest",
+      "label": "Chest"
+    },
+    {
+      "code": "head",
+      "label": "Head"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

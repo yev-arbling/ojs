@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/era.json",
+  "title": "OJS codelist: era",
+  "description": "Historical jewelry periods and style aesthetics",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "georgian",
+      "label": "Georgian"
+    },
+    {
+      "code": "early_victorian",
+      "label": "Early Victorian"
+    },
+    {
+      "code": "mid_victorian",
+      "label": "Mid Victorian"
+    },
+    {
+      "code": "late_victorian",
+      "label": "Late Victorian"
+    },
+    {
+      "code": "belle_epoque",
+      "label": "Belle Epoque"
+    },
+    {
+      "code": "edwardian",
+      "label": "Edwardian"
+    },
+    {
+      "code": "art_nouveau",
+      "label": "Art Nouveau"
+    },
+    {
+      "code": "art_deco",
+      "label": "Art Deco"
+    },
+    {
+      "code": "retro",
+      "label": "Retro"
+    },
+    {
+      "code": "mid_century",
+      "label": "Mid Century"
+    },
+    {
+      "code": "modernist",
+      "label": "Modernist"
+    },
+    {
+      "code": "contemporary",
+      "label": "Contemporary"
+    },
+    {
+      "code": "bohemian",
+      "label": "Bohemian"
+    },
+    {
+      "code": "unknown",
+      "label": "Unknown"
+    }
+  ]
+}
