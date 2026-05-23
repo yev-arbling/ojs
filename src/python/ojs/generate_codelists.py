@@ -49,7 +49,6 @@ _DESCRIPTIONS: dict[str, str] = {
     "GemstoneSpecies": "Major gemstone species per GIA / CIBJO",
     "GradingLab": "Accredited gemological laboratories (AGS legacy-only post-2022)",
     "HSCodePrefix": "Common HS 2022 codes for jewelry customs",
-    "HallmarkType": "Hallmark categories stamped on precious metal pieces",
     "ImageRole": "Image role/category for media assets",
     "JewelryClosure": "Closure mechanisms for necklaces, bracelets, earrings",
     "MetalColor": "Visible metal colors",
@@ -86,9 +85,7 @@ _DESCRIPTIONS: dict[str, str] = {
     "StrapType": "Watch strap/bracelet material types",
     "ThreadingType": "Body jewelry threading types",
     "TreatmentType": "Stone enhancement treatments (FTC 16 CFR 23.22 disclosure required)",
-    "VariantAxis": "Product variant axes (size, metal, stone, etc.)",
     "WaterProofRating": "Smart wearable water resistance ratings",
-    "WaterResistanceRating": "Watch water resistance ratings per ISO 22810",
 }
 
 
