@@ -287,6 +287,39 @@ class TestModels:
         assert m.lead_free is True
         assert m.tarnish_resistant is True
 
+    def test_condition_new_values(self):
+        from ojs.models import Condition
+        assert Condition.PRE_OWNED == "pre_owned"
+        assert Condition.NEW_WITH_TAGS == "new_with_tags"
+
+    def test_offer_warranty_and_return_days(self):
+        from ojs.models import Offer, Availability
+        o = Offer(
+            price={"amount": "500.00", "currency": "USD"},
+            availability=Availability.IN_STOCK,
+            url="https://example.com/p/1",
+            target_countries=["US"],
+            seller_name="Test",
+            seller_url="https://example.com",
+            warranty_years=2.0,
+            return_policy_days=30,
+        )
+        assert o.warranty_years == 2.0
+        assert o.return_policy_days == 30
+
+    def test_warranty_years_negative_rejected(self):
+        from ojs.models import Offer, Availability
+        with pytest.raises(Exception):
+            Offer(
+                price={"amount": "500.00", "currency": "USD"},
+                availability=Availability.IN_STOCK,
+                url="https://example.com/p/1",
+                target_countries=["US"],
+                seller_name="Test",
+                seller_url="https://example.com",
+                warranty_years=-1.0,
+            )
+
 
 # ============================================================
 # Discriminator tests
