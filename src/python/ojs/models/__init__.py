@@ -72,7 +72,7 @@ from .relationships import RelationshipsModule, ProductRelation, RelationshipTyp
 from .religious import ReligiousModule, Religion, CeremonyType
 from .reviews import ReviewsModule, AggregateRating, Review
 from .setting import SettingModule, SettingStyle, SettingType
-from .sizing import SizingModule, RingSize, SizeSystem, JewelryClosure
+from .sizing import SizingModule, RingSize, SizeSystem, JewelryClosure, EarringPostType
 from .smart import SmartModule, SmartFeature, Connectivity, WaterProofRating
 from .stones import (
     StonesModule,
@@ -135,6 +135,7 @@ __all__ = [
     "SettingStyle",
     "SizingModule",
     "RingSize",
+    "EarringPostType",
     "StyleModule",
     "ChainStyle",
     "CommerceModule",

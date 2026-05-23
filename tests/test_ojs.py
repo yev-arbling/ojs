@@ -320,6 +320,28 @@ class TestModels:
                 warranty_years=-1.0,
             )
 
+    def test_earring_post_type_enum(self):
+        from ojs.models import EarringPostType
+        assert EarringPostType.HUGGIE == "huggie"
+        assert EarringPostType.THREADER == "threader"
+        assert EarringPostType.STUD == "stud"
+
+    def test_sizing_new_fields(self):
+        from ojs.models import SizingModule, EarringPostType
+        s = SizingModule(
+            ring_thickness_mm=2.5,
+            pendant_thickness_mm=3.0,
+            earring_post_type=EarringPostType.HUGGIE,
+        )
+        assert s.ring_thickness_mm == 2.5
+        assert s.pendant_thickness_mm == 3.0
+        assert s.earring_post_type == "huggie"
+
+    def test_ring_thickness_negative_rejected(self):
+        from ojs.models import SizingModule
+        with pytest.raises(Exception):
+            SizingModule(ring_thickness_mm=-1.0)
+
 
 # ============================================================
 # Discriminator tests
