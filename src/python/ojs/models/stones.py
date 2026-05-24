@@ -71,6 +71,10 @@ class GemstoneSpecies(str, Enum):
     JADE_JADEITE = "jade_jadeite"
     JADE_NEPHRITE = "jade_nephrite"
 
+    # Additional quartz varieties
+    PRASIOLITE = "prasiolite"  # green quartz (sometimes called green amethyst)
+    QUARTZ = "quartz"  # generic quartz (when specific variety unknown)
+
     # Synthetic / lab-grown indicator — combine with `origin_type`
     OTHER = "other"
 
@@ -98,12 +102,17 @@ class StoneCut(str, Enum):
     ASSCHER = "asscher"
     HEART = "heart"
     BAGUETTE = "baguette"
+    TAPERED_BAGUETTE = "tapered_baguette"
     TRILLION = "trillion"
     ROSE_CUT = "rose_cut"  # vintage style
     OLD_EUROPEAN = "old_european"  # antique cut
     OLD_MINE = "old_mine"  # antique cushion-ish
     CABOCHON = "cabochon"  # unfaceted, polished dome
     BRIOLETTE = "briolette"
+    HEXAGON = "hexagon"
+    KITE = "kite"
+    PORTUGUESE = "portuguese"
+    COFFIN = "coffin"
     FANCY = "fancy"
     OTHER = "other"
 
@@ -125,6 +134,10 @@ class GradingLab(str, Enum):
     AGTA_GTC = "agta_gtc"
     GRS = "grs"  # GRS Gemresearch Swisslab (colored stones)
     LOTUS = "lotus"  # Lotus Gemology
+    GSI = "gsi"  # Gemological Science International
+    NGTC = "ngtc"  # National Gemstone Testing Centre (China)
+    AGL = "agl"  # American Gemological Laboratories
+    GRA = "gra"  # Gem Research Antwerp
     NONE = "none"  # Uncertified
 
 
@@ -173,6 +186,18 @@ class DiamondClarityGrade(str, Enum):
     I3 = "I3"
 
 
+class ColoredStoneClarityGrade(str, Enum):
+    """GIA clarity system for colored stones.
+
+    Distinct from the diamond FL-I3 scale. Used for sapphires, rubies,
+    emeralds, and other colored species per GIA colored stone grading.
+    """
+    EYE_CLEAN = "eye_clean"               # no inclusions visible to unaided eye
+    SLIGHTLY_INCLUDED = "slightly_included"
+    MODERATELY_INCLUDED = "moderately_included"
+    HEAVILY_INCLUDED = "heavily_included"  # affects brilliance/durability
+
+
 class CutGrade(str, Enum):
     """GIA cut grade for round brilliant diamonds. Also polish/symmetry."""
 
@@ -207,6 +232,7 @@ class TreatmentType(str, Enum):
     DIFFUSION = "diffusion"  # sapphires (Be diffusion)
     BLEACHING = "bleaching"  # pearls
     HPHT_TREATMENT = "hpht_treatment"  # post-growth diamond color modification
+    WAXED = "waxed"         # turquoise, lapis, emerald — per GIA/CIBJO
     OTHER = "other"
 
 
@@ -240,6 +266,11 @@ class Stone(OJSBaseModel):
     clarity_grade: Optional[DiamondClarityGrade] = Field(
         default=None, description="GIA clarity scale (diamonds only)"
     )
+    colored_stone_clarity: Optional[ColoredStoneClarityGrade] = Field(
+        default=None,
+        description="GIA clarity grade for colored stones. Use instead of clarity_grade "
+        "for non-diamond species (sapphire, ruby, emerald, etc.).",
+    )
     cut_grade: Optional[CutGrade] = Field(
         default=None, description="GIA cut grade (round brilliants only)"
     )
@@ -249,6 +280,17 @@ class Stone(OJSBaseModel):
     treatments: list[TreatmentType] = Field(
         default_factory=list,
         description="Enhancements applied. Empty list means untreated/none disclosed.",
+    )
+    count: int = Field(
+        default=1,
+        ge=1,
+        description="Number of stones of this type in the piece. Default 1. "
+        "Use for pavé/accent groups: count=24, total_carat=0.48.",
+    )
+    total_carat: Optional[Annotated[float, Field(gt=0)]] = Field(
+        default=None,
+        description="Total carat weight for this stone group when count > 1. "
+        "Distinct from StonesModule.total_carat_weight (sum of all groups).",
     )
     position: Optional[Annotated[str, Field(max_length=50)]] = Field(
         default=None,

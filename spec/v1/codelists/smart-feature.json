@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/smart-feature.json",
+  "title": "OJS codelist: smart-feature",
+  "description": "Smart wearable feature capabilities",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "heart_rate",
+      "label": "Heart Rate"
+    },
+    {
+      "code": "hrv",
+      "label": "Hrv"
+    },
+    {
+      "code": "spo2",
+      "label": "Spo2"
+    },
+    {
+      "code": "ecg",
+      "label": "Ecg"
+    },
+    {
+      "code": "sleep_tracking",
+      "label": "Sleep Tracking"
+    },
+    {
+      "code": "activity_tracking",
+      "label": "Activity Tracking"
+    },
+    {
+      "code": "gps",
+      "label": "Gps"
+    },
+    {
+      "code": "nfc_payment",
+      "label": "Nfc Payment"
+    },
+    {
+      "code": "cellular_lte",
+      "label": "Cellular Lte"
+    },
+    {
+      "code": "blood_pressure",
+      "label": "Blood Pressure"
+    },
+    {
+      "code": "skin_temperature",
+      "label": "Skin Temperature"
+    },
+    {
+      "code": "body_battery",
+      "label": "Body Battery"
+    },
+    {
+      "code": "stress_tracking",
+      "label": "Stress Tracking"
+    },
+    {
+      "code": "menstrual_cycle",
+      "label": "Menstrual Cycle"
+    },
+    {
+      "code": "fall_detection",
+      "label": "Fall Detection"
+    },
+    {
+      "code": "crash_detection",
+      "label": "Crash Detection"
+    },
+    {
+      "code": "emergency_sos",
+      "label": "Emergency Sos"
+    },
+    {
+      "code": "smart_notifications",
+      "label": "Smart Notifications"
+    },
+    {
+      "code": "voice_assistant",
+      "label": "Voice Assistant"
+    },
+    {
+      "code": "camera",
+      "label": "Camera"
+    },
+    {
+      "code": "speaker",
+      "label": "Speaker"
+    },
+    {
+      "code": "microphone",
+      "label": "Microphone"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

@@ -40,6 +40,8 @@ class Condition(str, Enum):
     ESTATE = "estate"  # synonym for used/pre-owned in jewelry trade
     VINTAGE = "vintage"  # 20+ years old
     ANTIQUE = "antique"  # 100+ years old
+    PRE_OWNED = "pre_owned"         # authenticated/verified used; TheRealReal, Vestiaire
+    NEW_WITH_TAGS = "new_with_tags"  # unworn, original tags present
 
 
 class PaymentMethod(str, Enum):
@@ -114,6 +116,16 @@ class Offer(OJSBaseModel):
     free_engraving: Optional[bool] = Field(default=None)
     lifetime_warranty: Optional[bool] = Field(default=None)
     warranty_description: Optional[Annotated[str, Field(max_length=500)]] = None
+    warranty_years: Optional[Annotated[float, Field(ge=0)]] = Field(
+        default=None,
+        description="Manufacturer warranty in years. Complements lifetime_warranty (boolean). "
+        "E.g. 2.0 for a 2-year warranty.",
+    )
+    return_policy_days: Optional[Annotated[int, Field(ge=0)]] = Field(
+        default=None,
+        description="Return window in days. Structured complement to return_policy_url. "
+        "GMC and AI agents require numeric value for comparison.",
+    )
 
 
 class CommerceModule(OJSBaseModel):

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/cleaning-method.json",
+  "title": "OJS codelist: cleaning-method",
+  "description": "Recommended cleaning approaches",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "mild_soap_water",
+      "label": "Mild Soap Water"
+    },
+    {
+      "code": "jewelry_cleaner",
+      "label": "Jewelry Cleaner"
+    },
+    {
+      "code": "ultrasonic_safe",
+      "label": "Ultrasonic Safe"
+    },
+    {
+      "code": "ultrasonic_avoid",
+      "label": "Ultrasonic Avoid"
+    },
+    {
+      "code": "steam_safe",
+      "label": "Steam Safe"
+    },
+    {
+      "code": "steam_avoid",
+      "label": "Steam Avoid"
+    },
+    {
+      "code": "polishing_cloth_only",
+      "label": "Polishing Cloth Only"
+    },
+    {
+      "code": "professional_only",
+      "label": "Professional Only"
+    },
+    {
+      "code": "avoid_water",
+      "label": "Avoid Water"
+    }
+  ]
+}

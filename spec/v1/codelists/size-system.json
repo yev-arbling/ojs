@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/size-system.json",
+  "title": "OJS codelist: size-system",
+  "description": "Ring size designation systems (ISO, US/CA, UK/AU, etc.)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "iso",
+      "label": "Iso"
+    },
+    {
+      "code": "us_ca",
+      "label": "Us Ca"
+    },
+    {
+      "code": "uk_au",
+      "label": "Uk Au"
+    },
+    {
+      "code": "eu",
+      "label": "Eu"
+    },
+    {
+      "code": "de",
+      "label": "De"
+    },
+    {
+      "code": "jp_cn",
+      "label": "Jp Cn"
+    },
+    {
+      "code": "it",
+      "label": "It"
+    },
+    {
+      "code": "br",
+      "label": "Br"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

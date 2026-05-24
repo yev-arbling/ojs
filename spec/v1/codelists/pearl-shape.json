@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-shape.json",
+  "title": "OJS codelist: pearl-shape",
+  "description": "CIBJO 7-shape pearl classification",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "round",
+      "label": "Round"
+    },
+    {
+      "code": "near_round",
+      "label": "Near Round"
+    },
+    {
+      "code": "oval",
+      "label": "Oval"
+    },
+    {
+      "code": "button",
+      "label": "Button"
+    },
+    {
+      "code": "drop",
+      "label": "Drop"
+    },
+    {
+      "code": "semi_baroque",
+      "label": "Semi Baroque"
+    },
+    {
+      "code": "baroque",
+      "label": "Baroque"
+    },
+    {
+      "code": "circle",
+      "label": "Circle"
+    },
+    {
+      "code": "keshi",
+      "label": "Keshi"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

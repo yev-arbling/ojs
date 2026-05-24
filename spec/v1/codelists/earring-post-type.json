@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/earring-post-type.json",
+  "title": "OJS codelist: earring-post-type",
+  "description": "Earring finding form factors (distinct from closure mechanism)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "stud",
+      "label": "Stud"
+    },
+    {
+      "code": "lever_back",
+      "label": "Lever Back"
+    },
+    {
+      "code": "huggie",
+      "label": "Huggie"
+    },
+    {
+      "code": "drop",
+      "label": "Drop"
+    },
+    {
+      "code": "hoop",
+      "label": "Hoop"
+    },
+    {
+      "code": "clip_on",
+      "label": "Clip On"
+    },
+    {
+      "code": "threader",
+      "label": "Threader"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

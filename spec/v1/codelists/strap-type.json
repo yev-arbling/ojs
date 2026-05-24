@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/strap-type.json",
+  "title": "OJS codelist: strap-type",
+  "description": "Watch strap/bracelet material types",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "leather",
+      "label": "Leather"
+    },
+    {
+      "code": "metal_bracelet",
+      "label": "Metal Bracelet"
+    },
+    {
+      "code": "rubber",
+      "label": "Rubber"
+    },
+    {
+      "code": "silicone",
+      "label": "Silicone"
+    },
+    {
+      "code": "nato",
+      "label": "Nato"
+    },
+    {
+      "code": "nylon",
+      "label": "Nylon"
+    },
+    {
+      "code": "canvas",
+      "label": "Canvas"
+    },
+    {
+      "code": "fabric",
+      "label": "Fabric"
+    },
+    {
+      "code": "ceramic",
+      "label": "Ceramic"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

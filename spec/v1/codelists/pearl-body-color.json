@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-body-color.json",
+  "title": "OJS codelist: pearl-body-color",
+  "description": "Pearl body colors per CIBJO",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "white",
+      "label": "White"
+    },
+    {
+      "code": "cream",
+      "label": "Cream"
+    },
+    {
+      "code": "gold",
+      "label": "Gold"
+    },
+    {
+      "code": "silver",
+      "label": "Silver"
+    },
+    {
+      "code": "peach",
+      "label": "Peach"
+    },
+    {
+      "code": "pink",
+      "label": "Pink"
+    },
+    {
+      "code": "lavender",
+      "label": "Lavender"
+    },
+    {
+      "code": "black",
+      "label": "Black"
+    },
+    {
+      "code": "grey",
+      "label": "Grey"
+    },
+    {
+      "code": "green",
+      "label": "Green"
+    },
+    {
+      "code": "blue",
+      "label": "Blue"
+    },
+    {
+      "code": "aubergine",
+      "label": "Aubergine"
+    },
+    {
+      "code": "multicolor",
+      "label": "Multicolor"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

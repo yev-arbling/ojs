@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/grading-lab.json",
+  "title": "OJS codelist: grading-lab",
+  "description": "Accredited gemological laboratories (AGS legacy-only post-2022)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "gia",
+      "label": "Gia"
+    },
+    {
+      "code": "ags",
+      "label": "Ags"
+    },
+    {
+      "code": "igi",
+      "label": "Igi"
+    },
+    {
+      "code": "hrd",
+      "label": "Hrd"
+    },
+    {
+      "code": "gcal",
+      "label": "Gcal"
+    },
+    {
+      "code": "egl_usa",
+      "label": "Egl Usa"
+    },
+    {
+      "code": "ssef",
+      "label": "Ssef"
+    },
+    {
+      "code": "agta_gtc",
+      "label": "Agta Gtc"
+    },
+    {
+      "code": "grs",
+      "label": "Grs"
+    },
+    {
+      "code": "lotus",
+      "label": "Lotus"
+    },
+    {
+      "code": "gsi",
+      "label": "Gsi"
+    },
+    {
+      "code": "ngtc",
+      "label": "Ngtc"
+    },
+    {
+      "code": "agl",
+      "label": "Agl"
+    },
+    {
+      "code": "gra",
+      "label": "Gra"
+    },
+    {
+      "code": "none",
+      "label": "None"
+    }
+  ]
+}

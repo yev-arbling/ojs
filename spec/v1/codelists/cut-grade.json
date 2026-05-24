@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/cut-grade.json",
+  "title": "OJS codelist: cut-grade",
+  "description": "GIA cut/polish/symmetry grades for round brilliant diamonds",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "excellent",
+      "label": "Excellent"
+    },
+    {
+      "code": "very_good",
+      "label": "Very Good"
+    },
+    {
+      "code": "good",
+      "label": "Good"
+    },
+    {
+      "code": "fair",
+      "label": "Fair"
+    },
+    {
+      "code": "poor",
+      "label": "Poor"
+    }
+  ]
+}

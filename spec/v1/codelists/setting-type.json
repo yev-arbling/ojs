@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schema.openjewelryschema.org/v1/codelist/setting_types.json",
-  "title": "OJS codelist: setting_types",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/setting-type.json",
+  "title": "OJS codelist: setting-type",
   "description": "Stone setting types",
   "version": "1.0.0",
   "values": [

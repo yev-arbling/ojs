@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/price-tier.json",
+  "title": "OJS codelist: price-tier",
+  "description": "Coarse price tiers for AI commerce matching",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "budget",
+      "label": "Budget"
+    },
+    {
+      "code": "affordable",
+      "label": "Affordable"
+    },
+    {
+      "code": "mid_market",
+      "label": "Mid Market"
+    },
+    {
+      "code": "affordable_luxury",
+      "label": "Affordable Luxury"
+    },
+    {
+      "code": "luxury",
+      "label": "Luxury"
+    },
+    {
+      "code": "ultra_luxury",
+      "label": "Ultra Luxury"
+    }
+  ]
+}

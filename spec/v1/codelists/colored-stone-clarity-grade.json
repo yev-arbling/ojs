@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/colored-stone-clarity-grade.json",
+  "title": "OJS codelist: colored-stone-clarity-grade",
+  "description": "GIA clarity grades for colored stones (sapphire, ruby, emerald, etc.)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "eye_clean",
+      "label": "Eye Clean"
+    },
+    {
+      "code": "slightly_included",
+      "label": "Slightly Included"
+    },
+    {
+      "code": "moderately_included",
+      "label": "Moderately Included"
+    },
+    {
+      "code": "heavily_included",
+      "label": "Heavily Included"
+    }
+  ]
+}

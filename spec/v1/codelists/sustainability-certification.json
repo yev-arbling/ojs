@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/sustainability-certification.json",
+  "title": "OJS codelist: sustainability-certification",
+  "description": "OJS v1 controlled vocabulary: SustainabilityCertification",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "rjc_cop",
+      "label": "Rjc Cop"
+    },
+    {
+      "code": "rjc_coc",
+      "label": "Rjc Coc"
+    },
+    {
+      "code": "kimberley_process",
+      "label": "Kimberley Process"
+    },
+    {
+      "code": "fairmined",
+      "label": "Fairmined"
+    },
+    {
+      "code": "fairtrade_gold",
+      "label": "Fairtrade Gold"
+    },
+    {
+      "code": "scs_recycled",
+      "label": "Scs Recycled"
+    },
+    {
+      "code": "bluesign",
+      "label": "Bluesign"
+    },
+    {
+      "code": "oeko_tex",
+      "label": "Oeko Tex"
+    },
+    {
+      "code": "wgc_conflict_free",
+      "label": "Wgc Conflict Free"
+    },
+    {
+      "code": "diamond_foundry_cert",
+      "label": "Diamond Foundry Cert"
+    },
+    {
+      "code": "bcorp",
+      "label": "Bcorp"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

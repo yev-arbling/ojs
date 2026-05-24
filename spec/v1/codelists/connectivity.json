@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/connectivity.json",
+  "title": "OJS codelist: connectivity",
+  "description": "Wireless connectivity standards for smart jewelry",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "bluetooth_le",
+      "label": "Bluetooth Le"
+    },
+    {
+      "code": "bluetooth_classic",
+      "label": "Bluetooth Classic"
+    },
+    {
+      "code": "wifi",
+      "label": "Wifi"
+    },
+    {
+      "code": "nfc",
+      "label": "Nfc"
+    },
+    {
+      "code": "uwb",
+      "label": "Uwb"
+    },
+    {
+      "code": "lte_cat_m1",
+      "label": "Lte Cat M1"
+    },
+    {
+      "code": "lte_cat_nb1",
+      "label": "Lte Cat Nb1"
+    },
+    {
+      "code": "gps",
+      "label": "Gps"
+    },
+    {
+      "code": "glonass",
+      "label": "Glonass"
+    },
+    {
+      "code": "galileo",
+      "label": "Galileo"
+    }
+  ]
+}

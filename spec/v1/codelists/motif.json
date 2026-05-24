@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/motif.json",
+  "title": "OJS codelist: motif",
+  "description": "Recurring decorative motifs (multi-valued)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "floral",
+      "label": "Floral"
+    },
+    {
+      "code": "leaf",
+      "label": "Leaf"
+    },
+    {
+      "code": "animal",
+      "label": "Animal"
+    },
+    {
+      "code": "butterfly",
+      "label": "Butterfly"
+    },
+    {
+      "code": "bird",
+      "label": "Bird"
+    },
+    {
+      "code": "snake",
+      "label": "Snake"
+    },
+    {
+      "code": "heart",
+      "label": "Heart"
+    },
+    {
+      "code": "star",
+      "label": "Star"
+    },
+    {
+      "code": "moon",
+      "label": "Moon"
+    },
+    {
+      "code": "sun",
+      "label": "Sun"
+    },
+    {
+      "code": "celestial",
+      "label": "Celestial"
+    },
+    {
+      "code": "cross",
+      "label": "Cross"
+    },
+    {
+      "code": "knot",
+      "label": "Knot"
+    },
+    {
+      "code": "infinity",
+      "label": "Infinity"
+    },
+    {
+      "code": "bow",
+      "label": "Bow"
+    },
+    {
+      "code": "geometric",
+      "label": "Geometric"
+    },
+    {
+      "code": "scroll",
+      "label": "Scroll"
+    },
+    {
+      "code": "filigree",
+      "label": "Filigree"
+    },
+    {
+      "code": "milgrain",
+      "label": "Milgrain"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

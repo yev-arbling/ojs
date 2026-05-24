@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/payment-method.json",
+  "title": "OJS codelist: payment-method",
+  "description": "Accepted payment methods",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "visa",
+      "label": "Visa"
+    },
+    {
+      "code": "mastercard",
+      "label": "Mastercard"
+    },
+    {
+      "code": "amex",
+      "label": "Amex"
+    },
+    {
+      "code": "paypal",
+      "label": "Paypal"
+    },
+    {
+      "code": "apple_pay",
+      "label": "Apple Pay"
+    },
+    {
+      "code": "google_pay",
+      "label": "Google Pay"
+    },
+    {
+      "code": "affirm",
+      "label": "Affirm"
+    },
+    {
+      "code": "klarna",
+      "label": "Klarna"
+    },
+    {
+      "code": "afterpay",
+      "label": "Afterpay"
+    },
+    {
+      "code": "shop_pay",
+      "label": "Shop Pay"
+    },
+    {
+      "code": "bank_transfer",
+      "label": "Bank Transfer"
+    },
+    {
+      "code": "crypto",
+      "label": "Crypto"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}
