@@ -23,3 +23,6 @@ dist/
 
 # pip install logs that landed as files
 =*
+
+# Superpowers dev artifacts (plans, specs, session notes)
+docs/superpowers/
