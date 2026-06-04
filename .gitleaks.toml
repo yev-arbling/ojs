@@ -1,0 +1,26 @@
+# Arbling secret-scanning config (gitleaks v8+). Extends the built-in ruleset.
+# Shared across yev-arbling repos. Keep the allowlist tight — only documentation
+# placeholders and test-fixture mocks, never real-looking values.
+title = "Arbling gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Doc placeholders + test-fixture mocks — never real credentials"
+regexTarget = "match"
+regexes = [
+  # WooCommerce / REST docs show literal credential placeholders in curl examples
+  '''consumer_key:consumer_secret''',
+  '''YOUR[-_]?(STORE|API|SECRET|KEY|TOKEN|CONSUMER)[-_A-Z]*''',
+  '''(PRODUCT|STORE|API)_ID''',
+  # pytest fixtures use obvious dummy Telegram creds (mocked client, never real)
+  '''abcdef1234567890''',
+]
+# Pure mock/fixture files — secrets here are stubs for the test harness.
+paths = [
+  '''tests/conftest\.py''',
+  '''.*/conftest\.py''',
+  '''.*_test\.py''',
+  '''test_.*\.py''',
+]
