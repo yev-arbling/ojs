@@ -23,7 +23,7 @@ Confidence sources (`ConfidenceSource` enum from `_common.py`):
 - `llm_inferred` — LLM inferred from context (0.50–0.85)
 - `default` — schema default fallback (0.20)
 
-Arbling pipeline confidence targets per field (internal):
+Example enrichment pipeline confidence targets per field:
 - `metals.compositions[].color` → 0.96
 - `metals.compositions[].type` → 0.98
 - `pearls.pearl_type` → 0.92

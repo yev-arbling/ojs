@@ -238,7 +238,7 @@ To populate OJS fields for existing products programmatically:
 ```bash
 curl -X PUT \
   "https://YOUR-STORE.com/wp-json/wc/v3/products/PRODUCT_ID" \
-  -u "consumer_key:consumer_secret" \
+  -u "${WC_CONSUMER_KEY}:${WC_CONSUMER_SECRET}" \
   -H "Content-Type: application/json" \
   -d '{
     "meta_data": [
@@ -255,7 +255,7 @@ curl -X PUT \
 ```bash
 curl -X POST \
   "https://YOUR-STORE.com/wp-json/wc/v3/products/batch" \
-  -u "consumer_key:consumer_secret" \
+  -u "${WC_CONSUMER_KEY}:${WC_CONSUMER_SECRET}" \
   -H "Content-Type: application/json" \
   -d '{
     "update": [

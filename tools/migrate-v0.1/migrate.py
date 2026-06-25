@@ -3,12 +3,14 @@
 Usage:
     python tools/migrate-v0.1/migrate.py
 
-Run from repo root. Reads from the v0.1-final source directory, writes to
-examples/contrib/, and validates each output against the Pydantic model.
+Run from repo root. Set `OJS_V01_EXAMPLES_DIR` to the v0.1-final source
+directory. The script writes to examples/contrib/ and validates each output
+against the Pydantic model.
 """
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from datetime import datetime, timezone
@@ -19,9 +21,7 @@ sys.path.insert(0, str(REPO_ROOT / "src" / "python"))
 
 from ojs.models import JewelryProduct  # noqa: E402
 
-SOURCE_DIR = Path(
-    r"C:\Users\yevma\Downloads\Arbling-Brain\raw\tools\open-jewelry-schema\v0.1-final\examples"
-)
+SOURCE_DIR = Path(os.environ.get("OJS_V01_EXAMPLES_DIR", "examples/v0.1-final"))
 OUTPUT_DIR = REPO_ROOT / "examples" / "contrib"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
