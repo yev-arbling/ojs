@@ -15,7 +15,9 @@ name = "ojs"
 # Tracks ojs.OJS_VERSION (src/python/ojs/models/_common.py) — bump both together.
 version = "1.0.0"
 description = "Open Jewelry Schema (OJS) — Pydantic v2 reference implementation: 21 domains (~280 fields), dual-published as JSON Schema and JSON-LD."
-requires-python = ">=3.9"
+# 3.10 floor: Python 3.9 is EOL (Oct 2025), and the transformers use PEP 604
+# (X | Y) unions which are not get_type_hints-safe before 3.10.
+requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Open Jewelry Schema contributors" }]
 keywords = ["jewelry", "schema", "pydantic", "json-schema", "json-ld", "ai-commerce"]
@@ -43,3 +45,8 @@ Source = "https://github.com/yev-arbling/ojs"
 
 [tool.setuptools]
 packages = ["ojs", "ojs.models", "ojs.transformers"]
+
+[tool.setuptools.package-data]
+# Ship the inline-types marker so the "Typing :: Typed" classifier is valid and
+# downstream type-checkers pick up ojs's annotations.
+ojs = ["py.typed"]
