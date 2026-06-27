@@ -1,0 +1,52 @@
+# Python packaging for the OJS reference implementation.
+#
+# The Python sources live under this directory (src/python/) with `ojs` as the
+# top-level package — mirroring how the Node validator keeps its own manifest
+# under tools/validate-node/. Installable with:
+#
+#     pip install -e src/python          # runtime
+#     pip install -e "src/python[dev]"   # runtime + test deps
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ojs"
+# Tracks ojs.OJS_VERSION (src/python/ojs/models/_common.py) — bump both together.
+version = "1.0.0"
+description = "Open Jewelry Schema (OJS) — Pydantic v2 reference implementation: 21 domains (~280 fields), dual-published as JSON Schema and JSON-LD."
+# 3.10 floor: Python 3.9 is EOL (Oct 2025), and the transformers use PEP 604
+# (X | Y) unions which are not get_type_hints-safe before 3.10.
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Open Jewelry Schema contributors" }]
+keywords = ["jewelry", "schema", "pydantic", "json-schema", "json-ld", "ai-commerce"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = [
+  # Pydantic v2 only — the models build on ConfigDict / model_validator /
+  # StringConstraints. Floor matches the documented minimum (README quickstart);
+  # cap below v3 so a future pydantic major cannot silently break the v2 model
+  # API this package is built on.
+  "pydantic>=2.5,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.urls]
+Homepage = "https://github.com/yev-arbling/ojs"
+Documentation = "https://schema.openjewelryschema.org/v1/"
+Source = "https://github.com/yev-arbling/ojs"
+
+[tool.setuptools]
+packages = ["ojs", "ojs.models", "ojs.transformers"]
+
+[tool.setuptools.package-data]
+# Ship the inline-types marker so the "Typing :: Typed" classifier is valid and
+# downstream type-checkers pick up ojs's annotations.
+ojs = ["py.typed"]
