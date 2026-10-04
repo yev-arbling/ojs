@@ -6,7 +6,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License%20(code)-Apache%202.0-blue.svg)](LICENSE)
 [![Schema 1.0 · release 1.0.1](https://img.shields.io/badge/schema-1.0%20%C2%B7%20release%201.0.1-green.svg)](CHANGELOG.md)
 
-OJS is a structured data schema for jewelry that captures the attributes existing standards (Schema.org, GS1, GMC) miss: stone provenance, treatments, ring sizes in eight regional systems, watch movements, CIBJO 7-factor pearl grading, body-jewelry biocompatibility, hallmarks, AR placement metadata, and agent-ranking signals.
+OJS is a structured data schema for jewelry that captures the attributes existing standards (Schema.org, GS1, GMC) miss: stone provenance, treatments, ring sizes in seven regional systems, watch movements, CIBJO 7-factor pearl grading, body-jewelry biocompatibility, hallmarks, AR placement metadata, and agent-ranking signals.
 
 **Designed to be consumed by AI shopping agents** (ChatGPT/ACP, Perplexity, Google AI Mode/UCP, Microsoft Copilot, MCP-based agents), AS WELL AS traditional commerce platforms (Shopify, Schema.org, Google Merchant Center).
 
