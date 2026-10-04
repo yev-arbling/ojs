@@ -23,3 +23,15 @@ jobs:
           mapfile -d '' files < <(find examples -name '*.json' -print0 | sort -z)
           test "${#files[@]}" -gt 0
           node tools/validate-node/bin/ojs-validate.js "${files[@]}"
+
+  validate-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reference implementation
+        run: pip install -e src/python
+      - name: Validate every example against the Pydantic model
+        run: python tests/validate_examples.py

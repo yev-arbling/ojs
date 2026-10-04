@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-braided-ring",
     "title": "Braided Ring",
-    "description": "Discover Mejuri's 14k gold Braided Ring, a 4.45mm chain-style band symbolizing unity and strength. Perfect for daily wear or special occasions, crafted for timeless elegance. Free shipping available!",
+    "description": "Band ring in 10k yellow gold, 4.45mm wide, with a braided chain-style pattern.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/braided-ring?Material=10k+Yellow+Gold&Size=4",
+        "url": "https://example.com/products/braided-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/braided-ring?Material=14k+Yellow+Gold&Size=4",
+        "url": "https://example.com/products/braided-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -49,7 +49,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Relaunch-BraidedRing-YG-OffFigureAngledView-PDP_new_35a80d00-d9a4-4a95-8154-c0eb546431e9.png?v=1758073330",
+        "url": "https://example.com/images/braided-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

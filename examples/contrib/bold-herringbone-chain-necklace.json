@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-bold-herringbone-chain-necklace",
     "title": "Bold Herringbone Chain Necklace",
-    "description": "Elevate your wardrobe with the Gold Vermeil Herringbone Chain Necklace from Mejuri. This elegant necklace is crafted in gold vermeil and features a sleek herringbone design, making it a versatile staple that complements any outfit effortlessly.",
+    "description": "Chain necklace in 18k gold vermeil with a flat, smooth herringbone link pattern.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=16+inches",
+        "url": "https://example.com/products/bold-herringbone-chain-necklace",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=18+inches",
+        "url": "https://example.com/products/bold-herringbone-chain-necklace",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -49,13 +49,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=18k+Gold+Vermeil&Length=20+inches",
+        "url": "https://example.com/products/bold-herringbone-chain-necklace",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -63,13 +63,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=Sterling+Silver&Length=16+inches",
+        "url": "https://example.com/products/bold-herringbone-chain-necklace",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -77,13 +77,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-herringbone-chain-necklace?Material=Sterling+Silver&Length=18+inches",
+        "url": "https://example.com/products/bold-herringbone-chain-necklace",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -91,12 +91,12 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Reshoot_DomeHuggies_V_OffFigureAngledView_PDP_2.jpg?v=1763561983",
+        "url": "https://example.com/images/bold-herringbone-chain-necklace.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/WG-Reshoot_DomeHuggies_V_OffFigureAngledView_PDP.jpg?v=1763561983",
+        "url": "https://example.com/images/bold-herringbone-chain-necklace-2.jpg",
         "role": "additional",
         "is_primary": false
       }

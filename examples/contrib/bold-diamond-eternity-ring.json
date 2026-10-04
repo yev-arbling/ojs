@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-bold-diamond-eternity-ring",
     "title": "Bold Diamond Eternity Ring",
-    "description": "Discover the Bold Diamond Eternity Ring in 14k gold or 14k white gold, featuring stunning natural diamonds that symbolize eternal love. This handcrafted engagement ring offers a bold and elegant design, perfect for proposals or special occasions. Elevate your jewelry collection with Mejuri's timeless eternity ring, a lasting expression of commitment and sophistication.",
+    "description": "Eternity ring in 14k yellow gold with natural diamonds set in a channel around the band, also offered in white gold.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=4",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=5",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -49,13 +49,13 @@
           "currency": "USD"
         },
         "availability": "backorder",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=6",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -63,13 +63,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=7",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -77,13 +77,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=8",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -91,13 +91,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=9",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -105,13 +105,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bold-diamond-eternity-ring?Material=14k+Yellow+Gold&Stone=Natural+Diamond&Size=10",
+        "url": "https://example.com/products/bold-diamond-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -119,12 +119,12 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/1_BoldDiamondEternityRing_WG_Hero_new_e85df88a-64a1-4264-b252-e79ba426c171.png?v=1758142464",
+        "url": "https://example.com/images/bold-diamond-eternity-ring.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/1_BoldDiamondEternityRing_YG_Hero_new_cf6979af-d536-4342-8f7f-c3676bd3f6e0.png?v=1758142464",
+        "url": "https://example.com/images/bold-diamond-eternity-ring-2.jpg",
         "role": "additional",
         "is_primary": false
       }

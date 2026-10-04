@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-black-onyx-square-signet-ring",
     "title": "Black Onyx Square Signet Ring",
-    "description": "Discover the timeless appeal of Mejuri's 14k Gold Black Onyx Square Signet Ring. Handcrafted in solid yellow gold and featuring a striking black onyx, this ring embodies elegance and sophistication.",
+    "description": "Square-faced signet ring in 14k yellow gold set with a polished black onyx.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/black-onyx-square-signet-ring?Material=14k+Yellow+Gold&Stone=Black+Onyx&Size=7",
+        "url": "https://example.com/products/black-onyx-square-signet-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/black-onyx-square-signet-ring?Material=Sterling+Silver&Stone=Black+Onyx&Size=7",
+        "url": "https://example.com/products/black-onyx-square-signet-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -49,12 +49,12 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-MENSGEMSTONEPENDANTNECKLACELES_BlackOnyxSquareSignetRing_SS_Angled_056_new_2cf8df38-a178-48e0-b8f8-78b6ebb7d533.png?v=1758043930",
+        "url": "https://example.com/images/black-onyx-square-signet-ring.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/mens_ring_onyxsquaresignet_yg_front_new_55bf38ec-50c6-4b81-b397-1e57cc854229.png?v=1758043930",
+        "url": "https://example.com/images/black-onyx-square-signet-ring-2.jpg",
         "role": "additional",
         "is_primary": false
       }
