@@ -10,7 +10,7 @@
   "keywords": ["jewelry", "json-schema", "json-ld", "ojs", "validator", "open-jewelry-schema"],
   "author": "Arbling Inc.",
   "license": "Apache-2.0",
-  "repository": { "type": "git", "url": "https://github.com/openjewelryschema/ojs.git" },
+  "repository": { "type": "git", "url": "https://github.com/yev-arbling/ojs.git" },
   "homepage": "https://openjewelryschema.org",
   "dependencies": {
     "ajv": "^8.17.1",

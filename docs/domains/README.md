@@ -25,6 +25,8 @@ Activated by `product_type` discriminator:
 
 ## Tier 3 — RECOMMENDED (high-value optional)
 
+Tiers 3 and 4 together hold 13 optional modules (11 recommended + 2 specialized): `metals`, `stones`, `setting`, `sizing`, `style`, `certification`, `sustainability`, `care`, `relationships`, `reviews`, `legal`, `artisan`, `religious`.
+
 | Domain | Module | Use for | Doc |
 |---|---|---|---|
 | Metals | `metals` | Metal-bearing pieces | [metals.md](metals.md) |

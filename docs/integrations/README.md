@@ -26,6 +26,6 @@ Both guides follow the same four steps:
 
 ## See also
 
-- [Node.js CLI validator](../../tools/validate-node/) — `npx @openjewelryschema/validate`
+- [Node.js CLI validator](../../tools/validate-node/) — `cd tools/validate-node && npm install && node bin/ojs-validate.js yourfile.json`
 - [Python reference implementation](../../src/python/ojs/) — Pydantic v2 models, 7 platform transformers
 - [Domain reference docs](../domains/README.md) — per-field documentation for all 21 domains
