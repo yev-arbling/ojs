@@ -6,7 +6,7 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-charlotte-ring",
+    "sku": "OJS-CONTRIB-ribbed-statement-ring",
     "title": "Ribbed Statement Ring",
     "description": "Ribbed statement ring in solid 14k yellow gold with a softly fluted surface.",
     "brand": {
@@ -21,7 +21,7 @@
           "currency": "USD"
         },
         "availability": "discontinued",
-        "url": "https://example.com/products/charlotte-ring",
+        "url": "https://example.com/products/ribbed-statement-ring",
         "condition": "new",
         "target_countries": [
           "US"
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://example.com/images/charlotte-ring.jpg",
+        "url": "https://example.com/images/ribbed-statement-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

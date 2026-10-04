@@ -6,9 +6,9 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-ada-double-pear-drop-earrings",
-    "title": "Double Pearl Drop Earrings",
-    "description": "Drop earrings with two pear-cut lab-grown sapphires in 18k gold vermeil, hung so they move gently with the wearer.",
+    "sku": "OJS-CONTRIB-tennis-drop-earrings",
+    "title": "Tennis Drop Earrings",
+    "description": "Tennis-style drop earrings in 925 sterling silver with lab-grown sapphires in a single line.",
     "brand": {
       "name": "Northwind Atelier"
     }
@@ -17,11 +17,11 @@
     "offers": [
       {
         "price": {
-          "amount": "178.00",
+          "amount": "258.00",
           "currency": "USD"
         },
-        "availability": "backorder",
-        "url": "https://example.com/products/ada-double-pearl-drop-earrings",
+        "availability": "in_stock",
+        "url": "https://example.com/products/tennis-drop-earrings",
         "condition": "new",
         "target_countries": [
           "US"
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://example.com/images/ada-double-pearl-drop-earrings.jpg",
+        "url": "https://example.com/images/tennis-drop-earrings.jpg",
         "role": "primary",
         "is_primary": true
       }
@@ -44,11 +44,10 @@
   "metals": {
     "compositions": [
       {
-        "type": "gold",
+        "type": "silver",
         "primary": true,
-        "purity_karat": 18.0,
-        "color": "yellow",
-        "plating": "vermeil"
+        "purity_fineness": 925,
+        "color": "white"
       }
     ]
   },
@@ -57,7 +56,6 @@
       {
         "species": "sapphire",
         "origin_type": "lab_grown",
-        "cut": "pear",
         "position": "center"
       }
     ],
@@ -68,7 +66,7 @@
     "motifs": [],
     "aesthetic_tags": [
       "everyday",
-      "color:gold",
+      "color:silver",
       "color:blue"
     ],
     "era": "contemporary"

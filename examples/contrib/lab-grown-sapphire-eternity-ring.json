@@ -6,9 +6,9 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-lacey-lab-grown-diamond-ring",
-    "title": "Lab Grown Diamond Half Eternity Ring",
-    "description": "Half-eternity ring in 14k yellow gold with graduated lab-grown diamonds in a channel setting.",
+    "sku": "OJS-CONTRIB-lab-grown-sapphire-eternity-ring",
+    "title": "Lab Grown Sapphire Eternity Ring",
+    "description": "Eternity-style ring in 18k gold vermeil with a continuous row of lab-grown sapphires in a channel setting.",
     "brand": {
       "name": "Northwind Atelier"
     }
@@ -17,11 +17,25 @@
     "offers": [
       {
         "price": {
-          "amount": "898.00",
+          "amount": "258.00",
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://example.com/products/lacey-lab-grown-diamond-ring",
+        "url": "https://example.com/products/lab-grown-sapphire-eternity-ring",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
+      },
+      {
+        "price": {
+          "amount": "218.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://example.com/products/lab-grown-sapphire-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
@@ -35,9 +49,14 @@
   "media": {
     "images": [
       {
-        "url": "https://example.com/images/lacey-lab-grown-diamond-ring.jpg",
+        "url": "https://example.com/images/lab-grown-sapphire-eternity-ring.jpg",
         "role": "primary",
         "is_primary": true
+      },
+      {
+        "url": "https://example.com/images/lab-grown-sapphire-eternity-ring-2.jpg",
+        "role": "additional",
+        "is_primary": false
       }
     ]
   },
@@ -46,15 +65,16 @@
       {
         "type": "gold",
         "primary": true,
-        "purity_karat": 14.0,
-        "color": "yellow"
+        "purity_karat": 18.0,
+        "color": "yellow",
+        "plating": "vermeil"
       }
     ]
   },
   "stones": {
     "stones": [
       {
-        "species": "diamond",
+        "species": "sapphire",
         "origin_type": "lab_grown",
         "position": "center"
       }
@@ -77,11 +97,13 @@
   },
   "style": {
     "design_styles": [],
-    "motifs": [],
+    "motifs": [
+      "celestial"
+    ],
     "aesthetic_tags": [
       "wedding",
       "color:gold",
-      "color:white"
+      "color:blue"
     ],
     "era": "contemporary"
   }
