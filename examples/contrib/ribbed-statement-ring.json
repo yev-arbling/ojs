@@ -6,11 +6,11 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-charlotte-ring",
-    "title": "Charlotte Ring",
-    "description": "Shop the iconic 14k Gold Charlotte Ribbed Ring from Mejuri. Inspired by the beautiful French dessert, this statement ribbed ring is crafted in solid gold, offering elegance and style.",
+    "sku": "OJS-CONTRIB-ribbed-statement-ring",
+    "title": "Ribbed Statement Ring",
+    "description": "Ribbed statement ring in solid 14k yellow gold with a softly fluted surface.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "discontinued",
-        "url": "https://mejuri.com/world/en/products/charlotte-ring?Material=14k+Yellow+Gold&Size=4",
+        "url": "https://example.com/products/ribbed-statement-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/3-Charlotte_Ring_YG_Front_new_436bd2b8-dc0c-41bf-ad6f-52756e519508.png?v=1758043913",
+        "url": "https://example.com/images/ribbed-statement-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

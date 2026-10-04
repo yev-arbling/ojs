@@ -6,11 +6,11 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-ziggy-ring",
-    "title": "Ziggy Ring",
-    "description": "Our beloved Ziggy Ring is a gifting and self-gifting favorite for a reason. Bezel set lab grown gemstones play and dance off of each other in a zig-zag pattern that catches the light. The Ziggy Ring is a party on its own, and also really shines when you stack a few together.",
+    "sku": "OJS-CONTRIB-bezel-lab-grown-diamond-zig-zag-ring",
+    "title": "Bezel Lab Grown Diamond Zig Zag Ring",
+    "description": "Ring in 14k yellow gold with bezel-set lab-grown stones arranged in a zig-zag pattern. Wears alone or stacked with other bands.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "url": "https://example.com/products/bezel-lab-grown-diamond-zig-zag-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Emerald&Size=4",
+        "url": "https://example.com/products/bezel-lab-grown-diamond-zig-zag-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -49,13 +49,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/bezel-lab-grown-diamond-zig-zag-ring?Material=Sterling+Silver&Stone=Lab+Grown+Diamond&Size=4",
+        "url": "https://example.com/products/bezel-lab-grown-diamond-zig-zag-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -63,17 +63,17 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LABGROWNDIAMONDSBEZEL-BabyBezelScatteredRing-14K-Angled_329_new_4e56da0e-dd76-470b-bbd1-fbebae6e9f19.png?v=1761058558",
+        "url": "https://example.com/images/bezel-lab-grown-diamond-zig-zag-ring.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LGDSilver_BezelLGDZigZagRingSilver-SS-Angled-v2-PDP_new_9c237fff-2a48-4529-ba20-73d004520873.png?v=1761058558",
+        "url": "https://example.com/images/bezel-lab-grown-diamond-zig-zag-ring-2.jpg",
         "role": "additional",
         "is_primary": false
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LabGrownEmerald_ZigZagLabGrownEmeraldRing_YG_OffFigureAngledView-PDP_new_4e4aa007-3788-4b0f-827b-510ef0c78ee9.png?v=1761058558",
+        "url": "https://example.com/images/bezel-lab-grown-diamond-zig-zag-ring-3.jpg",
         "role": "additional",
         "is_primary": false
       }

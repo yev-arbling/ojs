@@ -6,11 +6,11 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-drop-shot-tennis-earrings",
-    "title": "Drop Shot Tennis Earrings",
-    "description": "These tennis drop earrings add high shine and subtle swing to every ear stack. Part of Mejuri PLAY, these earrings are made for movement.",
+    "sku": "OJS-CONTRIB-tennis-drop-earrings",
+    "title": "Tennis Drop Earrings",
+    "description": "Tennis-style drop earrings in 925 sterling silver with lab-grown sapphires in a single line.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/drop-shot-tennis-earrings?Material=Sterling+Silver&Stone=Lab+Grown+Sapphire",
+        "url": "https://example.com/products/tennis-drop-earrings",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Navarro_Line_Earrings_Silver_001_2160x2580_bc537067-c249-4032-929d-544eea02f711.jpg?v=1768323014",
+        "url": "https://example.com/images/tennis-drop-earrings.jpg",
         "role": "primary",
         "is_primary": true
       }

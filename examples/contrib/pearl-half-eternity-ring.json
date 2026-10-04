@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-pearl-half-eternity-ring",
     "title": "Pearl Half Eternity Ring",
-    "description": "You’ll be eternally pearlescent. Especially when wearing this stack of pearls that’s handcrafted in recycled 14k solid gold.",
+    "description": "Half-eternity ring in recycled 14k yellow gold with a row of pearls in a channel setting.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/pearl-half-eternity-ring?Material=14k+Yellow+Gold&Stone=Pearl&Size=4",
+        "url": "https://example.com/products/pearl-half-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-PearlHalfEternityRingRelaunch_PearlHalfEternityRing_YG_OffFigureAngledView-PDP_new_66f8feca-fa38-46cd-b354-f389717e7ec2.png?v=1758073325",
+        "url": "https://example.com/images/pearl-half-eternity-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

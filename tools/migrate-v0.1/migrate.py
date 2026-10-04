@@ -234,9 +234,6 @@ def parse_purity(purity_str: str, metal_type: str) -> dict:
 
 def extract_seller_info(offer_url: str) -> tuple[str, str]:
     """Infer seller_name and seller_url from offer URL."""
-    # All v0.1 examples are mejuri.com
-    if "mejuri.com" in offer_url:
-        return "Mejuri", "https://mejuri.com"
     # Generic fallback: extract domain
     m = re.match(r"(https?://[^/]+)", offer_url)
     if m:

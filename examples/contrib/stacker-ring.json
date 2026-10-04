@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-stacker-ring",
     "title": "Stacker Ring",
-    "description": "Shop the 14k yellow gold stackable ring at Mejuri. This dainty stacking ring is the perfect starter ring or addition to anyone's collection.",
+    "description": "Thin stackable band in yellow gold, available in 10k and 14k, made to be worn alone or layered.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "backorder",
-        "url": "https://mejuri.com/world/en/products/stacker-ring?Material=10k+Yellow+Gold&Size=3",
+        "url": "https://example.com/products/stacker-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/stacker-ring?Material=14k+Yellow+Gold&Size=10",
+        "url": "https://example.com/products/stacker-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -49,17 +49,17 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRing-14K-Angled_352_new_1a1dbe41-b301-430e-b757-4d6ab65e243d.png?v=1758043901",
+        "url": "https://example.com/images/stacker-ring.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRing_10k_OffFigureAngledView_PDP_new_cd553b68-0235-4101-a70c-91b663ca2d63.png?v=1763561719",
+        "url": "https://example.com/images/stacker-ring-2.jpg",
         "role": "additional",
         "is_primary": false
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/stacker_ring_OffFigureAngledView_PDP.jpg?v=1763561719",
+        "url": "https://example.com/images/stacker-ring-3.jpg",
         "role": "additional",
         "is_primary": false
       }

@@ -7,10 +7,10 @@
   },
   "identity": {
     "sku": "OJS-CONTRIB-mega-d-me-earrings",
-    "title": "Mega Dôme Earrings",
-    "description": "Maybe you want more. With the puffiest piece in our Dôme collection, you don't have to ask for attention—you command it.",
+    "title": "Mega Dome Earrings",
+    "description": "Large domed earrings in 18k gold vermeil with a smooth, hollow, rounded shape.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/mega-dome-earrings?Material=18k+Gold+Vermeil",
+        "url": "https://example.com/products/mega-dome-earrings",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/mega-dome-earrings?Material=Sterling+Silver",
+        "url": "https://example.com/products/mega-dome-earrings",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -49,12 +49,12 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-SILVERBIGGIEDOMEEARRINGS_DomeBiggieEarrings_SS_Angled_241_new_79fd65a9-e8d6-402f-8c16-05cd8fe8c3da.png?v=1758043821",
+        "url": "https://example.com/images/mega-dome-earrings.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-VERMEILBIGGIEDOMEEARRINGS_DomeBiggieEarrings_V_Angled_241_new_2c047613-a556-479a-81e0-61497a802b0c.png?v=1758043821",
+        "url": "https://example.com/images/mega-dome-earrings-2.jpg",
         "role": "additional",
         "is_primary": false
       }

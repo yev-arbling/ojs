@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-mini-heart-pav-diamond-stud-earrings",
     "title": "Mini Heart Pavé Diamond Stud Earrings",
-    "description": "Throw some mini hearts in the mix. We promise you’ll love this playful statement forever. Mejuri's 14k Gold Handcrafted Mini Heart Pavé Diamond Stud Earrings are a charming addition to any jewelry collection.",
+    "description": "Small heart-shaped stud earrings in 14k yellow gold, pave-set with natural diamonds.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/mini-heart-pave-diamond-stud-earrings?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
+        "url": "https://example.com/products/mini-heart-pave-diamond-stud-earrings",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-14KHEARTS_PaveDiamondHeartStud_14K_Angled_026_new_5dbe16a0-95f4-454b-9edd-d0943dfa42bd.png?v=1758043809",
+        "url": "https://example.com/images/mini-heart-pave-diamond-stud-earrings.jpg",
         "role": "primary",
         "is_primary": true
       }

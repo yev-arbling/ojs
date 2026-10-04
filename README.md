@@ -25,9 +25,9 @@ OJS is a structured data schema for jewelry that captures the attributes existin
   - Shopify (Product + metafields)
   - Model Context Protocol (MCP) resources
 - **Node.js CLI validator** — `tools/validate-node/` — `cd tools/validate-node && npm install && node bin/ojs-validate.js yourfile.json`
-- **21 domain reference docs** — `docs/domains/` — FHIR-grade per-field documentation
+- **23 reference documents (21 domains and 2 cross-cutting modules)** — `docs/domains/` — FHIR-grade per-field documentation
 - **Integration guides** — `docs/integrations/` — Shopify and WooCommerce retailer onboarding
-- **Examples** — `examples/` — 5 production-grade examples + `examples/contrib/` — 20 contributor-migrated real-product examples
+- **Examples** — `examples/` — 5 production-grade examples + `examples/contrib/` — 20 examples modelled on real catalogue shapes
 - **Test suite** — `tests/` — 21 tests covering models, discriminators, transformers, round-trip
 
 ## Quickstart — drop-in JSON-LD for any HTML page
@@ -140,7 +140,7 @@ JewelryProduct(product_type=ProductType.PEARL, audit=..., identity=..., ...)
 ## Examples
 
 - **`examples/`** — 5 production-grade examples covering engagement ring, pearl necklace, vintage watch, smart ring, body piercing. Full field coverage with certification, ai_commerce, legal modules.
-- **`examples/contrib/`** — 20 contributor-migrated real-product examples from Mejuri, covering fashion rings (signet, dome, stacker, braided), earrings (drop, stud, hoop), and necklaces. Migrated from v0.1 format, all validated against the v1.0 schema.
+- **`examples/contrib/`** — 20 examples modelled on real catalogue shapes, covering fashion rings (signet, dome, stacker, braided), earrings (drop, stud, hoop), and necklaces. Migrated from v0.1 format, all validated against the v1.0 schema.
 
 ## License
 

@@ -6,11 +6,11 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-ada-double-pear-drop-earrings",
-    "title": "Ada Double Pear Drop Earrings",
-    "description": "Two pear-shaped gemstones for double the impact with a drop designed for subtle movement and not-so-subtle shine.",
+    "sku": "OJS-CONTRIB-double-pearl-drop-earrings",
+    "title": "Double Pearl Drop Earrings",
+    "description": "Drop earrings with two pear-cut lab-grown sapphires in 18k gold vermeil, hung so they move gently with the wearer.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "backorder",
-        "url": "https://mejuri.com/world/en/products/ada-double-pearl-drop-earrings?Material=18k+Gold+Vermeil&Stone=Lab+Grown+White+Sapphire",
+        "url": "https://example.com/products/double-pearl-drop-earrings",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-AdaDoublePearDropEarringsOffFigureAngledView2160x2580.jpg?v=1774968742",
+        "url": "https://example.com/images/double-pearl-drop-earrings.jpg",
         "role": "primary",
         "is_primary": true
       }

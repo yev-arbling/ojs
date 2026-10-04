@@ -7,10 +7,10 @@
   },
   "identity": {
     "sku": "OJS-CONTRIB-d-me-ring",
-    "title": "Dôme Ring",
-    "description": "A classic, yet bold design. Mejuri's Sterling Silver Dôme Ring is perfect for creating a stylish starter stack when paired with daintier rings.",
+    "title": "Dome Ring",
+    "description": "Domed band ring in 925 sterling silver with a smooth, rounded profile, suited to stacking with thinner rings.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "backorder",
-        "url": "https://mejuri.com/world/en/products/dome-ring?Material=Sterling+Silver&Size=3",
+        "url": "https://example.com/products/dome-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       },
       {
         "price": {
@@ -35,13 +35,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/dome-ring?Material=18k+Gold+Vermeil&Size=3",
+        "url": "https://example.com/products/dome-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -49,12 +49,12 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Reshoot_DomeRing_SS_OffFigureAngledView_PDP.png?v=1758736408",
+        "url": "https://example.com/images/dome-ring.jpg",
         "role": "primary",
         "is_primary": true
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Reshoot_DomeRing_V_OffFigureAngledView_PDP.png?v=1758736408",
+        "url": "https://example.com/images/dome-ring-2.jpg",
         "role": "additional",
         "is_primary": false
       }

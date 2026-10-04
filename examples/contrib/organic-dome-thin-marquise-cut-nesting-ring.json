@@ -7,10 +7,10 @@
   },
   "identity": {
     "sku": "OJS-CONTRIB-organic-d-me-thin-marquise-cut-nesting-ring",
-    "title": "Organic Dôme Thin Marquise Cut Nesting Ring",
-    "description": "Designed to stack seamlessly with the Dôme collection, the Organic Dôme Thin Marquise Cut Nesting Ring features a fancy cut lab grown diamond that shines in the stack. Featuring a soft curve that hugs the shape of our Dôme rings, this ring is a perfect addition to your stack or stunning on its own.",
+    "title": "Organic Dome Thin Marquise Cut Nesting Ring",
+    "description": "Thin nesting ring in 14k yellow gold with a curved profile and a marquise-cut lab-grown diamond.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/organic-dome-thin-marquise-cut-nesting-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "url": "https://example.com/products/organic-dome-thin-marquise-cut-nesting-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRings_ThinDomeRingMarquiseLGD_YG_OffFigure-PDP_new_d7938539-a0af-4cfd-98c0-03cea86ac6bd.png?v=1758043914",
+        "url": "https://example.com/images/organic-dome-thin-marquise-cut-nesting-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

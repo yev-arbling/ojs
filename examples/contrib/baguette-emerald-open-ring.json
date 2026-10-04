@@ -8,9 +8,9 @@
   "identity": {
     "sku": "OJS-CONTRIB-baguette-emerald-open-ring",
     "title": "Baguette Emerald Open Ring",
-    "description": "Discover Mejuri's 14k Gold Emerald Baguette Open Ring. This elegant ring features a tapered baguette emerald, handcrafted for a timeless look. Shop our collection of 14k gold and gemstone emerald jewelry with free shipping.",
+    "description": "Open-front ring in 14k yellow gold with a single baguette-cut natural emerald as the focal stone.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/baguette-emerald-open-ring?Material=14k+Yellow+Gold&Stone=Emerald&Size=4",
+        "url": "https://example.com/products/baguette-emerald-open-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0_EmeraldBaguetteOpenRing_YG_Hero_new_1339dd61-ee1d-48cd-ab0f-4d7ab34471f8.png?v=1758043901",
+        "url": "https://example.com/images/baguette-emerald-open-ring.jpg",
         "role": "primary",
         "is_primary": true
       }

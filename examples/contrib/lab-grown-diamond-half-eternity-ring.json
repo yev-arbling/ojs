@@ -6,11 +6,11 @@
     "source_system": "other"
   },
   "identity": {
-    "sku": "OJS-CONTRIB-lacey-lab-grown-diamond-ring",
-    "title": "Lacey Lab Grown Diamond Ring",
-    "description": "This half eternity lab grown diamond ring features graduating stones for an eye-catching ring that adds dimension to your stack (or wears perfectly on its own).",
+    "sku": "OJS-CONTRIB-lab-grown-diamond-half-eternity-ring",
+    "title": "Lab Grown Diamond Half Eternity Ring",
+    "description": "Half-eternity ring in 14k yellow gold with graduated lab-grown diamonds in a channel setting.",
     "brand": {
-      "name": "Mejuri"
+      "name": "Northwind Atelier"
     }
   },
   "commerce": {
@@ -21,13 +21,13 @@
           "currency": "USD"
         },
         "availability": "in_stock",
-        "url": "https://mejuri.com/world/en/products/lacey-lab-grown-diamond-ring?Material=14k+Yellow+Gold&Stone=Lab+Grown+Diamond&Size=4",
+        "url": "https://example.com/products/lab-grown-diamond-half-eternity-ring",
         "condition": "new",
         "target_countries": [
           "US"
         ],
-        "seller_name": "Mejuri",
-        "seller_url": "https://mejuri.com"
+        "seller_name": "Northwind Atelier",
+        "seller_url": "https://example.com"
       }
     ],
     "primary_offer_index": 0
@@ -35,7 +35,7 @@
   "media": {
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-DiamondLace_DiamondLaceRing_OffFigureAngledView-PDP_new_2985ae0d-535f-41cc-9577-8382331aad70.png?v=1758043928",
+        "url": "https://example.com/images/lab-grown-diamond-half-eternity-ring.jpg",
         "role": "primary",
         "is_primary": true
       }
