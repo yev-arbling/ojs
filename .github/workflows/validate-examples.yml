@@ -1,0 +1,25 @@
+name: Validate examples
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: tools/validate-node/package-lock.json
+      - name: Install validator
+        run: npm ci
+        working-directory: tools/validate-node
+      - name: Validate every example against spec/v1/ojs-strict.json
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(find examples -name '*.json' -print0 | sort -z)
+          test "${#files[@]}" -gt 0
+          node tools/validate-node/bin/ojs-validate.js "${files[@]}"

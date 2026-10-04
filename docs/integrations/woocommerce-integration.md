@@ -118,7 +118,7 @@ function ojs_output_jsonld_v1() {
     if (empty($images)) return;
 
     $data = [
-        '@context'     => 'https://openjewelryschema.org/v1/context.jsonld',
+        '@context'     => 'https://raw.githubusercontent.com/yev-arbling/ojs/main/spec/v1/context.jsonld',
         '@type'        => 'Product',
         'product_type' => $product_type,
         'audit'        => [
@@ -282,9 +282,10 @@ curl -X POST \
 After adding the output hook, view source on any product page and find the JSON-LD `<script>` tag. Copy the JSON object and validate:
 
 ```bash
-npm install -g @openjewelryschema/validate
+# From a clone of the repository, install once:
+cd tools/validate-node && npm install
 # Save JSON object to a file, then:
-ojs-validate product.json
+node bin/ojs-validate.js product.json
 ```
 
 The validator checks against `spec/v1/ojs-strict.json` — the same schema used by the Python reference implementation — and outputs a completeness score per tier (REQUIRED/RECOMMENDED/OPTIONAL).

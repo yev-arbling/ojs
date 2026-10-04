@@ -4,7 +4,7 @@ OJS is an open-source jewelry data schema for AI-driven commerce.
 21 domains covering ~280 fields, dual-published as JSON Schema and JSON-LD.
 
 License: CC0 1.0 (vocabulary) + Apache 2.0 (this implementation).
-Repo: https://github.com/openjewelryschema/ojs
+Repo: https://github.com/yev-arbling/ojs
 Docs: https://schema.openjewelryschema.org/v1/
 
 Quick start:

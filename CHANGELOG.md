@@ -23,7 +23,7 @@ Adoption-funnel patch. No schema changes — all additions are tooling, examples
 
 - (nothing yet — deferred to v1.0.2)
 
-[1.0.1]: https://github.com/openjewelryschema/ojs/releases/tag/v1.0.1
+[1.0.1]: https://github.com/yev-arbling/ojs/releases/tag/v1.0.1
 
 ## [1.0.0] — 2026-05-17
 
@@ -84,4 +84,4 @@ These corrections were made based on Stage 2 research (Prompt 4):
 - **GMC reverse parser** decodes top-level fields but leaves `product_detail` triples as raw — full reverse decoding deferred to v1.1.
 - **Sustainability claims are not audit-chain-verified** — fields are descriptive; consumers should verify against W3C Verifiable Supply Chain CG outputs once available.
 
-[1.0.0]: https://github.com/openjewelryschema/ojs/releases/tag/v1.0.0
+[1.0.0]: https://github.com/yev-arbling/ojs/releases/tag/v1.0.0

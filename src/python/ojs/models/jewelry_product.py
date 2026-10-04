@@ -10,6 +10,10 @@ discriminator:
   - product_type == "body" → `body` REQUIRED
   - product_type == "estate" → `estate` REQUIRED
 
+The 13 optional modules (11 recommended + 2 specialized): metals, stones,
+setting, sizing, style, certification, sustainability, care, relationships,
+reviews, legal, artisan, religious. `ai_commerce` is the cross-cutting module.
+
 Validation enforces these activation rules. Other modules are optional
 but recommended per the OJS field tier system (~18 REQUIRED, ~55
 RECOMMENDED, ~80 CONDITIONAL, ~138 OPTIONAL).

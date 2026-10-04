@@ -54,7 +54,7 @@ Create `snippets/ojs-jsonld.liquid` in your theme:
 
 <script type="application/ld+json">
 {
-  "@context": "https://openjewelryschema.org/v1/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/yev-arbling/ojs/main/spec/v1/context.jsonld",
   "@type": "Product",
   "product_type": {{ ojs_product_type | json }},
   "identity": {
@@ -226,11 +226,11 @@ Variables:
 After adding the snippet, view page source and copy the JSON-LD object. Validate with the OJS CLI validator:
 
 ```bash
-# Install globally
-npm install -g @openjewelryschema/validate
+# From a clone of the repository, install once:
+cd tools/validate-node && npm install
 
 # Save JSON-LD content to a file, then:
-ojs-validate product.json
+node bin/ojs-validate.js product.json
 ```
 
 Or use Google's Rich Results Test on your product URL.

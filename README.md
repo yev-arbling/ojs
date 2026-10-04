@@ -3,8 +3,8 @@
 > A free, vendor-neutral data schema for jewelry commerce, designed for the AI agent era.
 
 [![License: CC0 1.0](https://img.shields.io/badge/License%20(vocabulary)-CC0%201.0-lightgrey.svg)](LICENSE-CC0)
-[![License: Apache 2.0](https://img.shields.io/badge/License%20(code)-Apache%202.0-blue.svg)](LICENSE-APACHE)
-[![Status: 1.0.0](https://img.shields.io/badge/status-1.0.0-green.svg)](#)
+[![License: Apache 2.0](https://img.shields.io/badge/License%20(code)-Apache%202.0-blue.svg)](LICENSE)
+[![Schema 1.0 · release 1.0.1](https://img.shields.io/badge/schema-1.0%20%C2%B7%20release%201.0.1-green.svg)](CHANGELOG.md)
 
 OJS is a structured data schema for jewelry that captures the attributes existing standards (Schema.org, GS1, GMC) miss: stone provenance, treatments, ring sizes in eight regional systems, watch movements, CIBJO 7-factor pearl grading, body-jewelry biocompatibility, hallmarks, AR placement metadata, and agent-ranking signals.
 
@@ -24,7 +24,7 @@ OJS is a structured data schema for jewelry that captures the attributes existin
   - Perplexity Merchant feed
   - Shopify (Product + metafields)
   - Model Context Protocol (MCP) resources
-- **Node.js CLI validator** — `tools/validate-node/` — `npm install -g @openjewelryschema/validate`
+- **Node.js CLI validator** — `tools/validate-node/` — `cd tools/validate-node && npm install && node bin/ojs-validate.js yourfile.json`
 - **21 domain reference docs** — `docs/domains/` — FHIR-grade per-field documentation
 - **Integration guides** — `docs/integrations/` — Shopify and WooCommerce retailer onboarding
 - **Examples** — `examples/` — 5 production-grade examples + `examples/contrib/` — 20 contributor-migrated real-product examples
@@ -32,12 +32,12 @@ OJS is a structured data schema for jewelry that captures the attributes existin
 
 ## Quickstart — drop-in JSON-LD for any HTML page
 
-Drop this in your product page `<head>`. Google, ChatGPT, Perplexity, and OJS-aware agents will parse it. Validate with `npx @openjewelryschema/validate yourfile.json`.
+Drop this in your product page `<head>`. Maps to Schema.org, Google Merchant Center, ACP, UCP, Perplexity, Shopify and MCP through the included transformers. Validate from a clone with `cd tools/validate-node && npm install && node bin/ojs-validate.js yourfile.json`.
 
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://openjewelryschema.org/v1/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/yev-arbling/ojs/main/spec/v1/context.jsonld",
   "@type": "Product",
   "product_type": "ring",
   "identity": {
@@ -72,8 +72,8 @@ For Shopify and WooCommerce integration guides (metafields, Liquid snippets, PHP
 Use this if you build an enrichment pipeline, run validation in CI, or generate OJS records programmatically.
 
 ```bash
-pip install pydantic>=2.5
-git clone https://github.com/openjewelryschema/ojs.git
+pip install "pydantic>=2.5"
+git clone https://github.com/yev-arbling/ojs.git
 cd ojs
 export PYTHONPATH=src/python
 ```
@@ -81,7 +81,7 @@ export PYTHONPATH=src/python
 ```python
 from ojs.models import JewelryProduct, ProductType
 
-product = JewelryProduct.model_validate(open("examples/engagement-ring.json").read())
+product = JewelryProduct.model_validate_json(open("examples/engagement-ring.json").read())
 print(product.identity.title, product.commerce.offers[0].price)
 ```
 
@@ -102,7 +102,7 @@ OJS is a **hybrid modular core + sub-vertical discriminators** pattern (FHIR-ins
 
 - **4 always-required modules**: `identity`, `commerce`, `media`, `audit`
 - **5 sub-vertical discriminator modules**: `pearls`, `watch`, `smart`, `body`, `estate` — required when `product_type` matches
-- **12 recommended optional modules**: `metals`, `stones`, `setting`, `sizing`, `style`, `certification`, `sustainability`, `care`, `relationships`, `reviews`, `legal`, `artisan`, `religious`
+- **13 optional modules** (11 recommended + 2 specialized): `metals`, `stones`, `setting`, `sizing`, `style`, `certification`, `sustainability`, `care`, `relationships`, `reviews`, `legal`, `artisan`, `religious`
 - **1 cross-cutting module**: `ai_commerce` — agent ranking metadata
 
 See [docs/domains/README.md](docs/domains/README.md) for the full domain index.
@@ -147,11 +147,15 @@ JewelryProduct(product_type=ProductType.PEARL, audit=..., identity=..., ...)
 **Dual-licensed** (FHIR / GS1 pattern):
 
 - **Vocabulary, schema, and codelists** — [CC0 1.0 Universal (public domain)](LICENSE-CC0). You may use the schema and field names without restriction in any commercial or open-source product.
-- **This reference implementation (Python code)** — [Apache 2.0](LICENSE-APACHE). Standard patent grant; bring your own copyright notices when redistributing.
+- **This reference implementation (Python code)** — [Apache 2.0](LICENSE). Standard patent grant; bring your own copyright notices when redistributing.
+
+## Ecosystem
+
+- Agent Offer Protocol (an open protocol for offers between AI agents and stores, maintained by Arbling)
 
 ## Governance
 
-See [GOVERNANCE.md](GOVERNANCE.md). OJS is governed by a steering committee with named external members beyond the originating maintainer.
+Governed by a steering committee. The seats and their status are in [GOVERNANCE.md](GOVERNANCE.md).
 
 ## Contributing
 

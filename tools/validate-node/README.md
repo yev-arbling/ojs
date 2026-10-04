@@ -1,18 +1,17 @@
 # @openjewelryschema/validate
 
-AJV-based CLI validator for [Open Jewelry Schema (OJS) v1.0](https://github.com/openjewelryschema/ojs) documents. Validates against the same `spec/v1/ojs-strict.json` schema that the Pydantic reference implementation uses.
+AJV-based CLI validator for [Open Jewelry Schema (OJS) v1.0](https://github.com/yev-arbling/ojs) documents. Validates against the same `spec/v1/ojs-strict.json` schema that the Pydantic reference implementation uses.
 
 ## Installation
 
-```bash
-npm install -g @openjewelryschema/validate
-```
-
-Or use without installing:
+The package is not published to npm. Run it from a clone of the repository:
 
 ```bash
-npx @openjewelryschema/validate path/to/product.json
+cd tools/validate-node && npm install
+node bin/ojs-validate.js path/to/product.json
 ```
+
+In the examples below, `ojs-validate` stands for `node bin/ojs-validate.js`.
 
 ## CLI Usage
 
@@ -54,7 +53,7 @@ ojs-validate product.json --schema ./custom-schema.json  # override schema path
 ## Programmatic Usage
 
 ```javascript
-const { validate } = require('@openjewelryschema/validate');
+const { validate } = require('./bin/ojs-validate.js');
 
 const product = JSON.parse(fs.readFileSync('product.json', 'utf8'));
 const result = validate(product);
@@ -77,6 +76,6 @@ ojs-validate product.json --schema /path/to/ojs-strict.json
 
 ## See also
 
-- [OJS repository](https://github.com/openjewelryschema/ojs)
+- [OJS repository](https://github.com/yev-arbling/ojs)
 - [Python/Pydantic validator](../../src/python/ojs/models/) — source of truth
 - [Integration guides](../../docs/integrations/)
