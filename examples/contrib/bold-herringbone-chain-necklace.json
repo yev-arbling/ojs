@@ -17,7 +17,7 @@
     "offers": [
       {
         "price": {
-          "amount": "338.00",
+          "amount": "415.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -31,7 +31,7 @@
       },
       {
         "price": {
-          "amount": "378.00",
+          "amount": "470.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -45,7 +45,7 @@
       },
       {
         "price": {
-          "amount": "318.00",
+          "amount": "390.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -59,7 +59,7 @@
       },
       {
         "price": {
-          "amount": "298.00",
+          "amount": "335.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -73,7 +73,7 @@
       },
       {
         "price": {
-          "amount": "328.00",
+          "amount": "410.00",
           "currency": "USD"
         },
         "availability": "in_stock",
