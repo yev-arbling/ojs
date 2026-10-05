@@ -35,3 +35,5 @@ jobs:
         run: pip install -e src/python
       - name: Validate every example against the Pydantic model
         run: python tests/validate_examples.py
+      - name: The contributed examples' values are fictional (none equals its 1.0.2 value)
+        run: python tests/check_examples_fictional.py

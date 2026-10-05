@@ -1,0 +1,141 @@
+{
+  "baguette-emerald-open-ring.json": {
+    "prices": [
+      "518.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "bezel-lab-grown-diamond-zig-zag-ring.json": {
+    "prices": [
+      "718.00",
+      "538.00",
+      "458.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "black-onyx-square-signet-ring.json": {
+    "prices": [
+      "1400.00",
+      "238.00"
+    ],
+    "ring_size_us_ca": 7.0
+  },
+  "bold-diamond-eternity-ring.json": {
+    "prices": [
+      "3500.00",
+      "3600.00",
+      "3700.00",
+      "3800.00",
+      "4000.00",
+      "4100.00",
+      "4200.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "bold-herringbone-chain-necklace.json": {
+    "prices": [
+      "338.00",
+      "378.00",
+      "318.00",
+      "298.00",
+      "328.00"
+    ],
+    "ring_size_us_ca": null
+  },
+  "braided-ring.json": {
+    "prices": [
+      "378.00",
+      "458.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "dome-ring.json": {
+    "prices": [
+      "168.00",
+      "188.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "double-pearl-drop-earrings.json": {
+    "prices": [
+      "178.00"
+    ],
+    "ring_size_us_ca": null
+  },
+  "essential-pearl-earrings-white.json": {
+    "prices": [
+      "288.00"
+    ],
+    "ring_size_us_ca": null
+  },
+  "lab-grown-diamond-half-eternity-ring.json": {
+    "prices": [
+      "898.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "lab-grown-sapphire-eternity-ring.json": {
+    "prices": [
+      "258.00",
+      "218.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "mega-dome-earrings.json": {
+    "prices": [
+      "338.00",
+      "298.00"
+    ],
+    "ring_size_us_ca": null
+  },
+  "mini-heart-pave-diamond-stud-earrings.json": {
+    "prices": [
+      "378.00"
+    ],
+    "ring_size_us_ca": null
+  },
+  "organic-dome-thin-marquise-cut-nesting-ring.json": {
+    "prices": [
+      "778.00"
+    ],
+    "ring_size_us_ca": 5.0
+  },
+  "pave-diamond-wishbone-ring.json": {
+    "prices": [
+      "458.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "pearl-half-eternity-ring.json": {
+    "prices": [
+      "358.00"
+    ],
+    "ring_size_us_ca": 5.0
+  },
+  "ribbed-statement-ring.json": {
+    "prices": [
+      "1100.00"
+    ],
+    "ring_size_us_ca": 6.0
+  },
+  "signet-ring.json": {
+    "prices": [
+      "398.00",
+      "478.00"
+    ],
+    "ring_size_us_ca": 3.0
+  },
+  "stacker-ring.json": {
+    "prices": [
+      "158.00",
+      "188.00"
+    ],
+    "ring_size_us_ca": 4.0
+  },
+  "tennis-drop-earrings.json": {
+    "prices": [
+      "258.00"
+    ],
+    "ring_size_us_ca": null
+  }
+}
