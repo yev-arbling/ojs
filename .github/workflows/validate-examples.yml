@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -35,3 +37,5 @@ jobs:
         run: pip install -e src/python
       - name: Validate every example against the Pydantic model
         run: python tests/validate_examples.py
+      - name: One-time check for 1.0.3 - no contributed example keeps a v1.0.2 price or ring size
+        run: python tests/check_examples_fictional.py
