@@ -2,6 +2,20 @@
 
 All notable changes to OJS are documented here. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] — 2026-10-05
+
+Example data release. No schema changes: the schema stays at 1.0, and every example still validates against it.
+
+### Changed
+
+- **Contributed examples** (`examples/contrib/`): their prices and ring sizes are fictional. Each price is 1.15 times its 1.0.2 value, rounded to the nearest 5, and each ring size is 2.5 sizes larger. No example mirrors one real product.
+
+### Added
+
+- **CI** checks that no contributed example keeps a 1.0.2 price or ring size (`tests/check_examples_fictional.py`, against `tests/fixtures/contrib-values-1.0.2.json`).
+
+[1.0.3]: https://github.com/yev-arbling/ojs/releases/tag/v1.0.3
+
 ## [1.0.2] — 2026-10-05
 
 Hygiene release. No schema changes: the schema stays at 1.0, and every example still validates against it.
