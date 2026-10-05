@@ -80,3 +80,10 @@ The dual-licensing pattern (CC0 vocabulary + Apache 2.0 code) follows
 the HL7 FHIR governance model and is intended to maximize adoption
 while preserving the maintainer's ability to evolve the reference
 implementation.
+
+----------------------------------------------------------------------
+
+Example files in releases before 1.0.2 included product information
+taken from third-party websites. That information was not Arbling's to
+license and is not covered by this repository's licences. Rights
+holders can write to hi@arbling.com.
