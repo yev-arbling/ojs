@@ -17,7 +17,7 @@
     "offers": [
       {
         "price": {
-          "amount": "1100.00",
+          "amount": "1460.00",
           "currency": "USD"
         },
         "availability": "discontinued",
@@ -53,7 +53,7 @@
   },
   "sizing": {
     "ring_size": {
-      "us_ca": 6.0
+      "us_ca": 8.0
     },
     "ring_resizable": true
   },

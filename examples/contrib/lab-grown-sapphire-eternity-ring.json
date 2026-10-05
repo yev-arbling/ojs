@@ -17,7 +17,7 @@
     "offers": [
       {
         "price": {
-          "amount": "258.00",
+          "amount": "270.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -31,7 +31,7 @@
       },
       {
         "price": {
-          "amount": "218.00",
+          "amount": "205.00",
           "currency": "USD"
         },
         "availability": "in_stock",
@@ -91,7 +91,7 @@
   },
   "sizing": {
     "ring_size": {
-      "us_ca": 4.0
+      "us_ca": 6.0
     },
     "ring_resizable": true
   },

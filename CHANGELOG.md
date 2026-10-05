@@ -2,6 +2,16 @@
 
 All notable changes to OJS are documented here. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] — 2026-10-05
+
+Example data release. No schema changes: the schema stays at 1.0, and every example still validates against it.
+
+### Changed
+
+- **Contributed examples** (`examples/contrib/`): their prices and ring sizes are fictional.
+
+[1.0.3]: https://github.com/yev-arbling/ojs/releases/tag/v1.0.3
+
 ## [1.0.2] — 2026-10-05
 
 Hygiene release. No schema changes: the schema stays at 1.0, and every example still validates against it.
