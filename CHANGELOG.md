@@ -2,6 +2,27 @@
 
 All notable changes to OJS are documented here. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] — 2026-10-05
+
+Hygiene release. No schema changes: the schema stays at 1.0, and every example still validates against it.
+
+### Changed
+
+- **Contributed examples** (`examples/contrib/`) name no real company: no brand, product-line name or SKU in their content, their file names or the migration tool (#10; a first pass on 2026-06-25).
+- **README**: the repository's real address, commands that run as written, and the licences stated plainly (#8). It counts seven regional ring-size systems, not eight (#11).
+- **Licences**: `LICENSE` holds the Apache License 2.0 text and `NOTICE` keeps its notice word for word; the duplicate `LICENSE-APACHE` is removed (#8).
+
+### Added
+
+- **`pyproject.toml`** for the Python reference implementation (#3).
+- **CI** validates every example, and the Python validator runs in CI (#8, #10).
+
+### Fixed
+
+- **The Node.js validator's `fast-uri`** moves to 3.1.8 (3.1.5 in #6, then 3.1.8 in #11), which closes the open Dependabot alerts.
+
+[1.0.2]: https://github.com/yev-arbling/ojs/releases/tag/v1.0.2
+
 ## [1.0.1] — 2026-05-21
 
 Adoption-funnel patch. No schema changes — all additions are tooling, examples, and docs around the existing v1.0 schema.
