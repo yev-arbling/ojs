@@ -4,7 +4,7 @@
 
 [![License: CC0 1.0](https://img.shields.io/badge/License%20(vocabulary)-CC0%201.0-lightgrey.svg)](LICENSE-CC0)
 [![License: Apache 2.0](https://img.shields.io/badge/License%20(code)-Apache%202.0-blue.svg)](LICENSE)
-[![Schema 1.0 · release 1.0.1](https://img.shields.io/badge/schema-1.0%20%C2%B7%20release%201.0.1-green.svg)](CHANGELOG.md)
+[![Schema 1.0 · release 1.0.2](https://img.shields.io/badge/schema-1.0%20%C2%B7%20release%201.0.2-green.svg)](CHANGELOG.md)
 
 OJS is a structured data schema for jewelry that captures the attributes existing standards (Schema.org, GS1, GMC) miss: stone provenance, treatments, ring sizes in seven regional systems, watch movements, CIBJO 7-factor pearl grading, body-jewelry biocompatibility, hallmarks, AR placement metadata, and agent-ranking signals.
 
