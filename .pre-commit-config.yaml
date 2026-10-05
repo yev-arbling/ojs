@@ -1,0 +1,11 @@
+# Secret scanning on every commit.
+# Requires gitleaks on PATH: https://github.com/gitleaks/gitleaks/releases
+# Setup once per clone:  pre-commit install
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks (secret scan)
+        entry: gitleaks git --pre-commit --staged --redact --no-banner
+        language: system
+        pass_filenames: false
