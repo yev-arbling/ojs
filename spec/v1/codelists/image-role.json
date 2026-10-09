@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/image-role.json",
+  "title": "OJS codelist: image-role",
+  "description": "Image role/category for media assets",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "primary",
+      "label": "Primary"
+    },
+    {
+      "code": "additional",
+      "label": "Additional"
+    },
+    {
+      "code": "lifestyle",
+      "label": "Lifestyle"
+    },
+    {
+      "code": "macro",
+      "label": "Macro"
+    },
+    {
+      "code": "scale",
+      "label": "Scale"
+    },
+    {
+      "code": "certificate",
+      "label": "Certificate"
+    },
+    {
+      "code": "hallmark",
+      "label": "Hallmark"
+    },
+    {
+      "code": "packaging",
+      "label": "Packaging"
+    },
+    {
+      "code": "video_thumbnail",
+      "label": "Video Thumbnail"
+    },
+    {
+      "code": "infographic",
+      "label": "Infographic"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

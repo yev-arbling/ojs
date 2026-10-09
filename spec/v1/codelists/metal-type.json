@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/metal-type.json",
+  "title": "OJS codelist: metal-type",
+  "description": "Base metal types per ISO 9202",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "gold",
+      "label": "Gold"
+    },
+    {
+      "code": "silver",
+      "label": "Silver"
+    },
+    {
+      "code": "platinum",
+      "label": "Platinum"
+    },
+    {
+      "code": "palladium",
+      "label": "Palladium"
+    },
+    {
+      "code": "rhodium",
+      "label": "Rhodium"
+    },
+    {
+      "code": "titanium",
+      "label": "Titanium"
+    },
+    {
+      "code": "niobium",
+      "label": "Niobium"
+    },
+    {
+      "code": "steel",
+      "label": "Steel"
+    },
+    {
+      "code": "tungsten",
+      "label": "Tungsten"
+    },
+    {
+      "code": "brass",
+      "label": "Brass"
+    },
+    {
+      "code": "bronze",
+      "label": "Bronze"
+    },
+    {
+      "code": "copper",
+      "label": "Copper"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/product-subtype.json",
+  "title": "OJS codelist: product-subtype",
+  "description": "Fine-grained product classification within product_type",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "engagement_ring",
+      "label": "Engagement Ring"
+    },
+    {
+      "code": "wedding_band",
+      "label": "Wedding Band"
+    },
+    {
+      "code": "fashion_ring",
+      "label": "Fashion Ring"
+    },
+    {
+      "code": "signet_ring",
+      "label": "Signet Ring"
+    },
+    {
+      "code": "eternity_ring",
+      "label": "Eternity Ring"
+    },
+    {
+      "code": "cocktail_ring",
+      "label": "Cocktail Ring"
+    },
+    {
+      "code": "promise_ring",
+      "label": "Promise Ring"
+    },
+    {
+      "code": "mens_ring",
+      "label": "Mens Ring"
+    },
+    {
+      "code": "stud",
+      "label": "Stud"
+    },
+    {
+      "code": "hoop",
+      "label": "Hoop"
+    },
+    {
+      "code": "huggie",
+      "label": "Huggie"
+    },
+    {
+      "code": "drop",
+      "label": "Drop"
+    },
+    {
+      "code": "ear_cuff",
+      "label": "Ear Cuff"
+    },
+    {
+      "code": "climber",
+      "label": "Climber"
+    },
+    {
+      "code": "chain",
+      "label": "Chain"
+    },
+    {
+      "code": "choker",
+      "label": "Choker"
+    },
+    {
+      "code": "pendant_necklace",
+      "label": "Pendant Necklace"
+    },
+    {
+      "code": "collar",
+      "label": "Collar"
+    },
+    {
+      "code": "layered",
+      "label": "Layered"
+    },
+    {
+      "code": "bangle",
+      "label": "Bangle"
+    },
+    {
+      "code": "cuff",
+      "label": "Cuff"
+    },
+    {
+      "code": "tennis",
+      "label": "Tennis"
+    },
+    {
+      "code": "charm_bracelet",
+      "label": "Charm Bracelet"
+    },
+    {
+      "code": "chain_bracelet",
+      "label": "Chain Bracelet"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

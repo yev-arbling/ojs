@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/diamond-clarity-grade.json",
+  "title": "OJS codelist: diamond-clarity-grade",
+  "description": "GIA FL-I3 clarity scale for diamonds",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "FL",
+      "label": "Fl"
+    },
+    {
+      "code": "IF",
+      "label": "If"
+    },
+    {
+      "code": "VVS1",
+      "label": "Vvs1"
+    },
+    {
+      "code": "VVS2",
+      "label": "Vvs2"
+    },
+    {
+      "code": "VS1",
+      "label": "Vs1"
+    },
+    {
+      "code": "VS2",
+      "label": "Vs2"
+    },
+    {
+      "code": "SI1",
+      "label": "Si1"
+    },
+    {
+      "code": "SI2",
+      "label": "Si2"
+    },
+    {
+      "code": "SI3",
+      "label": "Si3"
+    },
+    {
+      "code": "I1",
+      "label": "I1"
+    },
+    {
+      "code": "I2",
+      "label": "I2"
+    },
+    {
+      "code": "I3",
+      "label": "I3"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/confidence-source.json",
+  "title": "OJS codelist: confidence-source",
+  "description": "Data provenance sources for enrichment pipeline",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "manual",
+      "label": "Manual"
+    },
+    {
+      "code": "certificate",
+      "label": "Certificate"
+    },
+    {
+      "code": "regex_text",
+      "label": "Regex Text"
+    },
+    {
+      "code": "cv_image",
+      "label": "Cv Image"
+    },
+    {
+      "code": "llm_inferred",
+      "label": "Llm Inferred"
+    },
+    {
+      "code": "default",
+      "label": "Default"
+    }
+  ]
+}

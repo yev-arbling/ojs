@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/dimension-unit.json",
+  "title": "OJS codelist: dimension-unit",
+  "description": "OJS v1 controlled vocabulary: DimensionUnit",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "mm",
+      "label": "Millimeter"
+    },
+    {
+      "code": "cm",
+      "label": "Centimeter"
+    },
+    {
+      "code": "m",
+      "label": "Meter"
+    },
+    {
+      "code": "in",
+      "label": "Inch"
+    },
+    {
+      "code": "ft",
+      "label": "Foot"
+    }
+  ]
+}

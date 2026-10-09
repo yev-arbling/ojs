@@ -7,10 +7,11 @@ Maps to: Schema.org Product (sku, gtin, brand, name, description),
         Shopify (product.handle, product.title, product.vendor).
 
 REQUIRED FIELDS: sku, title, brand, description
-RECOMMENDED: gtin, mpn, model
+RECOMMENDED: gtin, mpn, model, product_subtype
 """
 from __future__ import annotations
 
+from enum import Enum
 from typing import Annotated, Optional
 
 from pydantic import Field, StringConstraints
@@ -39,6 +40,46 @@ class Brand(OJSBaseModel):
         default=None,
         description="GS1 Global Location Number (13 digits) — links to GS1 registry",
     )
+
+
+class ProductSubtype(str, Enum):
+    """Fine-grained product classification within a product_type.
+
+    Enables marketplace faceted navigation (GMC subcategory, Amazon node,
+    Etsy taxonomy). product_type='ring' + product_subtype='engagement_ring'
+    is unambiguous; product_type alone is not.
+    """
+
+    # Rings
+    ENGAGEMENT_RING = "engagement_ring"
+    WEDDING_BAND = "wedding_band"
+    FASHION_RING = "fashion_ring"
+    SIGNET_RING = "signet_ring"
+    ETERNITY_RING = "eternity_ring"
+    COCKTAIL_RING = "cocktail_ring"
+    PROMISE_RING = "promise_ring"
+    MENS_RING = "mens_ring"
+    # Earrings
+    STUD = "stud"
+    HOOP = "hoop"
+    HUGGIE = "huggie"
+    DROP = "drop"
+    EAR_CUFF = "ear_cuff"
+    CLIMBER = "climber"
+    # Necklaces
+    CHAIN = "chain"
+    CHOKER = "choker"
+    PENDANT_NECKLACE = "pendant_necklace"
+    COLLAR = "collar"
+    LAYERED = "layered"
+    # Bracelets
+    BANGLE = "bangle"
+    CUFF = "cuff"
+    TENNIS = "tennis"
+    CHARM_BRACELET = "charm_bracelet"
+    CHAIN_BRACELET = "chain_bracelet"
+    # General
+    OTHER = "other"
 
 
 class IdentityModule(OJSBaseModel):
@@ -90,4 +131,14 @@ class IdentityModule(OJSBaseModel):
     handle: Optional[Annotated[str, StringConstraints(pattern=r"^[a-z0-9-]+$", max_length=100)]] = Field(
         default=None,
         description="URL-safe slug. Shopify-style handle (lowercase, hyphens). Auto-generated if absent.",
+    )
+    product_subtype: Optional[ProductSubtype] = Field(
+        default=None,
+        description="Fine-grained type within product_type. E.g. product_type='ring' + "
+        "product_subtype='engagement_ring'. Required for marketplace faceted navigation.",
+    )
+    note: Optional[Annotated[str, StringConstraints(max_length=1000)]] = Field(
+        default=None,
+        description="Factual product callout or disclaimer, distinct from marketing description. "
+        "E.g. 'All natural stones vary slightly in color', 'Aftermarket product not affiliated with brand X'.",
     )

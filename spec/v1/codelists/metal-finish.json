@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/metal-finish.json",
+  "title": "OJS codelist: metal-finish",
+  "description": "Metal surface finishes",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "polished",
+      "label": "Polished"
+    },
+    {
+      "code": "matte",
+      "label": "Matte"
+    },
+    {
+      "code": "brushed",
+      "label": "Brushed"
+    },
+    {
+      "code": "satin",
+      "label": "Satin"
+    },
+    {
+      "code": "hammered",
+      "label": "Hammered"
+    },
+    {
+      "code": "sandblasted",
+      "label": "Sandblasted"
+    },
+    {
+      "code": "oxidized",
+      "label": "Oxidized"
+    },
+    {
+      "code": "milgrain",
+      "label": "Milgrain"
+    },
+    {
+      "code": "engraved",
+      "label": "Engraved"
+    },
+    {
+      "code": "florentine",
+      "label": "Florentine"
+    },
+    {
+      "code": "twisted",
+      "label": "Twisted"
+    }
+  ]
+}

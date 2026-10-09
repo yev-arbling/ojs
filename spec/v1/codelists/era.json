@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schema.openjewelryschema.org/v1/codelist/eras.json",
-  "title": "OJS codelist: eras",
-  "description": "Historical periods for vintage/antique pieces",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/era.json",
+  "title": "OJS codelist: era",
+  "description": "Historical jewelry periods and style aesthetics",
   "version": "1.0.0",
   "values": [
     {
@@ -20,6 +20,10 @@
     {
       "code": "late_victorian",
       "label": "Late Victorian"
+    },
+    {
+      "code": "belle_epoque",
+      "label": "Belle Epoque"
     },
     {
       "code": "edwardian",
@@ -48,6 +52,10 @@
     {
       "code": "contemporary",
       "label": "Contemporary"
+    },
+    {
+      "code": "bohemian",
+      "label": "Bohemian"
     },
     {
       "code": "unknown",

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/origin-claim.json",
+  "title": "OJS codelist: origin-claim",
+  "description": "OJS v1 controlled vocabulary: OriginClaim",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "canadian_diamond",
+      "label": "Canadian Diamond"
+    },
+    {
+      "code": "botswana_sort",
+      "label": "Botswana Sort"
+    },
+    {
+      "code": "australian_diamond",
+      "label": "Australian Diamond"
+    },
+    {
+      "code": "recycled_gold",
+      "label": "Recycled Gold"
+    },
+    {
+      "code": "fairmined_gold",
+      "label": "Fairmined Gold"
+    },
+    {
+      "code": "recycled_platinum",
+      "label": "Recycled Platinum"
+    },
+    {
+      "code": "recycled_silver",
+      "label": "Recycled Silver"
+    },
+    {
+      "code": "single_origin",
+      "label": "Single Origin"
+    },
+    {
+      "code": "blockchain_tracked",
+      "label": "Blockchain Tracked"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

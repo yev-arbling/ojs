@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/relationship-type.json",
+  "title": "OJS codelist: relationship-type",
+  "description": "Product relationship types (variant, complement, etc.)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "variant",
+      "label": "Variant"
+    },
+    {
+      "code": "is_variant_of",
+      "label": "Is Variant Of"
+    },
+    {
+      "code": "part_of_set",
+      "label": "Part Of Set"
+    },
+    {
+      "code": "pairs_with",
+      "label": "Pairs With"
+    },
+    {
+      "code": "substitute",
+      "label": "Substitute"
+    },
+    {
+      "code": "replaces",
+      "label": "Replaces"
+    },
+    {
+      "code": "successor_of",
+      "label": "Successor Of"
+    },
+    {
+      "code": "different_brand",
+      "label": "Different Brand"
+    },
+    {
+      "code": "accessory",
+      "label": "Accessory"
+    },
+    {
+      "code": "required_part",
+      "label": "Required Part"
+    }
+  ]
+}

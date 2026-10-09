@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/crystal-type.json",
+  "title": "OJS codelist: crystal-type",
+  "description": "OJS v1 controlled vocabulary: CrystalType",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "sapphire",
+      "label": "Sapphire"
+    },
+    {
+      "code": "mineral_glass",
+      "label": "Mineral Glass"
+    },
+    {
+      "code": "acrylic",
+      "label": "Acrylic"
+    },
+    {
+      "code": "hardlex",
+      "label": "Hardlex"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/movement-type.json",
+  "title": "OJS codelist: movement-type",
+  "description": "Watch movement technology",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "automatic",
+      "label": "Automatic"
+    },
+    {
+      "code": "manual_wind",
+      "label": "Manual Wind"
+    },
+    {
+      "code": "quartz",
+      "label": "Quartz"
+    },
+    {
+      "code": "solar_quartz",
+      "label": "Solar Quartz"
+    },
+    {
+      "code": "kinetic",
+      "label": "Kinetic"
+    },
+    {
+      "code": "spring_drive",
+      "label": "Spring Drive"
+    },
+    {
+      "code": "meca_quartz",
+      "label": "Meca Quartz"
+    },
+    {
+      "code": "smart",
+      "label": "Smart"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

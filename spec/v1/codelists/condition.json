@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/condition.json",
+  "title": "OJS codelist: condition",
+  "description": "Product condition (Schema.org / GMC / ACP aligned)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "new",
+      "label": "New"
+    },
+    {
+      "code": "refurbished",
+      "label": "Refurbished"
+    },
+    {
+      "code": "used",
+      "label": "Used"
+    },
+    {
+      "code": "estate",
+      "label": "Estate"
+    },
+    {
+      "code": "vintage",
+      "label": "Vintage"
+    },
+    {
+      "code": "antique",
+      "label": "Antique"
+    },
+    {
+      "code": "pre_owned",
+      "label": "Pre Owned"
+    },
+    {
+      "code": "new_with_tags",
+      "label": "New With Tags"
+    }
+  ]
+}

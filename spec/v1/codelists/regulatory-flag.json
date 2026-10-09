@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/regulatory-flag.json",
+  "title": "OJS codelist: regulatory-flag",
+  "description": "Compliance claims (Nickel Directive, RoHS, etc.)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "prop_65_warning",
+      "label": "Prop 65 Warning"
+    },
+    {
+      "code": "nickel_directive_compliant",
+      "label": "Nickel Directive Compliant"
+    },
+    {
+      "code": "cpsia_compliant",
+      "label": "Cpsia Compliant"
+    },
+    {
+      "code": "reach_compliant",
+      "label": "Reach Compliant"
+    },
+    {
+      "code": "rohs_compliant",
+      "label": "Rohs Compliant"
+    },
+    {
+      "code": "fcc_certified",
+      "label": "Fcc Certified"
+    },
+    {
+      "code": "ce_marked",
+      "label": "Ce Marked"
+    },
+    {
+      "code": "kimberley_verified",
+      "label": "Kimberley Verified"
+    },
+    {
+      "code": "cites_listed",
+      "label": "Cites Listed"
+    }
+  ]
+}

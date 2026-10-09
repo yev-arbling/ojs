@@ -148,6 +148,200 @@ class TestModels:
                 seller_name="X", seller_url="https://x",
             )
 
+    def test_new_stone_cuts_valid(self):
+        from ojs.models import StoneCut
+        assert StoneCut.TAPERED_BAGUETTE == "tapered_baguette"
+        assert StoneCut.HEXAGON == "hexagon"
+        assert StoneCut.KITE == "kite"
+        assert StoneCut.PORTUGUESE == "portuguese"
+        assert StoneCut.COFFIN == "coffin"
+
+    def test_new_grading_labs_valid(self):
+        from ojs.models import GradingLab
+        assert GradingLab.GSI == "gsi"
+        assert GradingLab.NGTC == "ngtc"
+        assert GradingLab.AGL == "agl"
+        assert GradingLab.GRA == "gra"
+
+    def test_new_gemstone_species_valid(self):
+        from ojs.models import GemstoneSpecies
+        assert GemstoneSpecies.PRASIOLITE == "prasiolite"
+        assert GemstoneSpecies.QUARTZ == "quartz"
+
+    def test_colored_stone_clarity_enum(self):
+        from ojs.models import ColoredStoneClarityGrade
+        assert ColoredStoneClarityGrade.EYE_CLEAN == "eye_clean"
+        assert ColoredStoneClarityGrade.SLIGHTLY_INCLUDED == "slightly_included"
+        assert ColoredStoneClarityGrade.MODERATELY_INCLUDED == "moderately_included"
+        assert ColoredStoneClarityGrade.HEAVILY_INCLUDED == "heavily_included"
+
+    def test_stone_colored_clarity_field(self):
+        from ojs.models import Stone, ColoredStoneClarityGrade
+        s = Stone(
+            species="sapphire",
+            origin_type="natural",
+            colored_stone_clarity=ColoredStoneClarityGrade.EYE_CLEAN,
+        )
+        assert s.colored_stone_clarity == "eye_clean"
+
+    def test_treatment_waxed(self):
+        from ojs.models import TreatmentType
+        assert TreatmentType.WAXED == "waxed"
+
+    def test_stone_count_default_one(self):
+        from ojs.models import Stone
+        s = Stone(species="diamond", origin_type="natural")
+        assert s.count == 1
+
+    def test_stone_count_with_total_carat(self):
+        from ojs.models import Stone
+        s = Stone(
+            species="diamond",
+            origin_type="natural",
+            cut="round_brilliant",
+            count=24,
+            total_carat=0.48,
+        )
+        assert s.count == 24
+        assert s.total_carat == 0.48
+
+    def test_stone_count_zero_rejected(self):
+        from ojs.models import Stone
+        with pytest.raises(Exception):
+            Stone(species="diamond", origin_type="natural", count=0)
+
+    def test_new_era_values(self):
+        from ojs.models import Era
+        assert Era.BELLE_EPOQUE == "belle_epoque"
+        assert Era.BOHEMIAN == "bohemian"
+
+    def test_chain_style_enum(self):
+        from ojs.models import ChainStyle
+        assert ChainStyle.CUBAN_LINK == "cuban_link"
+        assert ChainStyle.HERRINGBONE == "herringbone"
+        assert ChainStyle.CABLE == "cable"
+
+    def test_style_module_new_fields(self):
+        from ojs.models import StyleModule, Era, Occasion, ChainStyle
+        s = StyleModule(
+            era=Era.BELLE_EPOQUE,
+            occasions=[Occasion.ENGAGEMENT, Occasion.ANNIVERSARY],
+            engravable=True,
+            customizable=False,
+            birthstone_month=3,
+            chain_style=ChainStyle.HERRINGBONE,
+            color_story=["blue", "white"],
+        )
+        assert s.era == "belle_epoque"
+        assert len(s.occasions) == 2
+        assert s.engravable is True
+        assert s.birthstone_month == 3
+        assert s.chain_style == "herringbone"
+        assert s.color_story == ["blue", "white"]
+
+    def test_birthstone_month_out_of_range(self):
+        from ojs.models import StyleModule
+        with pytest.raises(Exception):
+            StyleModule(birthstone_month=13)
+
+    def test_product_subtype_enum(self):
+        from ojs.models import ProductSubtype
+        assert ProductSubtype.ENGAGEMENT_RING == "engagement_ring"
+        assert ProductSubtype.HOOP == "hoop"
+        assert ProductSubtype.TENNIS == "tennis"
+        assert ProductSubtype.BANGLE == "bangle"
+
+    def test_identity_product_subtype_and_note(self):
+        from ojs.models import IdentityModule, Brand, ProductSubtype
+        m = IdentityModule(
+            sku="X",
+            title="Solitaire Ring",
+            description="A beautiful ring",
+            brand=Brand(name="Test"),
+            product_subtype=ProductSubtype.ENGAGEMENT_RING,
+            note="All natural diamonds vary slightly in color.",
+        )
+        assert m.product_subtype == "engagement_ring"
+        assert m.note == "All natural diamonds vary slightly in color."
+
+    def test_note_max_length(self):
+        from ojs.models import IdentityModule, Brand
+        with pytest.raises(Exception):
+            IdentityModule(
+                sku="X", title="X", description="X test",
+                brand=Brand(name="X"),
+                note="x" * 1001,
+            )
+
+    def test_metal_finish_twisted(self):
+        from ojs.models import MetalFinish
+        assert MetalFinish.TWISTED == "twisted"
+
+    def test_metals_module_lead_free_tarnish_resistant(self):
+        from ojs.models import MetalsModule, MetalComposition
+        m = MetalsModule(
+            compositions=[MetalComposition(type="gold", purity_fineness=750, primary=True)],
+            lead_free=True,
+            tarnish_resistant=True,
+        )
+        assert m.lead_free is True
+        assert m.tarnish_resistant is True
+
+    def test_condition_new_values(self):
+        from ojs.models import Condition
+        assert Condition.PRE_OWNED == "pre_owned"
+        assert Condition.NEW_WITH_TAGS == "new_with_tags"
+
+    def test_offer_warranty_and_return_days(self):
+        from ojs.models import Offer, Availability
+        o = Offer(
+            price={"amount": "500.00", "currency": "USD"},
+            availability=Availability.IN_STOCK,
+            url="https://example.com/p/1",
+            target_countries=["US"],
+            seller_name="Test",
+            seller_url="https://example.com",
+            warranty_years=2.0,
+            return_policy_days=30,
+        )
+        assert o.warranty_years == 2.0
+        assert o.return_policy_days == 30
+
+    def test_warranty_years_negative_rejected(self):
+        from ojs.models import Offer, Availability
+        with pytest.raises(Exception):
+            Offer(
+                price={"amount": "500.00", "currency": "USD"},
+                availability=Availability.IN_STOCK,
+                url="https://example.com/p/1",
+                target_countries=["US"],
+                seller_name="Test",
+                seller_url="https://example.com",
+                warranty_years=-1.0,
+            )
+
+    def test_earring_post_type_enum(self):
+        from ojs.models import EarringPostType
+        assert EarringPostType.HUGGIE == "huggie"
+        assert EarringPostType.THREADER == "threader"
+        assert EarringPostType.STUD == "stud"
+
+    def test_sizing_new_fields(self):
+        from ojs.models import SizingModule, EarringPostType
+        s = SizingModule(
+            ring_thickness_mm=2.5,
+            pendant_thickness_mm=3.0,
+            earring_post_type=EarringPostType.HUGGIE,
+        )
+        assert s.ring_thickness_mm == 2.5
+        assert s.pendant_thickness_mm == 3.0
+        assert s.earring_post_type == "huggie"
+
+    def test_ring_thickness_negative_rejected(self):
+        from ojs.models import SizingModule
+        with pytest.raises(Exception):
+            SizingModule(ring_thickness_mm=-1.0)
+
 
 # ============================================================
 # Discriminator tests
@@ -306,6 +500,42 @@ class TestRoundTrip:
         assert re_validated.identity.sku == original.identity.sku
         assert re_validated.stones.stones[0].carat == original.stones.stones[0].carat
         assert re_validated.metals.compositions[0].purity_fineness == 950
+
+
+class TestCodelists:
+    def test_all_codelists_generated(self, tmp_path):
+        """generate_codelists.main() must produce at least 30 files."""
+        import importlib.util
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parents[1]
+        spec_path = root / "src" / "python" / "ojs" / "generate_codelists.py"
+        spec = importlib.util.spec_from_file_location("generate_codelists", spec_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        mod.main(out_dir=tmp_path)
+        files = list(tmp_path.glob("*.json"))
+        assert len(files) >= 30, f"Expected ≥30 codelists, got {len(files)}: {[f.name for f in files]}"
+
+    def test_codelist_format_valid(self, tmp_path):
+        """Each generated codelist must have $schema, $id, values array."""
+        import importlib.util, json
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parents[1]
+        spec_path = root / "src" / "python" / "ojs" / "generate_codelists.py"
+        spec = importlib.util.spec_from_file_location("generate_codelists", spec_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+
+        mod.main(out_dir=tmp_path)
+        for f in tmp_path.glob("*.json"):
+            data = json.loads(f.read_text())
+            assert "$schema" in data, f"{f.name} missing $schema"
+            assert "values" in data, f"{f.name} missing values"
+            assert isinstance(data["values"], list), f"{f.name} values not a list"
+            assert len(data["values"]) > 0, f"{f.name} has empty values"
 
 
 if __name__ == "__main__":

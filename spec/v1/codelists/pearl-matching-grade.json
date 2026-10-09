@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-matching-grade.json",
+  "title": "OJS codelist: pearl-matching-grade",
+  "description": "Pearl strand matching quality",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "excellent",
+      "label": "Excellent"
+    },
+    {
+      "code": "very_good",
+      "label": "Very Good"
+    },
+    {
+      "code": "good",
+      "label": "Good"
+    },
+    {
+      "code": "fair",
+      "label": "Fair"
+    },
+    {
+      "code": "single_pearl",
+      "label": "Single Pearl"
+    }
+  ]
+}

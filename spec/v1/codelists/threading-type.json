@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/threading-type.json",
+  "title": "OJS codelist: threading-type",
+  "description": "Body jewelry threading types",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "internally_threaded",
+      "label": "Internally Threaded"
+    },
+    {
+      "code": "externally_threaded",
+      "label": "Externally Threaded"
+    },
+    {
+      "code": "threadless",
+      "label": "Threadless"
+    },
+    {
+      "code": "hinged",
+      "label": "Hinged"
+    },
+    {
+      "code": "captive_bead",
+      "label": "Captive Bead"
+    },
+    {
+      "code": "seamless",
+      "label": "Seamless"
+    },
+    {
+      "code": "segment",
+      "label": "Segment"
+    },
+    {
+      "code": "push_pin",
+      "label": "Push Pin"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

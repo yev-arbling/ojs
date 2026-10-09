@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/source-system.json",
+  "title": "OJS codelist: source-system",
+  "description": "Data provenance system identifiers",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "manual",
+      "label": "Manual"
+    },
+    {
+      "code": "shopify",
+      "label": "Shopify"
+    },
+    {
+      "code": "arbling_pipeline",
+      "label": "Arbling Pipeline"
+    },
+    {
+      "code": "pim_akeneo",
+      "label": "Pim Akeneo"
+    },
+    {
+      "code": "pim_salsify",
+      "label": "Pim Salsify"
+    },
+    {
+      "code": "pim_syndigo",
+      "label": "Pim Syndigo"
+    },
+    {
+      "code": "gmc_import",
+      "label": "Gmc Import"
+    },
+    {
+      "code": "acp_import",
+      "label": "Acp Import"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

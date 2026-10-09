@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/religion.json",
+  "title": "OJS codelist: religion",
+  "description": "Religious traditions for ceremonial jewelry",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "christian",
+      "label": "Christian"
+    },
+    {
+      "code": "catholic",
+      "label": "Catholic"
+    },
+    {
+      "code": "orthodox",
+      "label": "Orthodox"
+    },
+    {
+      "code": "protestant",
+      "label": "Protestant"
+    },
+    {
+      "code": "jewish",
+      "label": "Jewish"
+    },
+    {
+      "code": "muslim",
+      "label": "Muslim"
+    },
+    {
+      "code": "hindu",
+      "label": "Hindu"
+    },
+    {
+      "code": "buddhist",
+      "label": "Buddhist"
+    },
+    {
+      "code": "sikh",
+      "label": "Sikh"
+    },
+    {
+      "code": "pagan",
+      "label": "Pagan"
+    },
+    {
+      "code": "shinto",
+      "label": "Shinto"
+    },
+    {
+      "code": "interfaith",
+      "label": "Interfaith"
+    },
+    {
+      "code": "spiritual_non_religious",
+      "label": "Spiritual Non Religious"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

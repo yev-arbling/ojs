@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/activity-safety.json",
+  "title": "OJS codelist: activity-safety",
+  "description": "Safe and avoid-list activities for care",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "shower_safe",
+      "label": "Shower Safe"
+    },
+    {
+      "code": "swimming_safe",
+      "label": "Swimming Safe"
+    },
+    {
+      "code": "ocean_safe",
+      "label": "Ocean Safe"
+    },
+    {
+      "code": "exercise_safe",
+      "label": "Exercise Safe"
+    },
+    {
+      "code": "sleep_safe",
+      "label": "Sleep Safe"
+    },
+    {
+      "code": "avoid_perfume",
+      "label": "Avoid Perfume"
+    },
+    {
+      "code": "avoid_lotion",
+      "label": "Avoid Lotion"
+    },
+    {
+      "code": "avoid_household_chemicals",
+      "label": "Avoid Household Chemicals"
+    },
+    {
+      "code": "avoid_direct_sun",
+      "label": "Avoid Direct Sun"
+    }
+  ]
+}

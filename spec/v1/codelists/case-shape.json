@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/case-shape.json",
+  "title": "OJS codelist: case-shape",
+  "description": "Watch case shapes",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "round",
+      "label": "Round"
+    },
+    {
+      "code": "square",
+      "label": "Square"
+    },
+    {
+      "code": "rectangular",
+      "label": "Rectangular"
+    },
+    {
+      "code": "tonneau",
+      "label": "Tonneau"
+    },
+    {
+      "code": "cushion",
+      "label": "Cushion"
+    },
+    {
+      "code": "oval",
+      "label": "Oval"
+    },
+    {
+      "code": "octagonal",
+      "label": "Octagonal"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

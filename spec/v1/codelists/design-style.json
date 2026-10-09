@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/design-style.json",
+  "title": "OJS codelist: design-style",
+  "description": "Aesthetic design style tags (multi-valued)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "minimalist",
+      "label": "Minimalist"
+    },
+    {
+      "code": "maximalist",
+      "label": "Maximalist"
+    },
+    {
+      "code": "classic",
+      "label": "Classic"
+    },
+    {
+      "code": "vintage_inspired",
+      "label": "Vintage Inspired"
+    },
+    {
+      "code": "boho",
+      "label": "Boho"
+    },
+    {
+      "code": "gothic",
+      "label": "Gothic"
+    },
+    {
+      "code": "industrial",
+      "label": "Industrial"
+    },
+    {
+      "code": "nature_inspired",
+      "label": "Nature Inspired"
+    },
+    {
+      "code": "geometric",
+      "label": "Geometric"
+    },
+    {
+      "code": "abstract",
+      "label": "Abstract"
+    },
+    {
+      "code": "figurative",
+      "label": "Figurative"
+    },
+    {
+      "code": "ethnic",
+      "label": "Ethnic"
+    },
+    {
+      "code": "tribal",
+      "label": "Tribal"
+    },
+    {
+      "code": "romantic",
+      "label": "Romantic"
+    },
+    {
+      "code": "edgy",
+      "label": "Edgy"
+    },
+    {
+      "code": "unisex",
+      "label": "Unisex"
+    },
+    {
+      "code": "feminine",
+      "label": "Feminine"
+    },
+    {
+      "code": "masculine",
+      "label": "Masculine"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

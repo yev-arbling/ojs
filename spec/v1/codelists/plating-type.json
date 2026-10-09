@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/plating-type.json",
+  "title": "OJS codelist: plating-type",
+  "description": "Plating types (vermeil requires >=2.5um per FTC 23.5)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "none",
+      "label": "None"
+    },
+    {
+      "code": "gold_plated",
+      "label": "Gold Plated"
+    },
+    {
+      "code": "gold_filled",
+      "label": "Gold Filled"
+    },
+    {
+      "code": "vermeil",
+      "label": "Gold Vermeil"
+    },
+    {
+      "code": "rhodium_plated",
+      "label": "Rhodium Plated"
+    },
+    {
+      "code": "silver_plated",
+      "label": "Silver Plated"
+    },
+    {
+      "code": "platinum_plated",
+      "label": "Platinum Plated"
+    },
+    {
+      "code": "black_rhodium",
+      "label": "Black Rhodium"
+    },
+    {
+      "code": "rose_gold_plated",
+      "label": "Rose Gold Plated"
+    }
+  ]
+}

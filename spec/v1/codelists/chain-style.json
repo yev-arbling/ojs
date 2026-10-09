@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/chain-style.json",
+  "title": "OJS codelist: chain-style",
+  "description": "Chain link topology for necklaces and bracelets",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "box",
+      "label": "Box"
+    },
+    {
+      "code": "rolo",
+      "label": "Rolo"
+    },
+    {
+      "code": "cuban_link",
+      "label": "Cuban Link"
+    },
+    {
+      "code": "rope",
+      "label": "Rope"
+    },
+    {
+      "code": "tennis",
+      "label": "Tennis"
+    },
+    {
+      "code": "paperclip",
+      "label": "Paperclip"
+    },
+    {
+      "code": "herringbone",
+      "label": "Herringbone"
+    },
+    {
+      "code": "figaro",
+      "label": "Figaro"
+    },
+    {
+      "code": "snake",
+      "label": "Snake"
+    },
+    {
+      "code": "cable",
+      "label": "Cable"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

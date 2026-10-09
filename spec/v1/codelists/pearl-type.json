@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-type.json",
+  "title": "OJS codelist: pearl-type",
+  "description": "Pearl origin types per CIBJO",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "akoya",
+      "label": "Akoya"
+    },
+    {
+      "code": "south_sea",
+      "label": "South Sea"
+    },
+    {
+      "code": "tahitian",
+      "label": "Tahitian"
+    },
+    {
+      "code": "freshwater",
+      "label": "Freshwater"
+    },
+    {
+      "code": "sea_of_cortez",
+      "label": "Sea Of Cortez"
+    },
+    {
+      "code": "natural",
+      "label": "Natural"
+    },
+    {
+      "code": "keshi",
+      "label": "Keshi"
+    },
+    {
+      "code": "mabe",
+      "label": "Mabe"
+    },
+    {
+      "code": "imitation",
+      "label": "Imitation"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

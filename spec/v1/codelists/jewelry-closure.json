@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/jewelry-closure.json",
+  "title": "OJS codelist: jewelry-closure",
+  "description": "Closure mechanisms for necklaces, bracelets, earrings",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "lobster_claw",
+      "label": "Lobster Claw"
+    },
+    {
+      "code": "spring_ring",
+      "label": "Spring Ring"
+    },
+    {
+      "code": "box_clasp",
+      "label": "Box Clasp"
+    },
+    {
+      "code": "toggle",
+      "label": "Toggle"
+    },
+    {
+      "code": "magnetic",
+      "label": "Magnetic"
+    },
+    {
+      "code": "screw",
+      "label": "Screw"
+    },
+    {
+      "code": "hook",
+      "label": "Hook"
+    },
+    {
+      "code": "barrel",
+      "label": "Barrel"
+    },
+    {
+      "code": "slide",
+      "label": "Slide"
+    },
+    {
+      "code": "push_back",
+      "label": "Push Back"
+    },
+    {
+      "code": "lever_back",
+      "label": "Lever Back"
+    },
+    {
+      "code": "omega_back",
+      "label": "Omega Back"
+    },
+    {
+      "code": "screw_back",
+      "label": "Screw Back"
+    },
+    {
+      "code": "french_wire",
+      "label": "French Wire"
+    },
+    {
+      "code": "clip_on",
+      "label": "Clip On"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

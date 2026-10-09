@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/availability.json",
+  "title": "OJS codelist: availability",
+  "description": "Product availability states (Schema.org / GMC / ACP aligned)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "in_stock",
+      "label": "In Stock"
+    },
+    {
+      "code": "out_of_stock",
+      "label": "Out Of Stock"
+    },
+    {
+      "code": "preorder",
+      "label": "Preorder"
+    },
+    {
+      "code": "backorder",
+      "label": "Backorder"
+    },
+    {
+      "code": "discontinued",
+      "label": "Discontinued"
+    },
+    {
+      "code": "limited_availability",
+      "label": "Limited Availability"
+    },
+    {
+      "code": "made_to_order",
+      "label": "Made To Order"
+    },
+    {
+      "code": "unknown",
+      "label": "Unknown"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/storage-recommendation.json",
+  "title": "OJS codelist: storage-recommendation",
+  "description": "Storage and handling recommendations",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "soft_pouch",
+      "label": "Soft Pouch"
+    },
+    {
+      "code": "jewelry_box_divided",
+      "label": "Jewelry Box Divided"
+    },
+    {
+      "code": "airtight_bag",
+      "label": "Airtight Bag"
+    },
+    {
+      "code": "dry_environment",
+      "label": "Dry Environment"
+    },
+    {
+      "code": "avoid_humidity",
+      "label": "Avoid Humidity"
+    },
+    {
+      "code": "lay_flat",
+      "label": "Lay Flat"
+    }
+  ]
+}

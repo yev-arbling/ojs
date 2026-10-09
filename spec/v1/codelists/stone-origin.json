@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/stone-origin.json",
+  "title": "OJS codelist: stone-origin",
+  "description": "Stone origin types (natural / lab-grown / simulant)",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "natural",
+      "label": "Natural"
+    },
+    {
+      "code": "lab_grown",
+      "label": "Lab Grown"
+    },
+    {
+      "code": "simulant",
+      "label": "Simulant"
+    },
+    {
+      "code": "unknown",
+      "label": "Unknown"
+    }
+  ]
+}

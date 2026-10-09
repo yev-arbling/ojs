@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/product-type.json",
+  "title": "OJS codelist: product-type",
+  "description": "Top-level product type discriminator",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "ring",
+      "label": "Ring"
+    },
+    {
+      "code": "earring",
+      "label": "Earring"
+    },
+    {
+      "code": "necklace",
+      "label": "Necklace"
+    },
+    {
+      "code": "bracelet",
+      "label": "Bracelet"
+    },
+    {
+      "code": "pendant",
+      "label": "Pendant"
+    },
+    {
+      "code": "brooch",
+      "label": "Brooch"
+    },
+    {
+      "code": "anklet",
+      "label": "Anklet"
+    },
+    {
+      "code": "watch",
+      "label": "Watch"
+    },
+    {
+      "code": "pearl",
+      "label": "Pearl"
+    },
+    {
+      "code": "smart_wearable",
+      "label": "Smart Wearable"
+    },
+    {
+      "code": "body",
+      "label": "Body"
+    },
+    {
+      "code": "estate",
+      "label": "Estate"
+    },
+    {
+      "code": "jewelry_set",
+      "label": "Jewelry Set"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

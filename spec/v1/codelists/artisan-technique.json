@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/artisan-technique.json",
+  "title": "OJS codelist: artisan-technique",
+  "description": "Traditional and artisan fabrication techniques",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "lost_wax_casting",
+      "label": "Lost Wax Casting"
+    },
+    {
+      "code": "hand_forged",
+      "label": "Hand Forged"
+    },
+    {
+      "code": "hand_engraved",
+      "label": "Hand Engraved"
+    },
+    {
+      "code": "repousse",
+      "label": "Repousse"
+    },
+    {
+      "code": "chasing",
+      "label": "Chasing"
+    },
+    {
+      "code": "granulation",
+      "label": "Granulation"
+    },
+    {
+      "code": "filigree",
+      "label": "Filigree"
+    },
+    {
+      "code": "enamel_champleve",
+      "label": "Enamel Champleve"
+    },
+    {
+      "code": "enamel_cloisonne",
+      "label": "Enamel Cloisonne"
+    },
+    {
+      "code": "enamel_plique_a_jour",
+      "label": "Enamel Plique A Jour"
+    },
+    {
+      "code": "mokume_gane",
+      "label": "Mokume Gane"
+    },
+    {
+      "code": "damascus",
+      "label": "Damascus"
+    },
+    {
+      "code": "keum_boo",
+      "label": "Keum Boo"
+    },
+    {
+      "code": "niello",
+      "label": "Niello"
+    },
+    {
+      "code": "soldered_construction",
+      "label": "Soldered Construction"
+    },
+    {
+      "code": "fabrication",
+      "label": "Fabrication"
+    },
+    {
+      "code": "cast_then_hand_finished",
+      "label": "Cast Then Hand Finished"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

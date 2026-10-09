@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-overtone.json",
+  "title": "OJS codelist: pearl-overtone",
+  "description": "Pearl overtone colors",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "none",
+      "label": "None"
+    },
+    {
+      "code": "rose",
+      "label": "Rose"
+    },
+    {
+      "code": "silver",
+      "label": "Silver"
+    },
+    {
+      "code": "green",
+      "label": "Green"
+    },
+    {
+      "code": "blue",
+      "label": "Blue"
+    },
+    {
+      "code": "peacock",
+      "label": "Peacock"
+    },
+    {
+      "code": "pink",
+      "label": "Pink"
+    },
+    {
+      "code": "aubergine",
+      "label": "Aubergine"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

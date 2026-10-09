@@ -71,6 +71,7 @@ class MetalFinish(str, Enum):
     MILGRAIN = "milgrain"
     ENGRAVED = "engraved"
     FLORENTINE = "florentine"
+    TWISTED = "twisted"
 
 
 class PlatingType(str, Enum):
@@ -157,4 +158,14 @@ class MetalsModule(OJSBaseModel):
     recycled_content_percent: Optional[Annotated[float, Field(ge=0, le=100)]] = Field(
         default=None,
         description="Percent recycled metal content (0-100). Audit chain required for claim.",
+    )
+    lead_free: Optional[bool] = Field(
+        default=None,
+        description="All components free of lead. Required claim for Prop 65, "
+        "EU REACH, and children's jewelry regulations.",
+    )
+    tarnish_resistant: Optional[bool] = Field(
+        default=None,
+        description="Whether the piece is tarnish resistant. "
+        "Material property of composition/plating, not a care instruction.",
     )

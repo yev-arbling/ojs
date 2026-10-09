@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/watch-complication.json",
+  "title": "OJS codelist: watch-complication",
+  "description": "OJS v1 controlled vocabulary: WatchComplication",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "chronograph",
+      "label": "Chronograph"
+    },
+    {
+      "code": "date",
+      "label": "Date"
+    },
+    {
+      "code": "day_date",
+      "label": "Day Date"
+    },
+    {
+      "code": "gmt",
+      "label": "Gmt"
+    },
+    {
+      "code": "dual_time",
+      "label": "Dual Time"
+    },
+    {
+      "code": "moonphase",
+      "label": "Moonphase"
+    },
+    {
+      "code": "perpetual_calendar",
+      "label": "Perpetual Calendar"
+    },
+    {
+      "code": "annual_calendar",
+      "label": "Annual Calendar"
+    },
+    {
+      "code": "equation_of_time",
+      "label": "Equation Of Time"
+    },
+    {
+      "code": "tourbillon",
+      "label": "Tourbillon"
+    },
+    {
+      "code": "power_reserve_indicator",
+      "label": "Power Reserve Indicator"
+    },
+    {
+      "code": "alarm",
+      "label": "Alarm"
+    },
+    {
+      "code": "minute_repeater",
+      "label": "Minute Repeater"
+    },
+    {
+      "code": "world_time",
+      "label": "World Time"
+    },
+    {
+      "code": "second_time_zone",
+      "label": "Second Time Zone"
+    },
+    {
+      "code": "small_seconds",
+      "label": "Small Seconds"
+    },
+    {
+      "code": "big_date",
+      "label": "Big Date"
+    },
+    {
+      "code": "regulateur",
+      "label": "Regulateur"
+    },
+    {
+      "code": "chime",
+      "label": "Chime"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

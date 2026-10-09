@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/piercing-location.json",
+  "title": "OJS codelist: piercing-location",
+  "description": "Body piercing anatomical sites",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "ear_lobe",
+      "label": "Ear Lobe"
+    },
+    {
+      "code": "ear_helix",
+      "label": "Ear Helix"
+    },
+    {
+      "code": "ear_tragus",
+      "label": "Ear Tragus"
+    },
+    {
+      "code": "ear_daith",
+      "label": "Ear Daith"
+    },
+    {
+      "code": "ear_rook",
+      "label": "Ear Rook"
+    },
+    {
+      "code": "ear_conch",
+      "label": "Ear Conch"
+    },
+    {
+      "code": "ear_industrial",
+      "label": "Ear Industrial"
+    },
+    {
+      "code": "nose_nostril",
+      "label": "Nose Nostril"
+    },
+    {
+      "code": "nose_septum",
+      "label": "Nose Septum"
+    },
+    {
+      "code": "nose_bridge",
+      "label": "Nose Bridge"
+    },
+    {
+      "code": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "code": "lip_labret",
+      "label": "Lip Labret"
+    },
+    {
+      "code": "lip_monroe",
+      "label": "Lip Monroe"
+    },
+    {
+      "code": "lip_medusa",
+      "label": "Lip Medusa"
+    },
+    {
+      "code": "tongue",
+      "label": "Tongue"
+    },
+    {
+      "code": "navel",
+      "label": "Navel"
+    },
+    {
+      "code": "nipple",
+      "label": "Nipple"
+    },
+    {
+      "code": "surface",
+      "label": "Surface"
+    },
+    {
+      "code": "dermal",
+      "label": "Dermal"
+    },
+    {
+      "code": "genital",
+      "label": "Genital"
+    },
+    {
+      "code": "other",
+      "label": "Other"
+    }
+  ]
+}

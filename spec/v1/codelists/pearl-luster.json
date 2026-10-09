@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl-luster.json",
+  "title": "OJS codelist: pearl-luster",
+  "description": "Pearl luster quality grades",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "excellent",
+      "label": "Excellent"
+    },
+    {
+      "code": "very_good",
+      "label": "Very Good"
+    },
+    {
+      "code": "good",
+      "label": "Good"
+    },
+    {
+      "code": "fair",
+      "label": "Fair"
+    },
+    {
+      "code": "poor",
+      "label": "Poor"
+    }
+  ]
+}

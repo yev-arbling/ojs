@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.openjewelryschema.org/v1/codelist/diamond-color-grade.json",
+  "title": "OJS codelist: diamond-color-grade",
+  "description": "GIA D-Z color scale plus Fancy Color descriptors",
+  "version": "1.0.0",
+  "values": [
+    {
+      "code": "D",
+      "label": "D"
+    },
+    {
+      "code": "E",
+      "label": "E"
+    },
+    {
+      "code": "F",
+      "label": "F"
+    },
+    {
+      "code": "G",
+      "label": "G"
+    },
+    {
+      "code": "H",
+      "label": "H"
+    },
+    {
+      "code": "I",
+      "label": "I"
+    },
+    {
+      "code": "J",
+      "label": "J"
+    },
+    {
+      "code": "K",
+      "label": "K"
+    },
+    {
+      "code": "L",
+      "label": "L"
+    },
+    {
+      "code": "M",
+      "label": "M"
+    },
+    {
+      "code": "N",
+      "label": "N"
+    },
+    {
+      "code": "O-P",
+      "label": "O P"
+    },
+    {
+      "code": "Q-R",
+      "label": "Q R"
+    },
+    {
+      "code": "S-T",
+      "label": "S T"
+    },
+    {
+      "code": "U-V",
+      "label": "U V"
+    },
+    {
+      "code": "W-X",
+      "label": "W X"
+    },
+    {
+      "code": "Y-Z",
+      "label": "Y Z"
+    },
+    {
+      "code": "fancy_light",
+      "label": "Fancy Light"
+    },
+    {
+      "code": "fancy",
+      "label": "Fancy"
+    },
+    {
+      "code": "fancy_intense",
+      "label": "Fancy Intense"
+    },
+    {
+      "code": "fancy_vivid",
+      "label": "Fancy Vivid"
+    },
+    {
+      "code": "fancy_deep",
+      "label": "Fancy Deep"
+    },
+    {
+      "code": "fancy_dark",
+      "label": "Fancy Dark"
+    }
+  ]
+}
