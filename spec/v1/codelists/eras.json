@@ -54,10 +54,6 @@
       "label": "Contemporary"
     },
     {
-      "code": "bohemian",
-      "label": "Bohemian"
-    },
-    {
       "code": "unknown",
       "label": "Unknown"
     }

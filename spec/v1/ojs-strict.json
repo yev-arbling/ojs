@@ -1369,7 +1369,7 @@
       "type": "string"
     },
     "Era": {
-      "description": "Historical periods and style aesthetics.\n\nBoundaries are conventional, not absolute. Confidence often <0.80\nfrom CV — recommend human validation.",
+      "description": "Historical periods. Estate/antique jewelry critical for AI search.\n\nBoundaries are conventional, not absolute. Confidence often <0.80\nfrom CV — recommend human validation.",
       "enum": [
         "georgian",
         "early_victorian",
@@ -1383,7 +1383,6 @@
         "mid_century",
         "modernist",
         "contemporary",
-        "bohemian",
         "unknown"
       ],
       "title": "Era",
@@ -5293,7 +5292,7 @@
             }
           ],
           "default": null,
-          "description": "Historical period or style aesthetic"
+          "description": "Historical period"
         },
         "design_styles": {
           "description": "Design style tags (multi-valued)",

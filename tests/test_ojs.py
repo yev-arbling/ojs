@@ -213,7 +213,7 @@ class TestModels:
     def test_new_era_values(self):
         from ojs.models import Era
         assert Era.BELLE_EPOQUE == "belle_epoque"
-        assert Era.BOHEMIAN == "bohemian"
+        assert "bohemian" not in {e.value for e in Era}  # Era stays chronological; the aesthetic is DesignStyle.boho
 
     def test_chain_style_enum(self):
         from ojs.models import ChainStyle

@@ -58,7 +58,7 @@ _DESCRIPTIONS: dict[str, str] = {
     "DiamondColorGrade": "GIA D-Z color scale plus Fancy Color descriptors",
     "EarringPostType": "Earring finding form factors (distinct from closure mechanism)",
     "EditionType": "Edition classification for artisan pieces",
-    "Era": "Historical jewelry periods and style aesthetics",
+    "Era": "Historical jewelry periods",
     "FluorescenceIntensity": "GIA fluorescence intensity under longwave UV",
     "GemstoneSpecies": "Major gemstone species per GIA / CIBJO",
     "GradingLab": "Accredited gemological laboratories (AGS legacy-only post-2022)",

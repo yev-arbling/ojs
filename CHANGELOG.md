@@ -16,9 +16,9 @@ Additive minor release. Every 1.0 record still validates; no field, value, codel
   - stones (`Stone`): `colored_stone_clarity`, `count` (default 1), `total_carat`;
   - style: `occasions`, `engravable`, `customizable`, `birthstone_month`, `chain_style`, `color_story`.
 - **4 enums:** `ProductSubtype` (25 values), `ChainStyle` (11), `EarringPostType` (8), `ColoredStoneClarityGrade` (4).
-- **17 values on 7 enums:**
+- **16 values on 7 enums:**
   - `Condition`: `pre_owned`, `new_with_tags`;
-  - `Era`: `belle_epoque`, `bohemian`;
+  - `Era`: `belle_epoque`;
   - `GemstoneSpecies`: `prasiolite`, `quartz`;
   - `StoneCut`: `tapered_baguette`, `hexagon`, `kite`, `portuguese`, `coffin`;
   - `GradingLab`: `gsi`, `ngtc`, `agl`, `gra`;
@@ -41,7 +41,7 @@ Both fields of each pair are valid. Use the canonical one when only one fits.
 
 - **`style.occasions` and `ai_commerce.occasion_tags`:** the same `Occasion` vocabulary. `occasions` is canonical for syndication; `occasion_tags` stays the AI-matching input.
 - **`sizing.earring_post_type` and `sizing.closure`:** the form factor (how the earring sits) versus the fastening mechanism. They are complementary; a huggie can carry both.
-- **`Era.bohemian` and `DesignStyle.boho`:** `Era` holds periods and, from 1.1, this one style aesthetic. `design_styles: ["boho"]` stays canonical for the style tag.
+- **Bohemian style:** `Era` stays chronological. The bohemian aesthetic is `design_styles: ["boho"]`; ojs#2's proposed `Era.bohemian` is not part of 1.1.
 
 ## [1.0.3] — 2026-10-05
 

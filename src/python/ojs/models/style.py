@@ -15,25 +15,24 @@ from .ai_commerce import Occasion
 
 
 class Era(str, Enum):
-    """Historical periods and style aesthetics.
+    """Historical periods. Estate/antique jewelry critical for AI search.
 
     Boundaries are conventional, not absolute. Confidence often <0.80
     from CV — recommend human validation.
     """
 
-    GEORGIAN = "georgian"                # 1714-1837
+    GEORGIAN = "georgian"  # 1714-1837
     EARLY_VICTORIAN = "early_victorian"  # 1837-1860
-    MID_VICTORIAN = "mid_victorian"      # 1860-1885
-    LATE_VICTORIAN = "late_victorian"    # 1885-1901
-    BELLE_EPOQUE = "belle_epoque"        # 1871-1914 (European continental)
-    EDWARDIAN = "edwardian"              # 1901-1915
-    ART_NOUVEAU = "art_nouveau"          # 1890-1910
-    ART_DECO = "art_deco"                # 1920-1935
-    RETRO = "retro"                      # 1935-1950
-    MID_CENTURY = "mid_century"          # 1950-1970
-    MODERNIST = "modernist"              # 1960-1980
-    CONTEMPORARY = "contemporary"        # 1980-present
-    BOHEMIAN = "bohemian"                # style aesthetic, not chronological
+    MID_VICTORIAN = "mid_victorian"  # 1860-1885
+    LATE_VICTORIAN = "late_victorian"  # 1885-1901
+    BELLE_EPOQUE = "belle_epoque"  # 1871-1914 (European continental)
+    EDWARDIAN = "edwardian"  # 1901-1915
+    ART_NOUVEAU = "art_nouveau"  # 1890-1910
+    ART_DECO = "art_deco"  # 1920-1935
+    RETRO = "retro"  # 1935-1950
+    MID_CENTURY = "mid_century"  # 1950-1970
+    MODERNIST = "modernist"  # 1960-1980
+    CONTEMPORARY = "contemporary"  # 1980-present
     UNKNOWN = "unknown"
 
 
@@ -106,7 +105,7 @@ class StyleModule(OJSBaseModel):
     """Aesthetic and design tags. Multi-valued by design — pieces can
     have multiple styles and motifs."""
 
-    era: Optional[Era] = Field(default=None, description="Historical period or style aesthetic")
+    era: Optional[Era] = Field(default=None, description="Historical period")
     design_styles: list[DesignStyle] = Field(
         default_factory=list, description="Design style tags (multi-valued)"
     )
