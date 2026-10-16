@@ -210,6 +210,25 @@
     "style_descriptors": {"@id": "ojs:styleDescriptors", "@container": "@set"},
     "price_tier": "ojs:priceTier",
     "confidence_scores": {"@id": "ojs:confidenceScores", "@container": "@index"},
-    "overall_quality_score": {"@id": "ojs:overallQualityScore", "@type": "xsd:decimal"}
+    "overall_quality_score": {"@id": "ojs:overallQualityScore", "@type": "xsd:decimal"},
+
+    "product_subtype": "ojs:productSubtype",
+    "note": "ojs:note",
+    "warranty_years": {"@id": "ojs:warrantyYears", "@type": "xsd:decimal"},
+    "return_policy_days": {"@id": "ojs:returnPolicyDays", "@type": "xsd:integer"},
+    "lead_free": {"@id": "ojs:leadFree", "@type": "xsd:boolean"},
+    "tarnish_resistant": {"@id": "ojs:tarnishResistant", "@type": "xsd:boolean"},
+    "ring_thickness_mm": {"@id": "ojs:ringThicknessMm", "@type": "xsd:decimal"},
+    "pendant_thickness_mm": {"@id": "ojs:pendantThicknessMm", "@type": "xsd:decimal"},
+    "earring_post_type": "ojs:earringPostType",
+    "colored_stone_clarity": "ojs:coloredStoneClarity",
+    "count": {"@id": "ojs:stoneCount", "@type": "xsd:integer"},
+    "total_carat": {"@id": "ojs:stoneGroupTotalCarat", "@type": "xsd:decimal"},
+    "occasions": {"@id": "ojs:occasions", "@container": "@set"},
+    "engravable": {"@id": "ojs:engravable", "@type": "xsd:boolean"},
+    "customizable": {"@id": "ojs:customizable", "@type": "xsd:boolean"},
+    "birthstone_month": {"@id": "ojs:birthstoneMonth", "@type": "xsd:integer"},
+    "chain_style": "ojs:chainStyle",
+    "color_story": {"@id": "ojs:colorStory", "@container": "@set"}
   }
 }

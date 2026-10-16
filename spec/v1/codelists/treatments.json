@@ -3,7 +3,7 @@
   "$id": "https://schema.openjewelryschema.org/v1/codelist/treatments.json",
   "title": "OJS codelist: treatments",
   "description": "Stone enhancement treatments (FTC 16 CFR §23.22 disclosure)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "values": [
     {
       "code": "none",
@@ -48,6 +48,10 @@
     {
       "code": "hpht_treatment",
       "label": "Hpht Treatment"
+    },
+    {
+      "code": "waxed",
+      "label": "Waxed"
     },
     {
       "code": "other",

@@ -37,6 +37,9 @@ _COND_GMC = {
     "estate": "used",
     "vintage": "used",
     "antique": "used",
+    # 1.1.0: every Condition is mapped here; none may fall through to the "new" default.
+    "pre_owned": "used",
+    "new_with_tags": "new",  # GMC's condition is new / refurbished / used only: unworn with tags is new
 }
 # Google product taxonomy: Jewelry > Watches (201); rings/necklaces all under Apparel & Accessories > Jewelry (188)
 _GOOGLE_PRODUCT_CATEGORY = {

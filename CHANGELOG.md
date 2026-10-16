@@ -2,6 +2,47 @@
 
 All notable changes to OJS are documented here. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — unreleased
+
+Additive minor release. Every 1.0 record still validates; no field, value, codelist path or `$id` is removed or renamed. The spec stays at `spec/v1/`.
+
+### Added
+
+- **18 optional fields:**
+  - identity: `product_subtype`, `note`;
+  - commerce (`Offer`): `warranty_years`, `return_policy_days`;
+  - metals: `lead_free`, `tarnish_resistant`;
+  - sizing: `ring_thickness_mm`, `pendant_thickness_mm`, `earring_post_type`;
+  - stones (`Stone`): `colored_stone_clarity`, `count` (default 1), `total_carat`;
+  - style: `occasions`, `engravable`, `customizable`, `birthstone_month`, `chain_style`, `color_story`.
+- **4 enums:** `ProductSubtype` (25 values), `ChainStyle` (11), `EarringPostType` (8), `ColoredStoneClarityGrade` (4).
+- **17 values on 7 enums:**
+  - `Condition`: `pre_owned`, `new_with_tags`;
+  - `Era`: `belle_epoque`, `bohemian`;
+  - `GemstoneSpecies`: `prasiolite`, `quartz`;
+  - `StoneCut`: `tapered_baguette`, `hexagon`, `kite`, `portuguese`, `coffin`;
+  - `GradingLab`: `gsi`, `ngtc`, `agl`, `gra`;
+  - `TreatmentType`: `waxed`;
+  - `MetalFinish`: `twisted`.
+- **One codelist file per enum** in `spec/v1/codelists/` (67 files, `<kebab-case-name>.json`). They are added beside the 1.0 grouped files, which keep their paths and `$id`s.
+- **JSON-LD:** an explicit `ojs:` term for every new key in `spec/v1/context.jsonld`, so no new key expands silently to a schema.org IRI.
+- **Transformers:**
+  - `pre_owned` maps to used in ACP, GMC and schema.org.
+  - `new_with_tags` maps to new: none of these targets has a "new with tags" value.
+  - Every `Condition` is now mapped explicitly; nothing falls through to the "new" default.
+  - schema.org publishes `return_policy_days` as `MerchantReturnPolicy.merchantReturnDays` and `warranty_years` as a `WarrantyPromise`.
+  - The other new fields have no equivalent in the ACP, GMC, MCP, Perplexity, Shopify or UCP outputs, so they are not mapped there.
+- **Examples:** `examples/ojs-1-1-sapphire-ring.json`, `ojs-1-1-pendant-necklace.json` and `ojs-1-1-huggie-earrings.json`, with fictional brands. Together they cover every new field family and enum.
+- **CI:** the test suite (`tests/test_ojs.py`) now runs on every push and pull request.
+
+### Overlaps, documented
+
+Both fields of each pair are valid. Use the canonical one when only one fits.
+
+- **`style.occasions` and `ai_commerce.occasion_tags`:** the same `Occasion` vocabulary. `occasions` is canonical for syndication; `occasion_tags` stays the AI-matching input.
+- **`sizing.earring_post_type` and `sizing.closure`:** the form factor (how the earring sits) versus the fastening mechanism. They are complementary; a huggie can carry both.
+- **`Era.bohemian` and `DesignStyle.boho`:** `Era` holds periods and, from 1.1, this one style aesthetic. `design_styles: ["boho"]` stays canonical for the style tag.
+
 ## [1.0.3] — 2026-10-05
 
 Example data release. No schema changes: the schema stays at 1.0, and every example still validates against it.

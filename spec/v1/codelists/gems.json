@@ -4,7 +4,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/gemstone_species.json",
     "title": "OJS codelist: gemstone_species",
     "description": "Recognized gemstone species",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "diamond",
@@ -127,6 +127,14 @@
         "label": "Jade Nephrite"
       },
       {
+        "code": "prasiolite",
+        "label": "Prasiolite"
+      },
+      {
+        "code": "quartz",
+        "label": "Quartz"
+      },
+      {
         "code": "other",
         "label": "Other"
       }
@@ -137,7 +145,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/stone_origins.json",
     "title": "OJS codelist: stone_origins",
     "description": "Stone origin types (natural/lab-grown/simulant)",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "natural",
@@ -162,7 +170,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/stone_cuts.json",
     "title": "OJS codelist: stone_cuts",
     "description": "Faceting shapes",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "round_brilliant",
@@ -209,6 +217,10 @@
         "label": "Baguette"
       },
       {
+        "code": "tapered_baguette",
+        "label": "Tapered Baguette"
+      },
+      {
         "code": "trillion",
         "label": "Trillion"
       },
@@ -233,6 +245,22 @@
         "label": "Briolette"
       },
       {
+        "code": "hexagon",
+        "label": "Hexagon"
+      },
+      {
+        "code": "kite",
+        "label": "Kite"
+      },
+      {
+        "code": "portuguese",
+        "label": "Portuguese"
+      },
+      {
+        "code": "coffin",
+        "label": "Coffin"
+      },
+      {
         "code": "fancy",
         "label": "Fancy"
       },
@@ -247,7 +275,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/grading_labs.json",
     "title": "OJS codelist: grading_labs",
     "description": "Accredited grading laboratories (AGS legacy-only after 2022)",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "gia",
@@ -288,6 +316,22 @@
       {
         "code": "lotus",
         "label": "Lotus"
+      },
+      {
+        "code": "gsi",
+        "label": "Gsi"
+      },
+      {
+        "code": "ngtc",
+        "label": "Ngtc"
+      },
+      {
+        "code": "agl",
+        "label": "Agl"
+      },
+      {
+        "code": "gra",
+        "label": "Gra"
       },
       {
         "code": "none",

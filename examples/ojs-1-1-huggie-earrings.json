@@ -1,0 +1,86 @@
+{
+  "product_type": "earring",
+  "audit": {
+    "ojs_version": "1.1.0",
+    "created_at": "2026-10-16T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-EXAMPLE-ojs-1-1-huggie-earrings",
+    "title": "Diamond Huggie Earrings (fictional example)",
+    "description": "Huggie earrings in 14k rose gold with a row of small diamonds. A fictional OJS 1.1 example.",
+    "brand": {
+      "name": "Lumen & Vale (fictional)"
+    },
+    "product_subtype": "huggie"
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "540.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://example.com/products/ojs-1-1-huggie-earrings",
+        "condition": "new",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Lumen & Vale (fictional)",
+        "seller_url": "https://example.com",
+        "warranty_years": 2.0,
+        "return_policy_days": 30
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://example.com/images/ojs-1-1-huggie-earrings.jpg",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "rose"
+      }
+    ],
+    "tarnish_resistant": true
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "diamond",
+        "origin_type": "lab_grown",
+        "cut": "round_brilliant",
+        "count": 10,
+        "total_carat": 0.2,
+        "position": "front"
+      }
+    ]
+  },
+  "sizing": {
+    "earring_width_mm": 3.0,
+    "earring_post_type": "huggie",
+    "closure": "push_back"
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [],
+    "engravable": false,
+    "customizable": true,
+    "color_story": [
+      "pink",
+      "white"
+    ]
+  }
+}

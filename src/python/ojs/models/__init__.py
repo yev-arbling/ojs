@@ -45,7 +45,7 @@ from .commerce import (
     PaymentMethod,
 )
 from .estate import EstateModule, Hallmark, ProvenanceEntry, RestorationRecord
-from .identity import IdentityModule, Brand
+from .identity import IdentityModule, Brand, ProductSubtype
 from .jewelry_product import JewelryProduct
 from .legal import LegalModule, HSCodePrefix, RegulatoryFlag
 from .media import MediaModule, ImageAsset, VideoAsset, ARMetadata, ImageRole, PlacementAnchor
@@ -72,7 +72,7 @@ from .relationships import RelationshipsModule, ProductRelation, RelationshipTyp
 from .religious import ReligiousModule, Religion, CeremonyType
 from .reviews import ReviewsModule, AggregateRating, Review
 from .setting import SettingModule, SettingStyle, SettingType
-from .sizing import SizingModule, RingSize, SizeSystem, JewelryClosure
+from .sizing import SizingModule, RingSize, SizeSystem, JewelryClosure, EarringPostType
 from .smart import SmartModule, SmartFeature, Connectivity, WaterProofRating
 from .stones import (
     StonesModule,
@@ -83,11 +83,12 @@ from .stones import (
     GradingLab,
     DiamondColorGrade,
     DiamondClarityGrade,
+    ColoredStoneClarityGrade,
     CutGrade,
     FluorescenceIntensity,
     TreatmentType,
 )
-from .style import StyleModule, Era, DesignStyle, Motif
+from .style import StyleModule, Era, DesignStyle, Motif, ChainStyle
 from .sustainability import (
     SustainabilityModule,
     SustainabilityCertification,
@@ -124,16 +125,20 @@ __all__ = [
     # 21 modules
     "IdentityModule",
     "Brand",
+    "ProductSubtype",
     "MetalsModule",
     "MetalComposition",
     "StonesModule",
     "Stone",
+    "ColoredStoneClarityGrade",
     "PearlsModule",
     "SettingModule",
     "SettingStyle",
     "SizingModule",
     "RingSize",
+    "EarringPostType",
     "StyleModule",
+    "ChainStyle",
     "CommerceModule",
     "Offer",
     "CertificationModule",
