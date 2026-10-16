@@ -52,6 +52,24 @@ class JewelryClosure(str, Enum):
     OTHER = "other"
 
 
+class EarringPostType(str, Enum):
+    """Earring finding form factor.
+
+    Distinct from JewelryClosure (mechanical fastening mechanism).
+    A huggie is both a form factor and a closure; a stud can have
+    push_back or screw_back closure. These are complementary dimensions.
+    """
+
+    STUD = "stud"
+    LEVER_BACK = "lever_back"
+    HUGGIE = "huggie"
+    DROP = "drop"
+    HOOP = "hoop"
+    CLIP_ON = "clip_on"
+    THREADER = "threader"
+    OTHER = "other"
+
+
 class RingSize(OJSBaseModel):
     """A ring size measurement in multiple equivalent systems.
 
@@ -91,6 +109,12 @@ class SizingModule(OJSBaseModel):
     ring_resizable: Optional[bool] = Field(
         default=None, description="Whether ring can be resized professionally"
     )
+    ring_thickness_mm: Optional[Annotated[float, Field(gt=0)]] = Field(
+        default=None,
+        description="Band profile height in mm (side view). "
+        "Distinct from ring_width_mm (top view across finger). "
+        "Relevant for comfort fit bands.",
+    )
 
     # Chain/strand length (necklaces, bracelets, anklets)
     length_mm: Optional[Annotated[float, Field(gt=0)]] = Field(
@@ -110,10 +134,20 @@ class SizingModule(OJSBaseModel):
     )
     pendant_width_mm: Optional[Annotated[float, Field(gt=0)]] = None
     pendant_height_mm: Optional[Annotated[float, Field(gt=0)]] = None
+    pendant_thickness_mm: Optional[Annotated[float, Field(gt=0)]] = Field(
+        default=None,
+        description="Pendant depth/thickness in mm. "
+        "Third dimension alongside pendant_width_mm and pendant_height_mm.",
+    )
 
     # Earring
     earring_drop_mm: Optional[Annotated[float, Field(gt=0)]] = None
     earring_width_mm: Optional[Annotated[float, Field(gt=0)]] = None
+    earring_post_type: Optional[EarringPostType] = Field(
+        default=None,
+        description="Earring finding form factor (how the earring looks/sits on the ear). "
+        "Complements closure (mechanical fastening mechanism).",
+    )
 
     # Brooch / pin
     brooch_width_mm: Optional[Annotated[float, Field(gt=0)]] = None

@@ -3,7 +3,7 @@
   "$id": "https://schema.openjewelryschema.org/v1/codelist/eras.json",
   "title": "OJS codelist: eras",
   "description": "Historical periods for vintage/antique pieces",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "values": [
     {
       "code": "georgian",
@@ -20,6 +20,10 @@
     {
       "code": "late_victorian",
       "label": "Late Victorian"
+    },
+    {
+      "code": "belle_epoque",
+      "label": "Belle Epoque"
     },
     {
       "code": "edwardian",

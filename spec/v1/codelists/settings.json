@@ -3,7 +3,7 @@
   "$id": "https://schema.openjewelryschema.org/v1/codelist/setting_types.json",
   "title": "OJS codelist: setting_types",
   "description": "Stone setting types",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "values": [
     {
       "code": "prong",

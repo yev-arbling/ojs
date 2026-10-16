@@ -29,7 +29,7 @@ from pydantic import (
 
 # --- Constants ----------------------------------------------------------
 
-OJS_VERSION = "1.0.0"
+OJS_VERSION = "1.1.0"
 OJS_NAMESPACE = "https://schema.openjewelryschema.org/v1/"
 
 # ISO 4217 currency code (3 uppercase letters)

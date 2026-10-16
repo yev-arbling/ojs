@@ -1,0 +1,91 @@
+{
+  "product_type": "necklace",
+  "audit": {
+    "ojs_version": "1.1.0",
+    "created_at": "2026-10-16T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-EXAMPLE-ojs-1-1-pendant-necklace",
+    "title": "Prasiolite Pendant on a Paperclip Chain (fictional example)",
+    "description": "A prasiolite (green quartz) pendant on a 14k yellow gold paperclip chain, new with tags. A fictional OJS 1.1 example.",
+    "brand": {
+      "name": "Lumen & Vale (fictional)"
+    },
+    "product_subtype": "pendant_necklace",
+    "note": "The chain length is adjustable."
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "320.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://example.com/products/ojs-1-1-pendant-necklace",
+        "condition": "new_with_tags",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Lumen & Vale (fictional)",
+        "seller_url": "https://example.com",
+        "return_policy_days": 60
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://example.com/images/ojs-1-1-pendant-necklace.jpg",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 14.0,
+        "color": "yellow"
+      }
+    ],
+    "lead_free": true
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "prasiolite",
+        "origin_type": "natural",
+        "cut": "hexagon",
+        "carat": 0.9,
+        "colored_stone_clarity": "slightly_included",
+        "position": "center"
+      }
+    ],
+    "center_stone_index": 0
+  },
+  "sizing": {
+    "length_mm": 450.0,
+    "pendant_width_mm": 8.0,
+    "pendant_height_mm": 12.0,
+    "pendant_thickness_mm": 4.5,
+    "closure": "lobster_claw"
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [],
+    "chain_style": "paperclip",
+    "occasions": [
+      "birthday"
+    ],
+    "color_story": [
+      "green",
+      "gold"
+    ]
+  }
+}

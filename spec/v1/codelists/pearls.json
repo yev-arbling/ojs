@@ -4,7 +4,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_types.json",
     "title": "OJS codelist: pearl_types",
     "description": "Pearl origin types per CIBJO",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "akoya",
@@ -53,7 +53,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_luster.json",
     "title": "OJS codelist: pearl_luster",
     "description": "Luster grades",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "excellent",
@@ -82,7 +82,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_surface.json",
     "title": "OJS codelist: pearl_surface",
     "description": "Surface cleanliness grades",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "clean",
@@ -107,7 +107,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_shapes.json",
     "title": "OJS codelist: pearl_shapes",
     "description": "CIBJO 7-shape classification",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "round",
@@ -156,7 +156,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_body_colors.json",
     "title": "OJS codelist: pearl_body_colors",
     "description": "Body colors",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "white",
@@ -221,7 +221,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/pearl_overtones.json",
     "title": "OJS codelist: pearl_overtones",
     "description": "Overtone colors",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "none",

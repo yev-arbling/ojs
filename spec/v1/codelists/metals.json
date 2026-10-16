@@ -4,7 +4,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_types.json",
     "title": "OJS codelist: metal_types",
     "description": "Base metal types per ISO 9202",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "gold",
@@ -65,7 +65,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_colors.json",
     "title": "OJS codelist: metal_colors",
     "description": "Visible metal colors",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "yellow",
@@ -106,7 +106,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/metal_finishes.json",
     "title": "OJS codelist: metal_finishes",
     "description": "Surface finishes",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "polished",
@@ -147,6 +147,10 @@
       {
         "code": "florentine",
         "label": "Florentine"
+      },
+      {
+        "code": "twisted",
+        "label": "Twisted"
       }
     ]
   },
@@ -155,7 +159,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/plating_types.json",
     "title": "OJS codelist: plating_types",
     "description": "Plating types (vermeil ≥2.5µm per FTC §23.5)",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "none",

@@ -37,6 +37,9 @@ _AVAIL_ACP = {
 _COND_ACP = {
     "new": "new", "refurbished": "refurbished", "used": "used",
     "estate": "used", "vintage": "used", "antique": "used",
+    # 1.1.0: every Condition is mapped here; none may fall through to the "new" default.
+    "pre_owned": "used",
+    "new_with_tags": "new",  # ACP has no "new with tags" value: unworn with tags is new
 }
 
 

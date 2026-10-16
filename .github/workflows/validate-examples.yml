@@ -35,3 +35,7 @@ jobs:
         run: pip install -e src/python
       - name: Validate every example against the Pydantic model
         run: python tests/validate_examples.py
+      - name: Run the reference test suite
+        run: |
+          pip install -e 'src/python[dev]'
+          python -m pytest tests/test_ojs.py -q

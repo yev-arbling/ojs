@@ -4,7 +4,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/design_styles.json",
     "title": "OJS codelist: design_styles",
     "description": "Design style tags",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "minimalist",
@@ -89,7 +89,7 @@
     "$id": "https://schema.openjewelryschema.org/v1/codelist/motifs.json",
     "title": "OJS codelist: motifs",
     "description": "Decorative motifs",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "values": [
       {
         "code": "floral",

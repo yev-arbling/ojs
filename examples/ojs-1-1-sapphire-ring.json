@@ -1,0 +1,121 @@
+{
+  "product_type": "ring",
+  "audit": {
+    "ojs_version": "1.1.0",
+    "created_at": "2026-10-16T00:00:00Z",
+    "source_system": "other"
+  },
+  "identity": {
+    "sku": "OJS-EXAMPLE-ojs-1-1-sapphire-ring",
+    "title": "Sapphire Cocktail Ring with Accent Diamonds (fictional example)",
+    "description": "A pre-owned cocktail ring in 18k white gold: an oval sapphire with a halo of 24 small diamonds. A fictional OJS 1.1 example.",
+    "brand": {
+      "name": "Lumen & Vale (fictional)"
+    },
+    "product_subtype": "cocktail_ring",
+    "note": "Natural stones vary slightly in color."
+  },
+  "commerce": {
+    "offers": [
+      {
+        "price": {
+          "amount": "1450.00",
+          "currency": "USD"
+        },
+        "availability": "in_stock",
+        "url": "https://example.com/products/ojs-1-1-sapphire-ring",
+        "condition": "pre_owned",
+        "target_countries": [
+          "US"
+        ],
+        "seller_name": "Lumen & Vale (fictional)",
+        "seller_url": "https://example.com",
+        "warranty_years": 1.0,
+        "return_policy_days": 30
+      }
+    ],
+    "primary_offer_index": 0
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://example.com/images/ojs-1-1-sapphire-ring.jpg",
+        "role": "primary",
+        "is_primary": true
+      }
+    ]
+  },
+  "metals": {
+    "compositions": [
+      {
+        "type": "gold",
+        "primary": true,
+        "purity_karat": 18.0,
+        "color": "white",
+        "finish": "twisted"
+      }
+    ],
+    "lead_free": true,
+    "tarnish_resistant": true
+  },
+  "stones": {
+    "stones": [
+      {
+        "species": "sapphire",
+        "origin_type": "natural",
+        "cut": "oval",
+        "carat": 1.2,
+        "colored_stone_clarity": "eye_clean",
+        "treatments": [
+          "heat"
+        ],
+        "position": "center"
+      },
+      {
+        "species": "diamond",
+        "origin_type": "natural",
+        "cut": "round_brilliant",
+        "count": 24,
+        "total_carat": 0.48,
+        "position": "halo"
+      },
+      {
+        "species": "quartz",
+        "origin_type": "natural",
+        "cut": "kite",
+        "count": 2,
+        "total_carat": 0.3,
+        "position": "shank",
+        "treatments": [
+          "waxed"
+        ]
+      }
+    ],
+    "center_stone_index": 0,
+    "total_carat_weight": 1.98
+  },
+  "sizing": {
+    "ring_size": {
+      "us_ca": 6.5
+    },
+    "ring_width_mm": 2.2,
+    "ring_thickness_mm": 1.8,
+    "ring_resizable": true
+  },
+  "style": {
+    "design_styles": [],
+    "motifs": [],
+    "aesthetic_tags": [],
+    "era": "belle_epoque",
+    "occasions": [
+      "anniversary"
+    ],
+    "engravable": true,
+    "customizable": false,
+    "birthstone_month": 9,
+    "color_story": [
+      "blue",
+      "white"
+    ]
+  }
+}

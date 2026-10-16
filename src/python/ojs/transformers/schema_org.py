@@ -32,6 +32,9 @@ _COND_MAP = {
     "vintage": "https://schema.org/UsedCondition",
     "antique": "https://schema.org/UsedCondition",
     "refurbished": "https://schema.org/RefurbishedCondition",
+    # 1.1.0: every Condition is mapped here; none may fall through to the NewCondition default.
+    "pre_owned": "https://schema.org/UsedCondition",
+    "new_with_tags": "https://schema.org/NewCondition",  # schema.org has no "new with tags" condition
 }
 
 
@@ -137,10 +140,17 @@ def _offer_to_schema_org(offer) -> dict:
         "seller": {"@type": "Organization", "name": offer.seller_name, "url": offer.seller_url},
         "areaServed": offer.target_countries,
     }
-    if offer.return_policy_url:
-        out["hasMerchantReturnPolicy"] = {
-            "@type": "MerchantReturnPolicy",
-            "merchantReturnLink": offer.return_policy_url,
+    if offer.return_policy_url or offer.return_policy_days is not None:
+        policy = {"@type": "MerchantReturnPolicy"}
+        if offer.return_policy_url:
+            policy["merchantReturnLink"] = offer.return_policy_url
+        if offer.return_policy_days is not None:  # 1.1.0: schema.org's own return window
+            policy["merchantReturnDays"] = offer.return_policy_days
+        out["hasMerchantReturnPolicy"] = policy
+    if offer.warranty_years is not None:  # 1.1.0: schema.org WarrantyPromise, duration in years (UN/CEFACT ANN)
+        out["warranty"] = {
+            "@type": "WarrantyPromise",
+            "durationOfWarranty": {"@type": "QuantitativeValue", "value": offer.warranty_years, "unitCode": "ANN"},
         }
     if offer.sale_price:
         out["priceSpecification"] = {
