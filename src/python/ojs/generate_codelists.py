@@ -186,6 +186,12 @@ def main(out_dir: Path | None = None) -> None:
         path = out_dir / f"{name}.json"
         path.write_text(json.dumps(content, indent=2, ensure_ascii=False) + "\n")
         written.append(path.name)
+    legacy = set(written)
+    for enum_cls in _collect_enums():  # 1.1.0: one file per enum, never over a grouped file
+        path = out_dir / f"{_enum_to_filename(enum_cls.__name__)}.json"
+        assert path.name not in legacy, path.name
+        path.write_text(json.dumps(_enum_codelist(enum_cls), indent=2, ensure_ascii=False) + "\n")
+        written.append(path.name)
 
     print(f"Wrote {len(written)} codelist files to {out_dir}:")
     for f in written:

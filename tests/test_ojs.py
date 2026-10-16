@@ -597,13 +597,14 @@ class TestOJS11Mappings:
         p.commerce.offers[0].return_policy_days = 30
         p.commerce.offers[0].warranty_years = 2.0
         offer = to_schema_org(p)["offers"]
-        assert offer["hasMerchantReturnPolicy"] == {"@type": "MerchantReturnPolicy", "merchantReturnDays": 30}
+        assert offer["hasMerchantReturnPolicy"]["merchantReturnDays"] == 30  # beside the fixture's existing link
         assert offer["warranty"]["durationOfWarranty"] == {"@type": "QuantitativeValue", "value": 2.0,
                                                            "unitCode": "ANN"}
 
     def test_an_offer_without_the_new_fields_publishes_as_before(self):
         offer = to_schema_org(_basic_ring())["offers"]
-        assert "warranty" not in offer and "hasMerchantReturnPolicy" not in offer
+        assert "warranty" not in offer
+        assert set(offer["hasMerchantReturnPolicy"]) == {"@type", "merchantReturnLink"}  # as in 1.0
 
     def test_every_new_key_has_an_explicit_context_term(self):
         context = json.loads((ROOT / "spec" / "v1" / "context.jsonld").read_text(encoding="utf-8"))["@context"]
